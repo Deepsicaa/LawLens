@@ -1,0 +1,90 @@
+[project]
+name = "lawlens-api"
+version = "0.1.0"
+description = "LawLens — AI-powered multi-jurisdiction legal intelligence API"
+requires-python = ">=3.12"
+dependencies = [
+    # Web framework
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "python-multipart>=0.0.20",
+
+    # Config & validation
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+
+    # Database
+    "sqlmodel>=0.0.22",
+    "asyncpg>=0.30.0",
+    "alembic>=1.14.0",
+
+    # Cache
+    "redis[hiredis]>=5.2.0",
+
+    # HTTP client
+    "httpx>=0.28.0",
+
+    # AI — LLM (via OpenRouter — OpenAI-compatible gateway)
+    "openai>=1.60.0",
+
+    # AI — Pipeline orchestration
+    "langgraph>=0.2.0",
+    "langchain-openai>=0.3.0",
+
+    # AI — Document indexing and retrieval
+    "llama-index-core>=0.12.0",
+    "llama-index-vector-stores-qdrant>=0.4.0",
+    "llama-index-embeddings-voyageai>=0.3.0",
+
+    # Vector database
+    "qdrant-client[fastembed]>=1.12.0",
+
+    # Sparse retrieval
+    "rank-bm25>=0.2.2",
+
+    # Reranking
+    "cohere>=5.13.0",
+
+    # Auth
+    "python-jose[cryptography]>=3.3.0",
+    "clerk-backend-api>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.28.0",
+    "ruff>=0.9.0",
+    "mypy>=1.13.0",
+    "types-redis>=4.6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["B008"]  # FastAPI uses function calls as default arguments (Depends)
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

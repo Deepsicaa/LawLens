@@ -1,0 +1,64 @@
+# ─── Node / pnpm ─────────────────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ─── Next.js ──────────────────────────────────────────────────────────────────
+.next/
+out/
+.vercel/
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ─── Python tooling ───────────────────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ─── Environment ──────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Keep examples
+!.env.example
+!.env.local.example
+
+# ─── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Temp ─────────────────────────────────────────────────────────────────────
+.tmp/
+tmp/
+
+# ─── Local data (Docker volumes mounted locally) ──────────────────────────────
+qdrant_storage/
+postgres_data/
+
+# ─── Local Qdrant binary + vector data ────────────────────────────────────────
+.qdrant/
+
+# ─── 3D model assets (large binaries — serve from CDN or public/ only) ────────
+apps/web/public/models/*.glb
+apps/web/public/models/*.gltf

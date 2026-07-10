@@ -1,0 +1,30 @@
+{
+  "name": "lawlens",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\" --ignore-path .gitignore",
+    "ingest": "tsx scripts/ingest.ts",
+    "ingest:india": "tsx scripts/ingest.ts --jurisdiction india",
+    "ingest:uk": "tsx scripts/ingest.ts --jurisdiction uk",
+    "ingest:canada": "tsx scripts/ingest.ts --jurisdiction canada",
+    "ingest:australia": "tsx scripts/ingest.ts --jurisdiction australia",
+    "ingest:count": "tsx scripts/ingest.ts --count",
+    "ingest:dry-run": "tsx scripts/ingest.ts --dry-run"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tsx": "^4.23.0"
+  }
+}
