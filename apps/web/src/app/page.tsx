@@ -8,10 +8,11 @@ import { SceneJurisdictions } from "@/components/scenes/scene-jurisdictions";
 import { SceneDemo } from "@/components/scenes/scene-demo";
 import { SceneTrust } from "@/components/scenes/scene-trust";
 import { SceneCTA } from "@/components/scenes/scene-cta";
+import { LenisProvider } from "@/providers/lenis-provider";
 
 export default function LandingPage() {
   return (
-    <>
+    <LenisProvider>
       <Nav />
       <main style={{ position: "relative", zIndex: 2 }}>
         <SceneHero />
@@ -31,6 +32,6 @@ export default function LandingPage() {
         <SceneCTA />
       </main>
       <Footer />
-    </>
+    </LenisProvider>
   );
 }
