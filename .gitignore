@@ -62,3 +62,4 @@ postgres_data/
 # ─── 3D model assets (large binaries — serve from CDN or public/ only) ────────
 apps/web/public/models/*.glb
 apps/web/public/models/*.gltf
+.vercel
