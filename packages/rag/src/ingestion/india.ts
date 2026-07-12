@@ -1,430 +1,330 @@
 import type { LegalDocument } from "../types";
 
 export const INDIA_DOCUMENTS: LegalDocument[] = [
-  // ─── Constitution of India, 1950 ────────────────────────────────────────
+  // ─── Constitution of India, 1950 ─────────────────────────────────────────
   {
     id: "india-const-art14",
-    text: `CONSTITUTION OF INDIA, 1950
-PART III — FUNDAMENTAL RIGHTS
-Article 14 — Equality before law
-
+    text: `CONSTITUTION OF INDIA, 1950 — Article 14 — Equality before law
 The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India.`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 14",
-    title: "Equality before law",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 1950,
+    source: "Constitution of India, 1950", act: "Constitution of India", section: "Article 14",
+    title: "Equality before law", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/15240", year: 1950,
     topics: ["constitutional law", "equality", "fundamental rights"],
   },
   {
     id: "india-const-art19",
-    text: `CONSTITUTION OF INDIA, 1950
-Article 19 — Protection of certain rights regarding freedom of speech, etc.
-
-(1) All citizens shall have the right—
-  (a) to freedom of speech and expression;
-  (b) to assemble peaceably and without arms;
-  (c) to form associations or unions;
-  (d) to move freely throughout the territory of India;
-  (e) to reside and settle in any part of the territory of India;
-  (g) to practise any profession, or to carry on any occupation, trade or business.
-
-(2) Nothing in sub-clause (a) of clause (1) shall affect the operation of any existing law, or prevent the State from making any law, in so far as such law imposes reasonable restrictions on the exercise of the right conferred by the said sub-clause in the interests of the sovereignty and integrity of India, the security of the State, friendly relations with foreign States, public order, decency or morality, or in relation to contempt of court, defamation or incitement to an offence.`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 19",
-    title: "Freedom of speech, assembly, movement, and profession",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 1950,
-    topics: ["constitutional law", "free speech", "fundamental rights", "freedoms"],
+    text: `CONSTITUTION OF INDIA, 1950 — Article 19 — Freedom of speech and expression
+All citizens shall have the right to freedom of speech and expression; to assemble peaceably and without arms; to form associations or unions; to move freely throughout India; to reside and settle in any part of India; to practise any profession or carry on any occupation, trade or business. These rights are subject to reasonable restrictions in the interests of sovereignty and integrity of India, public order, decency or morality.`,
+    source: "Constitution of India, 1950", act: "Constitution of India", section: "Article 19",
+    title: "Freedom of speech, assembly, movement, profession", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/15240", year: 1950,
+    topics: ["constitutional law", "free speech", "fundamental rights"],
   },
   {
     id: "india-const-art21",
-    text: `CONSTITUTION OF INDIA, 1950
-Article 21 — Protection of life and personal liberty
-
-No person shall be deprived of his life or personal liberty except according to procedure established by law.
-
-Note: The Supreme Court has interpreted Article 21 to include the right to dignity, right to health, right to privacy (K.S. Puttaswamy v. Union of India, 2017), right to livelihood, right to a fair trial, right to legal aid, and right to a speedy trial. This Article has been the foundation for a vast body of human rights jurisprudence in India.`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 21",
-    title: "Protection of life and personal liberty",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 1950,
-    topics: ["constitutional law", "right to life", "personal liberty", "fundamental rights"],
-  },
-  {
-    id: "india-const-art21a",
-    text: `CONSTITUTION OF INDIA, 1950
-Article 21A — Right to Education (inserted by Constitution (Eighty-sixth Amendment) Act, 2002)
-
-The State shall provide free and compulsory education to all children of the age of six to fourteen years in such manner as the State may, by law, determine.
-
-This Article is given effect by the Right of Children to Free and Compulsory Education Act, 2009 (RTE Act), which mandates free and compulsory elementary education for children aged 6–14 years and requires 25% reservation of seats in private schools for economically weaker sections.`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 21A",
-    title: "Right to Education",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 2002,
-    topics: ["constitutional law", "education", "fundamental rights", "children's rights"],
+    text: `CONSTITUTION OF INDIA, 1950 — Article 21 — Protection of life and personal liberty
+No person shall be deprived of his life or personal liberty except according to procedure established by law. The Supreme Court has interpreted Article 21 to include the right to dignity, privacy (K.S. Puttaswamy v. Union of India, 2017), livelihood, fair trial, legal aid, speedy trial, clean environment, and health.`,
+    source: "Constitution of India, 1950", act: "Constitution of India", section: "Article 21",
+    title: "Right to life and personal liberty", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/15240", year: 1950,
+    topics: ["constitutional law", "right to life", "fundamental rights", "privacy"],
   },
   {
     id: "india-const-art22",
-    text: `CONSTITUTION OF INDIA, 1950
-Article 22 — Protection against arrest and detention in certain cases
-
-(1) No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest nor shall he be denied the right to consult, and to be defended by, a legal practitioner of his choice.
-(2) Every person who is arrested and detained in custody shall be produced before the nearest magistrate within a period of twenty-four hours of such arrest excluding the time necessary for the journey from the place of arrest to the court of the magistrate and no such person shall be detained in custody beyond the said period without the authority of a magistrate.`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 22",
-    title: "Protection against arrest and detention",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 1950,
-    topics: ["constitutional law", "arrest", "detention", "fundamental rights", "criminal procedure"],
+    text: `CONSTITUTION OF INDIA, 1950 — Article 22 — Protection against arrest and detention
+No person arrested shall be detained without being informed of the grounds of arrest, nor denied the right to consult a legal practitioner. Every arrested person must be produced before the nearest magistrate within 24 hours of arrest. No person can be detained beyond 24 hours without a magistrate's authority.`,
+    source: "Constitution of India, 1950", act: "Constitution of India", section: "Article 22",
+    title: "Protection against arrest and detention", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/15240", year: 1950,
+    topics: ["arrest", "detention", "fundamental rights", "criminal procedure"],
   },
   {
     id: "india-const-art32",
-    text: `CONSTITUTION OF INDIA, 1950
-Article 32 — Remedies for enforcement of rights conferred by this Part
-
-(1) The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed.
-(2) The Supreme Court shall have power to issue directions or orders or writs, including writs in the nature of habeas corpus, mandamus, prohibition, quo warranto and certiorari, whichever may be appropriate, for the enforcement of any of the rights conferred by this Part.
-(3) Without prejudice to the powers conferred on the Supreme Court by clauses (1) and (2), Parliament may by law empower any other court to exercise within the local limits of its jurisdiction all or any of the powers exercisable by the Supreme Court under clause (2).
-(4) The right guaranteed by this article shall not be suspended except as otherwise provided for by this Constitution.
-
-Dr. B.R. Ambedkar called Article 32 the "heart and soul of the Constitution."`,
-    source: "Constitution of India, 1950",
-    act: "Constitution of India",
-    section: "Article 32",
-    title: "Remedies for enforcement of fundamental rights",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/15240",
-    year: 1950,
-    topics: ["constitutional law", "writ jurisdiction", "Supreme Court", "habeas corpus", "fundamental rights enforcement"],
+    text: `CONSTITUTION OF INDIA, 1950 — Article 32 — Remedies for enforcement of fundamental rights
+The right to move the Supreme Court for enforcement of fundamental rights is guaranteed. The Supreme Court may issue writs of habeas corpus, mandamus, prohibition, quo warranto, and certiorari. Dr. B.R. Ambedkar called Article 32 the "heart and soul of the Constitution." Article 226 gives High Courts similar power.`,
+    source: "Constitution of India, 1950", act: "Constitution of India", section: "Article 32",
+    title: "Remedies — writ jurisdiction", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/15240", year: 1950,
+    topics: ["writ jurisdiction", "habeas corpus", "Supreme Court", "enforcement"],
   },
 
-  // ─── Indian Penal Code, 1860 / Bharatiya Nyaya Sanhita, 2023 ────────────
+  // ─── Hindu Marriage Act, 1955 ─────────────────────────────────────────────
   {
-    id: "india-ipc-s299",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Section 100)
-Section 299 — Culpable homicide
-
-Whoever causes death by doing an act with the intention of causing death, or with the intention of causing such bodily injury as is likely to cause death, or with the knowledge that he is likely by such act to cause death, commits the offence of culpable homicide.
-
-Explanation 1 — A person who causes bodily injury to another who is labouring under a disorder, disease or bodily infirmity, and thereby accelerates the death of that other, shall be deemed to have caused his death.
-Explanation 2 — Where death is caused by bodily injury, the person who causes such bodily injury shall be deemed to have caused the death, although by resorting to proper remedies and skilful treatment the death might have been prevented.
-Explanation 3 — The causing of the death of a child in the mother's womb is not homicide. But it may amount to culpable homicide to cause the death of a living child, if any part of that child has been brought forth, though the child may not have breathed or been completely born.`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Section 299",
-    title: "Culpable homicide",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1860,
-    topics: ["criminal law", "homicide", "culpable homicide", "IPC"],
+    id: "india-hma-s13",
+    text: `HINDU MARRIAGE ACT, 1955 — Section 13 — Divorce
+Either party to a marriage may present a petition for divorce on the grounds that the other party: (i) has committed adultery; (ii) has treated the petitioner with cruelty; (iii) has deserted the petitioner for a continuous period of not less than two years; (iv) has ceased to be Hindu by conversion; (v) has been of unsound mind or suffering from mental disorder; (vi) has been suffering from venereal disease in a communicable form; (vii) has renounced the world.
+Section 13B — Divorce by mutual consent: Both parties together petition for divorce after living separately for one year. A second motion is filed after 6 months. The court may waive the 6-month cooling period in appropriate cases.`,
+    source: "Hindu Marriage Act, 1955", act: "Hindu Marriage Act", section: "Section 13",
+    title: "Grounds for divorce", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1955,
+    topics: ["divorce", "family law", "marriage", "grounds for divorce", "mutual consent divorce", "Hindu law"],
   },
+  {
+    id: "india-hma-s24",
+    text: `HINDU MARRIAGE ACT, 1955 — Section 24 — Maintenance pendente lite and expenses of proceedings
+Where in any proceeding under this Act it appears that either the wife or the husband, as the case may be, has no independent income sufficient for support and necessary expenses of the proceeding, it may, on the application of the wife or the husband, order the respondent to pay to the petitioner the expenses of the proceeding, and monthly maintenance. The amount is determined considering the income of both parties, lifestyle, and needs.`,
+    source: "Hindu Marriage Act, 1955", act: "Hindu Marriage Act", section: "Section 24",
+    title: "Maintenance pendente lite during divorce proceedings", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1955,
+    topics: ["maintenance", "alimony", "divorce", "family law", "interim maintenance", "Hindu law"],
+  },
+  {
+    id: "india-hma-s25",
+    text: `HINDU MARRIAGE ACT, 1955 — Section 25 — Permanent alimony and maintenance
+Any court exercising jurisdiction under this Act may, at the time of passing any decree or at any time subsequent thereto, on application made to it for the purpose by either the wife or the husband, as the case may be, order that the respondent shall pay to the applicant for her or his maintenance and support such gross sum or such monthly or periodical sum for a term not exceeding the life of the applicant. The court considers: (a) income of both parties; (b) property of both parties; (c) conduct of parties; (d) other just and fair circumstances. Alimony can be modified or rescinded if the recipient remarries or becomes self-sufficient.`,
+    source: "Hindu Marriage Act, 1955", act: "Hindu Marriage Act", section: "Section 25",
+    title: "Permanent alimony and maintenance after divorce", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1955,
+    topics: ["alimony", "permanent alimony", "maintenance", "divorce", "family law", "Hindu law", "spousal support"],
+  },
+  {
+    id: "india-hma-s26",
+    text: `HINDU MARRIAGE ACT, 1955 — Section 26 — Custody of children
+In any proceeding under this Act, the court may, from time to time, pass such interim orders and make such provisions in the decree as it deems just and proper with respect to the custody, maintenance and education of minor children, consistently with their wishes, wherever possible. The welfare of the child is the paramount consideration. Courts consider: (a) age and sex of child; (b) wishes of child if old enough; (c) financial capacity of each parent; (d) past conduct of parents.`,
+    source: "Hindu Marriage Act, 1955", act: "Hindu Marriage Act", section: "Section 26",
+    title: "Custody of children during divorce", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1955,
+    topics: ["child custody", "divorce", "children", "family law", "Hindu law", "welfare of child"],
+  },
+  {
+    id: "india-hma-s9",
+    text: `HINDU MARRIAGE ACT, 1955 — Section 9 — Restitution of conjugal rights
+When either the husband or the wife has, without reasonable excuse, withdrawn from the society of the other, the aggrieved party may apply by petition to the district court for restitution of conjugal rights and the court, on being satisfied of the truth of the statements made in such petition, and that there is no legal ground why the application should not be granted, may decree restitution of conjugal rights accordingly.`,
+    source: "Hindu Marriage Act, 1955", act: "Hindu Marriage Act", section: "Section 9",
+    title: "Restitution of conjugal rights", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1955,
+    topics: ["restitution of conjugal rights", "marriage", "family law", "Hindu law"],
+  },
+
+  // ─── Hindu Adoption and Maintenance Act, 1956 ────────────────────────────
+  {
+    id: "india-hama-s18",
+    text: `HINDU ADOPTIONS AND MAINTENANCE ACT, 1956 — Section 18 — Maintenance of wife
+Subject to the provisions of this section, a Hindu wife, whether married before or after the commencement of this Act, shall be entitled to be maintained by her husband during her lifetime. A Hindu wife shall be entitled to live separately from her husband without forfeiting her claim to maintenance if he is guilty of: (a) desertion; (b) cruelty; (c) leprosy; (d) any other wife or mistress; (e) conversion to another religion; (f) any other cause justifying her living separately.`,
+    source: "Hindu Adoptions and Maintenance Act, 1956", act: "Hindu Adoptions and Maintenance Act", section: "Section 18",
+    title: "Maintenance of wife", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["maintenance", "wife", "family law", "Hindu law", "alimony", "spousal support"],
+  },
+  {
+    id: "india-hama-s20",
+    text: `HINDU ADOPTIONS AND MAINTENANCE ACT, 1956 — Section 20 — Maintenance of children and aged parents
+A Hindu is bound to maintain his legitimate or illegitimate children and his aged or infirm parents. A child's right to maintenance continues until the child (if a girl) gets married, or (if a boy) is able to maintain himself. An aged or infirm parent unable to maintain himself or herself is entitled to maintenance from an adult child who is able to maintain such parent.`,
+    source: "Hindu Adoptions and Maintenance Act, 1956", act: "Hindu Adoptions and Maintenance Act", section: "Section 20",
+    title: "Maintenance of children and aged parents", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["child maintenance", "parental maintenance", "family law", "Hindu law"],
+  },
+  {
+    id: "india-hama-s23",
+    text: `HINDU ADOPTIONS AND MAINTENANCE ACT, 1956 — Section 23 — Amount of maintenance
+In determining the amount of maintenance, the court shall have due regard to: (a) the position and status of the parties; (b) the reasonable wants of the claimant; (c) if the claimant is living separately, whether the claimant is justified in doing so; (d) the value of the claimant's property and income; (e) the number of persons entitled to maintenance under this Act.`,
+    source: "Hindu Adoptions and Maintenance Act, 1956", act: "Hindu Adoptions and Maintenance Act", section: "Section 23",
+    title: "Amount of maintenance — factors considered", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["maintenance amount", "alimony quantum", "family law", "Hindu law"],
+  },
+
+  // ─── Code of Criminal Procedure — Section 125 ───────────────────────────
+  {
+    id: "india-crpc-s125",
+    text: `CODE OF CRIMINAL PROCEDURE, 1973 (now Bharatiya Nagarik Suraksha Sanhita, 2023 — Section 144)
+Section 125 — Order for maintenance of wives, children and parents
+If any person having sufficient means neglects or refuses to maintain: (a) his wife, unable to maintain herself; (b) his legitimate or illegitimate minor child, unable to maintain itself; (c) his legitimate or illegitimate child (not being a married daughter) who has attained majority, where such child is, by reason of physical or mental abnormality or injury, unable to maintain itself; (d) his father or mother, unable to maintain himself or herself — a Magistrate of the first class may order such person to make a monthly allowance for the maintenance of his wife or such child, father or mother, at such monthly rate as the Magistrate thinks fit. Maximum maintenance under this section was uncapped after 2001. Section 125 applies to all religions. The wife includes a divorced wife. The proceedings can be initiated in the place where the wife resides.`,
+    source: "Code of Criminal Procedure, 1973", act: "Code of Criminal Procedure", section: "Section 125",
+    title: "Maintenance of wives, children and parents", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/1611", year: 1973,
+    topics: ["maintenance", "alimony", "wife", "children", "parents", "family law", "criminal procedure", "all religions"],
+  },
+
+  // ─── Hindu Succession Act, 1956 ──────────────────────────────────────────
+  {
+    id: "india-hsa-s6",
+    text: `HINDU SUCCESSION ACT, 1956 — Section 6 — Devolution of interest in coparcenary property
+(as amended by Hindu Succession (Amendment) Act, 2005)
+On and from 9th September 2005, in a Joint Hindu family governed by the Mitakshara law, the daughter of a coparcener shall by birth become a coparcener in her own right in the same manner as the son. The daughter shall have the same rights in the coparcenary property as she would have had if she had been a son. This right applies even if the father died before 9 September 2005 (Vineeta Sharma v. Rakesh Sharma, Supreme Court 2020). The daughter is also subject to the same liabilities in respect of the said coparcenary property as that of a son.`,
+    source: "Hindu Succession Act, 1956", act: "Hindu Succession Act", section: "Section 6",
+    title: "Daughter's equal right in ancestral property", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["succession", "inheritance", "ancestral property", "daughter's rights", "coparcenary", "Hindu law"],
+  },
+  {
+    id: "india-hsa-s8",
+    text: `HINDU SUCCESSION ACT, 1956 — Section 8 — General rules of succession for males
+The property of a male Hindu dying intestate shall devolve according to this section and the rules contained in the Schedule:
+Class I heirs (take simultaneously, excluding all others): son, daughter, widow, mother, son of pre-deceased son, daughter of pre-deceased son, son of pre-deceased daughter, daughter of pre-deceased daughter, widow of pre-deceased son, son of pre-deceased son of pre-deceased son, daughter of pre-deceased son of pre-deceased son, widow of pre-deceased son of pre-deceased son.
+If there are no Class I heirs, property goes to Class II heirs (father, siblings, etc.), then agnates, then cognates.`,
+    source: "Hindu Succession Act, 1956", act: "Hindu Succession Act", section: "Section 8",
+    title: "Succession rules for Hindu males — Class I heirs", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["succession", "inheritance", "intestate succession", "Hindu law", "heirs", "property"],
+  },
+  {
+    id: "india-hsa-s15",
+    text: `HINDU SUCCESSION ACT, 1956 — Section 15 — General rules of succession for females
+Property of a female Hindu dying intestate shall devolve: (a) firstly, upon the sons and daughters (including children of pre-deceased son or daughter) and the husband; (b) secondly, upon the heirs of the husband; (c) thirdly, upon the mother and father; (d) fourthly, upon the heirs of the father; (e) lastly, upon the heirs of the mother. Property inherited from father/father's parents passes to father's heirs if no son/daughter. Property inherited from husband/husband's parents passes to husband's heirs if no son/daughter.`,
+    source: "Hindu Succession Act, 1956", act: "Hindu Succession Act", section: "Section 15",
+    title: "Succession rules for Hindu females", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1956,
+    topics: ["succession", "inheritance", "Hindu female", "intestate succession", "Hindu law"],
+  },
+
+  // ─── Transfer of Property Act, 1882 ──────────────────────────────────────
+  {
+    id: "india-tpa-s54",
+    text: `TRANSFER OF PROPERTY ACT, 1882 — Section 54 — Sale defined
+"Sale" is a transfer of ownership in exchange for a price paid or promised or part-paid and part-promised. Sale of immovable property of value of Rs.100 or upwards can only be made by a registered instrument. Sale of immovable property of value less than Rs.100 may be made either by registered instrument or by delivery of property. A contract for sale of immoveable property does not, of itself, create interest in or charge on such property.`,
+    source: "Transfer of Property Act, 1882", act: "Transfer of Property Act", section: "Section 54",
+    title: "Sale of immovable property", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2104", year: 1882,
+    topics: ["property law", "sale", "immovable property", "registration", "transfer"],
+  },
+  {
+    id: "india-tpa-s105",
+    text: `TRANSFER OF PROPERTY ACT, 1882 — Section 105 — Lease defined
+A lease of immoveable property is a transfer of a right to enjoy such property, made for a certain time, express or implied, or in perpetuity, in consideration of a price paid or promised, or of money, a share of crops, service or any other thing of value, to be rendered periodically or on specified occasions to the transferor by the transferee, who accepts the transfer on such terms. The transferor is called the lessor, the transferee is called the lessee, the price is called the premium, and the money, share, service or other thing to be so rendered is called the rent. Lease of immovable property from year to year or for any term exceeding one year can only be made by a registered instrument.`,
+    source: "Transfer of Property Act, 1882", act: "Transfer of Property Act", section: "Section 105",
+    title: "Lease of immovable property", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2104", year: 1882,
+    topics: ["property law", "lease", "rent", "tenancy", "immovable property"],
+  },
+
+  // ─── Negotiable Instruments Act, 1881 — Cheque Bounce ───────────────────
+  {
+    id: "india-nia-s138",
+    text: `NEGOTIABLE INSTRUMENTS ACT, 1881 — Section 138 — Dishonour of cheque for insufficiency of funds
+Where any cheque drawn by a person for the discharge of any legally enforceable debt or other liability is returned unpaid by the bank (because the amount is insufficient or the amount exceeds the arrangement made), that person shall be deemed to have committed an offence and shall be punished with imprisonment for a term which may be extended to two years, or with fine which may extend to twice the amount of the cheque, or with both. Requirements: (1) cheque must be presented within 3 months; (2) payee must send notice within 30 days of dishonour; (3) drawer must fail to pay within 15 days of notice. Complaint must be filed in court within 30 days of expiry of 15-day notice period.`,
+    source: "Negotiable Instruments Act, 1881", act: "Negotiable Instruments Act", section: "Section 138",
+    title: "Cheque bounce — dishonour of cheque", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1881,
+    topics: ["cheque bounce", "negotiable instruments", "dishonour", "bank", "criminal liability"],
+  },
+
+  // ─── Motor Vehicles Act, 1988 ─────────────────────────────────────────────
+  {
+    id: "india-mva-s166",
+    text: `MOTOR VEHICLES ACT, 1988 — Section 166 — Application for compensation (Motor Accident Claims)
+An application for compensation arising out of an accident of the nature specified in sub-section (1) of section 165 may be made: (a) by the person who has sustained the injury; (b) by the owner of the property; (c) where death has resulted from the accident, by all or any of the legal representatives of the deceased. The application shall be made to the Claims Tribunal having jurisdiction over the area where the accident occurred or to the Claims Tribunal within whose jurisdiction the claimant resides. There is no limitation period for filing claims (Supreme Court: Rani Gupta v. Union of India). Compensation is calculated on the basis of the victim's age, income and dependency.`,
+    source: "Motor Vehicles Act, 1988", act: "Motor Vehicles Act", section: "Section 166",
+    title: "Motor accident compensation claims", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/1798", year: 1988,
+    topics: ["motor accident", "compensation", "personal injury", "claims tribunal", "road accident"],
+  },
+
+  // ─── Indian Penal Code ────────────────────────────────────────────────────
   {
     id: "india-ipc-s302",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Section 103)
-Section 302 — Punishment for murder
-
-Whoever commits murder shall be punished with death, or imprisonment for life, and shall also be liable to fine.
-
-Note: Murder is defined under Section 300 IPC as culpable homicide amounting to murder when:
-(1) the act is done with the intention of causing death;
-(2) the act is done with the intention of causing such bodily injury as the offender knows to be likely to cause death;
-(3) the act is done with the intention of causing bodily injury sufficient in the ordinary course of nature to cause death;
-(4) the person committing the act knows that it is so imminently dangerous that it must, in all probability, cause death or such bodily injury as is likely to cause death.`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Section 302",
-    title: "Punishment for murder",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1860,
-    topics: ["criminal law", "murder", "punishment", "IPC", "capital punishment"],
+    text: `INDIAN PENAL CODE, 1860 — Section 302 — Punishment for murder
+Whoever commits murder shall be punished with death, or imprisonment for life, and shall also be liable to fine. Murder (Section 300) is culpable homicide when done with intent to cause death, or intent to cause bodily injury likely to cause death, or with knowledge that the act is imminently dangerous and must in all probability cause death.`,
+    source: "Indian Penal Code, 1860", act: "Indian Penal Code", section: "Section 302",
+    title: "Punishment for murder", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2128", year: 1860,
+    topics: ["murder", "criminal law", "punishment", "IPC", "capital punishment"],
   },
   {
     id: "india-ipc-s376",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Section 64)
-Section 376 — Punishment for rape
-
-(1) Whoever, except in the cases provided for in sub-section (2), commits rape, shall be punished with rigorous imprisonment of either description for a term which shall not be less than seven years, but which may extend to imprisonment for life, and shall also be liable to fine.
-(2) Whoever,—
-  (a) being a police officer, commits rape— within the limits of the police station to which such police officer is appointed; or in the premises of any station house; or on a woman in such police officer's custody or in the custody of a police officer subordinate to such police officer; or
-  (b) being a public servant, commits rape on a woman in such public servant's custody or in the custody of a public servant subordinate to such public servant; or
-  [...other aggravated forms of rape including gang rape, rape of minors, etc.]
-shall be punished with rigorous imprisonment for a term which shall not be less than ten years, but which may extend to imprisonment for life, which shall mean imprisonment for the remainder of that person's natural life, and shall also be liable to fine.`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Section 376",
-    title: "Punishment for rape",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1860,
-    topics: ["criminal law", "sexual offences", "rape", "IPC", "punishment"],
-  },
-  {
-    id: "india-ipc-s378-379",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Sections 303-304)
-Section 378 — Theft
-
-Whoever, intending to take dishonestly any moveable property out of the possession of any person without that person's consent, moves that property in order to such taking, is said to commit theft.
-
-Section 379 — Punishment for theft
-
-Whoever commits theft shall be punished with imprisonment of either description for a term which may extend to three years, or with fine, or with both.
-
-Note: Theft requires: (1) dishonest intention to take; (2) moveable property; (3) from possession of another; (4) without consent; (5) actual movement of the property.`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Sections 378–379",
-    title: "Theft and its punishment",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1860,
-    topics: ["criminal law", "theft", "property offences", "IPC"],
+    text: `INDIAN PENAL CODE, 1860 — Section 376 — Punishment for rape
+Minimum punishment: rigorous imprisonment of 7 years (may extend to life imprisonment) plus fine. Aggravated forms (gang rape, rape of minor, rape by public servant) carry minimum 10 years to life. Section 375 defines rape as sexual intercourse by a man with a woman against her will, without her consent, or with consent obtained by fear, fraud or intoxication, or with a woman under 18 years of age.`,
+    source: "Indian Penal Code, 1860", act: "Indian Penal Code", section: "Section 376",
+    title: "Punishment for rape", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2128", year: 1860,
+    topics: ["rape", "sexual assault", "criminal law", "IPC", "punishment", "women's rights"],
   },
   {
     id: "india-ipc-s420",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Section 318)
-Section 420 — Cheating and dishonestly inducing delivery of property
-
-Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, or anything which is signed or sealed, and which is capable of being converted into a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.
-
-Section 415 — Cheating (definition):
-Whoever, by deceiving any person, fraudulently or dishonestly induces the person so deceived to deliver any property to any person, or to consent that any person shall retain any property, or intentionally induces the person so deceived to do or omit to do anything which he would not do or omit if he were not so deceived, and which act or omission causes or is likely to cause damage or harm to that person in body, mind, reputation or property, is said to "cheat".`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Section 420",
-    title: "Cheating and dishonestly inducing delivery of property",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1860,
-    topics: ["criminal law", "cheating", "fraud", "property offences", "IPC"],
+    text: `INDIAN PENAL CODE, 1860 — Section 420 — Cheating
+Whoever cheats and thereby dishonestly induces the person deceived to deliver any property, shall be punished with imprisonment up to 7 years and fine. Section 415 defines cheating as deceiving any person fraudulently or dishonestly to deliver property or do something that causes harm to body, mind, reputation or property.`,
+    source: "Indian Penal Code, 1860", act: "Indian Penal Code", section: "Section 420",
+    title: "Cheating and fraud", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2128", year: 1860,
+    topics: ["cheating", "fraud", "criminal law", "IPC", "property offences"],
   },
   {
     id: "india-ipc-s498a",
-    text: `INDIAN PENAL CODE, 1860 (now Bharatiya Nyaya Sanhita, 2023 — BNS Section 85)
-Section 498A — Husband or relative of husband of a woman subjecting her to cruelty
-
-Whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty shall be punished with imprisonment for a term which may extend to three years and shall also be liable to fine.
-
-Explanation — For the purposes of this section, "cruelty" means—
-(a) any wilful conduct which is of such a nature as is likely to drive the woman to commit suicide or to cause grave injury or danger to life, limb or health (whether mental or physical) of the woman; or
-(b) harassment of the woman where such harassment is with a view to coercing her or any person related to her to meet any unlawful demand for any property or valuable security or is on account of failure by her or any person related to her to meet such demand.
-
-This section is non-bailable and cognizable. The offence is not compoundable.`,
-    source: "Indian Penal Code, 1860",
-    act: "Indian Penal Code",
-    section: "Section 498A",
-    title: "Cruelty by husband or his relatives",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2128",
-    year: 1983,
-    topics: ["criminal law", "domestic violence", "cruelty", "matrimonial offences", "IPC"],
+    text: `INDIAN PENAL CODE, 1860 — Section 498A — Cruelty by husband or relatives
+Whoever, being the husband or relative of the husband of a woman, subjects her to cruelty shall be punished with imprisonment up to 3 years and fine. "Cruelty" means: (a) wilful conduct likely to drive the woman to suicide or cause grave injury; (b) harassment to coerce her to meet unlawful demands for property or dowry. The offence is cognizable and non-bailable.`,
+    source: "Indian Penal Code, 1860", act: "Indian Penal Code", section: "Section 498A",
+    title: "Cruelty by husband or relatives — domestic cruelty", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2128", year: 1983,
+    topics: ["domestic violence", "cruelty", "matrimonial offences", "husband", "dowry harassment"],
+  },
+  {
+    id: "india-ipc-s378",
+    text: `INDIAN PENAL CODE, 1860 — Sections 378–379 — Theft
+Section 378: Whoever intending to take dishonestly any moveable property out of the possession of any person without that person's consent, moves that property, commits theft. Section 379: Punishment for theft — imprisonment up to 3 years, or fine, or both. Aggravated theft (Section 380 — theft in dwelling house) carries up to 7 years.`,
+    source: "Indian Penal Code, 1860", act: "Indian Penal Code", section: "Sections 378-379",
+    title: "Theft", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2128", year: 1860,
+    topics: ["theft", "criminal law", "property offences", "IPC"],
   },
 
-  // ─── Indian Contract Act, 1872 ───────────────────────────────────────────
+  // ─── Contract Act ─────────────────────────────────────────────────────────
   {
     id: "india-contract-s10",
-    text: `INDIAN CONTRACT ACT, 1872
-Section 10 — What agreements are contracts
-
-All agreements are contracts if they are made by the free consent of parties competent to contract, for a lawful consideration and with a lawful object, and are not hereby expressly declared to be void.
-
-Nothing herein contained shall affect any law in force in India and not hereby expressly repealed, by which any contract is required to be made in writing or in the presence of witnesses, or any law relating to the registration of documents.
-
-Essential elements of a valid contract:
-(1) Offer and acceptance
-(2) Free consent (Section 14)
-(3) Competency of parties (Section 11)
-(4) Lawful consideration (Section 2(d))
-(5) Lawful object (Section 23)
-(6) Not expressly void (Sections 24-30)`,
-    source: "Indian Contract Act, 1872",
-    act: "Indian Contract Act",
-    section: "Section 10",
-    title: "What agreements are contracts",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2187",
-    year: 1872,
-    topics: ["contract law", "agreements", "contracts", "commercial law"],
+    text: `INDIAN CONTRACT ACT, 1872 — Section 10 — What agreements are contracts
+All agreements are contracts if made by free consent of parties competent to contract, for a lawful consideration, with a lawful object, and not expressly declared void. Essential elements: (1) offer and acceptance; (2) free consent (not coerced, unduly influenced, fraudulent or mistaken); (3) competency (majority, sound mind); (4) lawful consideration; (5) lawful object; (6) not expressly void.`,
+    source: "Indian Contract Act, 1872", act: "Indian Contract Act", section: "Section 10",
+    title: "What agreements are contracts", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1872,
+    topics: ["contract law", "agreements", "commercial law"],
   },
   {
-    id: "india-contract-s11",
-    text: `INDIAN CONTRACT ACT, 1872
-Section 11 — Who are competent to contract
-
-Every person is competent to contract who is of the age of majority according to the law to which he is subject, and who is of sound mind, and is not disqualified from contracting by any law to which he is subject.
-
-Section 3, Indian Majority Act, 1875: A person attains majority at 18 years of age.
-
-Section 12 — What is a sound mind for the purposes of contracting:
-A person is said to be of sound mind for the purpose of making a contract, if, at the time when he makes it, he is capable of understanding it and of forming a rational judgment as to its effect upon his interests.
-
-A person who is usually of unsound mind, but occasionally of sound mind, may make a contract when he is of sound mind. A person who is usually of sound mind, but occasionally of unsound mind, may not make a contract when he is of unsound mind.`,
-    source: "Indian Contract Act, 1872",
-    act: "Indian Contract Act",
-    section: "Section 11",
-    title: "Competency to contract",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2187",
-    year: 1872,
-    topics: ["contract law", "competency", "minor", "unsound mind", "capacity"],
+    id: "india-contract-s73",
+    text: `INDIAN CONTRACT ACT, 1872 — Section 73 — Compensation for breach of contract
+When a contract has been broken, the party who suffers from such breach is entitled to receive compensation for any loss or damage caused which naturally arose from the breach, or which the parties knew, when they made the contract, to be likely to result from the breach. Such compensation is not to be given for remote and indirect loss or damage. Section 74: If a sum is named in the contract as the amount to be paid in case of breach, the party complaining receives reasonable compensation not exceeding the penalty.`,
+    source: "Indian Contract Act, 1872", act: "Indian Contract Act", section: "Section 73",
+    title: "Compensation for loss or damage on breach of contract", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1872,
+    topics: ["breach of contract", "compensation", "damages", "contract law"],
   },
+
+  // ─── Consumer Protection Act, 2019 ───────────────────────────────────────
   {
-    id: "india-contract-s14",
-    text: `INDIAN CONTRACT ACT, 1872
-Section 14 — "Free consent" defined
-
-Consent is said to be free when it is not caused by—
-(1) coercion, as defined in section 15, or
-(2) undue influence, as defined in section 16, or
-(3) fraud, as defined in section 17, or
-(4) misrepresentation, as defined in section 18, or
-(5) mistake, subject to the provisions of sections 20, 21 and 22.
-
-Consent is said to be so caused when it would not have been given but for the existence of such coercion, undue influence, fraud, misrepresentation, or mistake.
-
-Effect: A contract made without free consent is voidable at the option of the party whose consent was obtained by coercion, undue influence, fraud, or misrepresentation. In cases of mistake, the contract may be void.`,
-    source: "Indian Contract Act, 1872",
-    act: "Indian Contract Act",
-    section: "Section 14",
-    title: "Free consent",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2187",
-    year: 1872,
-    topics: ["contract law", "consent", "coercion", "fraud", "misrepresentation", "mistake"],
+    id: "india-consumer-s35",
+    text: `CONSUMER PROTECTION ACT, 2019 — Filing a consumer complaint
+A consumer may file a complaint with the District Consumer Commission (claims up to Rs. 1 crore), State Consumer Commission (Rs. 1–10 crore), or National Consumer Commission (above Rs. 10 crore). Complaints can be filed electronically. Time limit: within 2 years of the cause of action (with power to condone delay). Reliefs available: replacement or repair of goods, refund of price, removal of deficiency, cessation of unfair trade practice, discontinuance of restrictive trade practice, compensation for loss or injury, punitive damages.`,
+    source: "Consumer Protection Act, 2019", act: "Consumer Protection Act", section: "Section 35",
+    title: "Filing consumer complaint — jurisdiction and relief", jurisdiction: "india", url: "https://consumeraffairs.nic.in", year: 2019,
+    topics: ["consumer complaint", "consumer forum", "defect", "deficiency", "consumer rights", "refund"],
   },
 
-  // ─── Consumer Protection Act, 2019 ──────────────────────────────────────
-  {
-    id: "india-consumer-s2-defective",
-    text: `CONSUMER PROTECTION ACT, 2019
-Section 2(10) — "Defect" defined
-
-"defect" means any fault, imperfection or shortcoming in the quality, quantity, potency, purity or standard which is required to be maintained by or under any law for the time being in force or under any contract, express or implied, or as is claimed by the trader in any manner whatsoever in relation to any goods or product and the expression "defective" shall be construed accordingly.
-
-Section 2(11) — "Deficiency" defined:
-"deficiency" means any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance which is required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service and includes—
-(i) any act of negligence or omission or commission by such person which causes loss or injury to the consumer; and
-(ii) deliberate withholding of relevant information by such person to the consumer.
-
-Remedies available: replacement, refund, compensation, discontinuation of unfair trade practice.`,
-    source: "Consumer Protection Act, 2019",
-    act: "Consumer Protection Act",
-    section: "Section 2(10) and 2(11)",
-    title: "Definition of defect and deficiency",
-    jurisdiction: "india",
-    url: "https://consumeraffairs.nic.in/acts-rules/consumer-protection-act-2019",
-    year: 2019,
-    topics: ["consumer law", "defect", "deficiency", "goods", "services"],
-  },
-
-  // ─── Protection of Women from Domestic Violence Act, 2005 ───────────────
-  {
-    id: "india-dv-act-s3",
-    text: `PROTECTION OF WOMEN FROM DOMESTIC VIOLENCE ACT, 2005
-Section 3 — Definition of domestic violence
-
-For the purposes of this Act, any act, omission or commission or conduct of the respondent shall constitute "domestic violence" in case it—
-(a) harms or injures or endangers the health, safety, life, limb or well-being, whether mental or physical, of the aggrieved person or tends to do so and includes causing physical abuse, sexual abuse, verbal and emotional abuse and economic abuse; or
-(b) harasses, harms, injures or endangers the aggrieved person with a view to coerce her or any other person related to her to meet any unlawful demand for any dowry or other property or valuable security; or
-(c) has the effect of threatening the aggrieved person or any person related to her by any conduct mentioned in clause (a) or clause (b); or
-(d) otherwise injures or causes harm, whether physical or mental, to the aggrieved person.
-
-Remedies available: Protection order, residence order, monetary relief, custody order, compensation order.`,
-    source: "Protection of Women from Domestic Violence Act, 2005",
-    act: "Protection of Women from Domestic Violence Act",
-    section: "Section 3",
-    title: "Definition of domestic violence",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2021",
-    year: 2005,
-    topics: ["domestic violence", "women's rights", "protection orders", "family law"],
-  },
-
-  // ─── Right to Information Act, 2005 ─────────────────────────────────────
+  // ─── RTI Act ──────────────────────────────────────────────────────────────
   {
     id: "india-rti-s3",
     text: `RIGHT TO INFORMATION ACT, 2005
-Section 3 — Right to information
-
-Subject to the provisions of this Act, all citizens shall have the right to information.
-
-Section 6 — Request for obtaining information:
-(1) A person who desires to obtain any information under this Act, shall make a request in writing or through electronic means in English or Hindi or in the official language of the area in which the application is being made, accompanying such fee as may be prescribed, to—
-(a) the Central Public Information Officer or State Public Information Officer, as the case may be, of the concerned public authority;
-(b) the Central Assistant Public Information Officer or State Assistant Public Information Officer, as the case may be.
-
-Section 7: A CPIO or SPIO shall deal with a request as expeditiously as possible and in any case within 30 days of the receipt of the request. Where the information sought concerns the life or liberty of a person, it shall be provided within 48 hours.
-
-Section 8: Exemptions from disclosure (national security, cabinet papers, private information, etc.)`,
-    source: "Right to Information Act, 2005",
-    act: "Right to Information Act",
-    section: "Sections 3, 6, 7",
-    title: "Right to information and procedure",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/2021",
-    year: 2005,
-    topics: ["RTI", "transparency", "public information", "government accountability"],
+Section 3: All citizens have the right to information. Section 6: Request to CPIO/SPIO in writing or electronically with fee. Section 7: Information to be provided within 30 days (48 hours if life or liberty is involved). Section 8: Exemptions include national security, cabinet deliberations, personal information, trade secrets. Second appeal lies to Central/State Information Commission. Penalty for failure: Rs. 250 per day up to Rs. 25,000.`,
+    source: "Right to Information Act, 2005", act: "Right to Information Act", section: "Sections 3, 6, 7, 8",
+    title: "Right to information — procedure and exemptions", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2021", year: 2005,
+    topics: ["RTI", "transparency", "government information", "public authority"],
   },
 
-  // ─── Industrial Disputes Act, 1947 ──────────────────────────────────────
+  // ─── Protection of Women from Domestic Violence Act, 2005 ────────────────
   {
-    id: "india-id-act-s25f",
-    text: `INDUSTRIAL DISPUTES ACT, 1947
-Section 25F — Conditions precedent to retrenchment of workmen
-
-No workman employed in any industry who has been in continuous service for not less than one year under an employer shall be retrenched by that employer until—
-(a) the workman has been given one month's notice in writing indicating the reasons for retrenchment and the period of notice has expired, or the workman has been paid in lieu of such notice, wages for the period of the notice;
-(b) the workman has been paid, at the time of retrenchment, compensation which shall be equivalent to fifteen days' average pay for every completed year of continuous service or any part thereof in excess of six months; and
-(c) notice in the prescribed manner is served on the appropriate Government or such authority as may be specified by the appropriate Government by notification in the Official Gazette.
-
-"Retrenchment" means the termination by the employer of the service of a workman for any reason whatsoever, otherwise than as a punishment inflicted by way of disciplinary action, but does not include voluntary retirement, retirement on superannuation, or non-renewal of contract.`,
-    source: "Industrial Disputes Act, 1947",
-    act: "Industrial Disputes Act",
-    section: "Section 25F",
-    title: "Conditions precedent to retrenchment",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/1552",
-    year: 1947,
-    topics: ["labour law", "retrenchment", "workmen", "termination", "employment"],
+    id: "india-dv-s3",
+    text: `PROTECTION OF WOMEN FROM DOMESTIC VIOLENCE ACT, 2005 — Section 3 — Definition of domestic violence
+Domestic violence includes: physical abuse (assault, hurt, threat); sexual abuse; verbal and emotional abuse (insults, humiliation, threats); economic abuse (denial of financial resources, disposal of assets). Section 12: An aggrieved woman can apply to Magistrate for protection order, residence order, monetary relief, custody order, or compensation order. Section 23: Magistrate may pass ex parte interim protection order.`,
+    source: "Protection of Women from Domestic Violence Act, 2005", act: "Protection of Women from Domestic Violence Act", section: "Section 3",
+    title: "Definition of domestic violence and remedies", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2021", year: 2005,
+    topics: ["domestic violence", "protection order", "women's rights", "family law", "abuse"],
   },
 
-  // ─── Information Technology Act, 2000 ───────────────────────────────────
+  // ─── Labour Law ───────────────────────────────────────────────────────────
   {
-    id: "india-it-act-s66",
-    text: `INFORMATION TECHNOLOGY ACT, 2000
-Section 66 — Computer related offences
+    id: "india-id-s25f",
+    text: `INDUSTRIAL DISPUTES ACT, 1947 — Section 25F — Conditions for retrenchment
+No workman employed for not less than one year shall be retrenched until: (a) one month's written notice with reasons has been given, or wages in lieu thereof paid; (b) compensation of 15 days' average pay for every completed year of service has been paid; (c) notice served on the appropriate government. "Retrenchment" means termination for any reason other than disciplinary action, voluntary retirement, superannuation, or non-renewal of contract.`,
+    source: "Industrial Disputes Act, 1947", act: "Industrial Disputes Act", section: "Section 25F",
+    title: "Conditions for retrenchment — notice and compensation", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/1552", year: 1947,
+    topics: ["retrenchment", "labour law", "termination", "employment", "workmen", "notice period"],
+  },
+  {
+    id: "india-gratuity-s4",
+    text: `PAYMENT OF GRATUITY ACT, 1972 — Section 4 — Payment of gratuity
+Gratuity shall be payable to an employee on termination of his employment after he has rendered continuous service for not less than 5 years: on superannuation, retirement, resignation, death, or disablement. Gratuity = 15/26 × last drawn salary × completed years of service. Maximum gratuity is Rs. 20 lakhs (as amended). In case of death or disablement, 5-year minimum service is not required. Gratuity is fully exempt from income tax (for government employees; up to Rs. 20 lakhs for private employees).`,
+    source: "Payment of Gratuity Act, 1972", act: "Payment of Gratuity Act", section: "Section 4",
+    title: "Gratuity — eligibility and calculation", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/2187", year: 1972,
+    topics: ["gratuity", "labour law", "employment benefits", "retirement", "termination"],
+  },
 
-If any person, dishonestly or fraudulently, does any act referred to in section 43 [which covers unauthorised access, downloading data, introducing computer viruses, causing disruption to computer systems, etc.], he shall be punishable with imprisonment for a term which may extend to three years or with fine which may extend to five lakh rupees or with both.
+  // ─── Information Technology Act, 2000 ────────────────────────────────────
+  {
+    id: "india-it-s66",
+    text: `INFORMATION TECHNOLOGY ACT, 2000 — Cyber offences
+Section 66: Computer related offences (hacking) — imprisonment up to 3 years or fine up to Rs. 5 lakh or both. Section 66C: Identity theft — imprisonment up to 3 years and fine up to Rs. 1 lakh. Section 66D: Cheating by impersonation using computer — imprisonment up to 3 years and fine up to Rs. 1 lakh. Section 67: Publishing obscene material electronically — up to 3 years on first conviction. Section 66E: Violation of privacy (publishing private images) — imprisonment up to 3 years or fine up to Rs. 2 lakh.`,
+    source: "Information Technology Act, 2000", act: "Information Technology Act", section: "Sections 66, 66C, 66D, 66E, 67",
+    title: "Cyber crimes and digital offences", jurisdiction: "india", url: "https://www.indiacode.nic.in/handle/123456789/1999", year: 2000,
+    topics: ["cyber law", "hacking", "identity theft", "online crimes", "privacy violation", "IT Act"],
+  },
 
-Section 66A (declared unconstitutional by Supreme Court in Shreya Singhal v. Union of India, 2015):
-The Supreme Court struck down Section 66A (which penalised sending offensive messages through communication services) as unconstitutional for violating Article 19(1)(a) of the Constitution — the right to free speech.
+  // ─── Rent Control / Tenancy ───────────────────────────────────────────────
+  {
+    id: "india-rent-model",
+    text: `MODEL TENANCY ACT, 2021 — Key provisions on renting property in India
+Security deposit: Maximum 2 months' rent for residential property, 6 months for non-residential property. Rent Agreement: Must be in writing and registered with the Rent Authority. Rent increase: Landlord must give 3 months' notice before increasing rent. Eviction: Landlord can seek eviction if tenant (a) defaults in rent for 2 months; (b) misuses premises; (c) sublets without consent; (d) premises needed for landlord's own use; (e) building requires demolition. Eviction process is through the Rent Court. Landlord cannot cut off essential services (water, electricity) to force eviction.`,
+    source: "Model Tenancy Act, 2021", act: "Model Tenancy Act", section: "Sections 4, 11, 21",
+    title: "Tenancy rights — rent, deposit, eviction", jurisdiction: "india", url: "https://mohua.gov.in", year: 2021,
+    topics: ["tenancy", "rent", "landlord", "tenant rights", "eviction", "security deposit", "rental property"],
+  },
 
-Section 67 — Publishing obscene material in electronic form:
-Punishment: up to 3 years on first conviction, up to 5 years on subsequent conviction.
-
-Section 66C — Identity theft: imprisonment up to 3 years and fine up to 1 lakh rupees.
-Section 66D — Cheating by impersonation using computer resource: imprisonment up to 3 years and fine up to 1 lakh rupees.`,
-    source: "Information Technology Act, 2000",
-    act: "Information Technology Act",
-    section: "Sections 66, 66C, 66D, 67",
-    title: "Computer related offences and cyber crimes",
-    jurisdiction: "india",
-    url: "https://www.indiacode.nic.in/handle/123456789/1999",
-    year: 2000,
-    topics: ["cyber law", "computer crimes", "IT Act", "digital offences", "online crimes"],
+  // ─── Income Tax Act ───────────────────────────────────────────────────────
+  {
+    id: "india-income-tax-s80c",
+    text: `INCOME TAX ACT, 1961 — Section 80C — Deductions from total income
+Deduction up to Rs. 1,50,000 per year for: life insurance premiums, PPF (Public Provident Fund), ELSS mutual funds, tuition fees for children, home loan principal repayment, NSC (National Savings Certificates), 5-year bank FD, Sukanya Samriddhi Yojana. Section 80D: Premium for health insurance — deduction up to Rs. 25,000 (Rs. 50,000 for senior citizens). Section 24(b): Interest on housing loan — deduction up to Rs. 2 lakh for self-occupied property. Standard deduction for salaried employees: Rs. 50,000.`,
+    source: "Income Tax Act, 1961", act: "Income Tax Act", section: "Section 80C",
+    title: "Tax deductions — 80C, 80D, housing loan interest", jurisdiction: "india", url: "https://www.incometax.gov.in", year: 1961,
+    topics: ["income tax", "tax deductions", "80C", "PPF", "insurance", "home loan", "tax savings"],
   },
 ];

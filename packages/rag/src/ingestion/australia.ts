@@ -285,7 +285,55 @@ Business Judgment Rule (s.180(2)): A director who makes a business judgment is t
     topics: ["corporations law", "directors' duties", "good faith", "business judgment rule", "fiduciary duties"],
   },
 
+  // ─── Residential Tenancies ────────────────────────────────────────────────
+  {
+    id: "au-rta-nsw",
+    text: `RESIDENTIAL TENANCIES ACT 2010 (NSW) — Tenant and landlord rights
+Fixed-term tenancy may be ended at expiry with 14–90 days notice depending on circumstances. Periodic tenancy: tenant can end with 21 days notice; landlord can end without grounds with 90 days notice (reform to abolish no-grounds eviction ongoing). Rent increases: maximum once per 12 months with 60 days written notice. Bond: maximum 4 weeks rent (or 6 weeks for rent over $1,400/week) lodged with NSW Fair Trading. Landlord must keep premises in good repair and fit for habitation. Tenants may apply to NSW Civil and Administrative Tribunal (NCAT) for disputes. Urgent repairs must be actioned immediately; non-urgent repairs within a reasonable time.`,
+    source: "Residential Tenancies Act 2010 (NSW)", act: "Residential Tenancies Act 2010", section: "Key provisions",
+    title: "Tenancy — notice, bond, repairs, disputes (NSW Australia)", jurisdiction: "australia",
+    url: "https://www.legislation.nsw.gov.au/view/html/inforce/current/act-2010-042", year: 2010,
+    topics: ["tenancy", "rent", "bond", "eviction", "landlord", "tenant rights", "NSW", "Australia"],
+  },
+
   // ─── Family Law Act 1975 (Cth) ───────────────────────────────────────────
+  {
+    id: "au-fla-s48-divorce",
+    text: `FAMILY LAW ACT 1975 (Cth) — Section 48 — Divorce (dissolution of marriage)
+Australia has a single ground for divorce: irretrievable breakdown of the marriage, established by 12 months' separation. The parties may live separately under the same roof during the separation period (the court must be satisfied they actually lived as separated). Section 55A: court must be satisfied proper arrangements have been made for any children under 18 before granting divorce. Applications are made to the Federal Circuit and Family Court of Australia (FCFCOA) and can be filed by one or both parties. The divorce order takes effect one month and one day after it is made.`,
+    source: "Family Law Act 1975 (Cth)", act: "Family Law Act 1975", section: "Sections 48 and 55A",
+    title: "Divorce in Australia — irretrievable breakdown, 12 months separation", jurisdiction: "australia",
+    url: "https://www.legislation.gov.au/Details/C2022C00164", year: 1975,
+    topics: ["divorce", "family law", "separation", "marriage breakdown", "FCFCOA", "Australia"],
+  },
+  {
+    id: "au-fla-s74-maintenance",
+    text: `FAMILY LAW ACT 1975 (Cth) — Sections 72 and 74 — Spousal maintenance (alimony)
+Section 72: A party to a marriage is liable to maintain the other party to the extent that the first-mentioned party is reasonably able to do so, if and only if, the other party is unable to support herself or himself adequately. Section 74: Court may make an order for maintenance, taking into account: age and health of parties; income, property and financial resources; ability to work (including child care responsibilities); duration of marriage and standard of living; commitments of the party to support others; eligibility for social security; and any other relevant factor. Maintenance can be periodic, lump sum, or by transfer of property. Section 83: Court may discharge, suspend, revive or vary a maintenance order if circumstances change.`,
+    source: "Family Law Act 1975 (Cth)", act: "Family Law Act 1975", section: "Sections 72, 74 and 83",
+    title: "Spousal maintenance (alimony) — eligibility, amount, variation (Australia)", jurisdiction: "australia",
+    url: "https://www.legislation.gov.au/Details/C2022C00164", year: 1975,
+    topics: ["spousal maintenance", "alimony", "family law", "support", "maintenance order", "Australia"],
+  },
+  {
+    id: "au-fla-s79-property",
+    text: `FAMILY LAW ACT 1975 (Cth) — Section 79 — Property settlement
+On breakdown of a marriage the court may make orders to alter the interests of the parties in property. The court applies a four-step process: (1) identify the asset pool — all property, liabilities and financial resources of both parties; (2) assess the contributions of each party — financial contributions (income, inheritance), non-financial contributions (improvements to property), and homemaking/parenting contributions; (3) consider future needs factors — age, health, earning capacity, care of children, standard of living; (4) assess whether the order is just and equitable overall. There is no automatic 50/50 split. Superannuation is treated as property and can be split (Superannuation splitting order). Section 90B/90C: Binding Financial Agreements (pre-nups and post-nups) can pre-empt court orders if they meet formal requirements.`,
+    source: "Family Law Act 1975 (Cth)", act: "Family Law Act 1975", section: "Section 79",
+    title: "Property settlement — asset pool, contributions, future needs (Australia)", jurisdiction: "australia",
+    url: "https://www.legislation.gov.au/Details/C2022C00164", year: 1975,
+    topics: ["property settlement", "asset division", "family law", "superannuation", "contributions", "Australia"],
+  },
+  {
+    id: "au-child-support",
+    text: `CHILD SUPPORT (ASSESSMENT) ACT 1989 (Cth) — Child support formula
+Child support is calculated by Services Australia using a formula. Key elements: both parents' taxable incomes; the costs of raising children (Costs of Children table indexed annually); the percentage of time each parent cares for the child (care percentage). A parent with less than 35% overnight care pays child support; the primary carer has 65%+ care. The formula calculates each parent's income percentage and care percentage, then determines liability. Child support continues until the child turns 18 or completes secondary school. Parents may enter Limited Child Support Agreements or Binding Child Support Agreements as alternatives. The Child Support Assessment Act 1989 and the Child Support (Registration and Collection) Act 1988 together govern collection and enforcement.`,
+    source: "Child Support (Assessment) Act 1989 (Cth)", act: "Child Support (Assessment) Act 1989", section: "Key provisions",
+    title: "Child support — formula, care percentages, agreements (Australia)", jurisdiction: "australia",
+    url: "https://www.legislation.gov.au/Series/C2004A03772", year: 1989,
+    topics: ["child support", "family law", "maintenance", "children", "care percentage", "Australia"],
+  },
+
   {
     id: "au-fla-s60cc",
     text: `FAMILY LAW ACT 1975 (Cth)

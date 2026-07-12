@@ -31,7 +31,7 @@ export async function embedDocuments(texts: string[], apiKey?: string): Promise<
 
 // ─── Voyage AI ───────────────────────────────────────────────────────────────
 
-const VOYAGE_BATCH = 8;
+const VOYAGE_BATCH = 3; // free tier: 3 RPM / 10K TPM — small batches to stay within TPM
 
 async function voyageEmbed(
   texts: string[],
@@ -57,7 +57,8 @@ async function voyageEmbed(
     embeddings.push(...sorted.map((d) => d.embedding));
 
     if (i + VOYAGE_BATCH < texts.length) {
-      await new Promise((r) => setTimeout(r, 300));
+      // Free tier = 3 RPM → wait 22s between requests to avoid 429
+      await new Promise((r) => setTimeout(r, 22_000));
     }
   }
 

@@ -1,345 +1,176 @@
 import type { LegalDocument } from "../types";
 
 export const UK_DOCUMENTS: LegalDocument[] = [
-  // ─── Human Rights Act 1998 ───────────────────────────────────────────────
+  // ─── Matrimonial Causes Act 1973 ─────────────────────────────────────────
   {
-    id: "uk-hra-s6",
-    text: `HUMAN RIGHTS ACT 1998
-Section 6 — Acts of public authorities
-
-(1) It is unlawful for a public authority to act in a way which is incompatible with a Convention right.
-(2) Subsection (1) does not apply to an act if—
-  (a) as the result of one or more provisions of primary legislation, the authority could not have acted differently; or
-  (b) in the case of one or more provisions of, or made under, primary legislation which cannot be read or given effect in a way which is compatible with the Convention rights, the authority was acting so as to give effect to or enforce those provisions.
-(3) In this section "public authority" includes—
-  (a) a court or tribunal, and
-  (b) any person certain of whose functions are functions of a public nature.
-
-Schedule 1, Part I — Convention Rights incorporated into UK law:
-Article 2 (Right to life), Article 3 (Prohibition of torture), Article 4 (Prohibition of slavery), Article 5 (Right to liberty and security), Article 6 (Right to a fair trial), Article 7 (No punishment without law), Article 8 (Right to respect for private and family life), Article 9 (Freedom of thought, conscience and religion), Article 10 (Freedom of expression), Article 11 (Freedom of assembly and association), Article 12 (Right to marry), Article 14 (Prohibition of discrimination).`,
-    source: "Human Rights Act 1998",
-    act: "Human Rights Act",
-    section: "Section 6",
-    title: "Acts of public authorities; Convention rights",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1998/42/contents",
-    year: 1998,
-    topics: ["human rights", "Convention rights", "public authorities", "ECHR"],
+    id: "uk-mca-s1",
+    text: `MATRIMONIAL CAUSES ACT 1973 (as amended by Divorce, Dissolution and Separation Act 2020) — Divorce
+The sole ground for divorce in England and Wales is irretrievable breakdown of the marriage. Under the 2020 Act (in force April 2022), no-fault divorce is available: one or both spouses state the marriage has irretrievably broken down without having to prove fault. A 20-week reflection period applies. Joint applications are possible. The court makes a conditional order then a final order.`,
+    source: "Matrimonial Causes Act 1973", act: "Matrimonial Causes Act 1973", section: "Section 1",
+    title: "Divorce — irretrievable breakdown, no-fault divorce", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1973/18", year: 2020,
+    topics: ["divorce", "family law", "marriage dissolution", "no-fault divorce"],
   },
   {
-    id: "uk-hra-art5",
-    text: `HUMAN RIGHTS ACT 1998 — Schedule 1, Part I
-Article 5 — Right to liberty and security
-
-1. Everyone has the right to liberty and security of person. No one shall be deprived of his liberty save in the following cases and in accordance with a procedure prescribed by law:
-  (a) the lawful detention of a person after conviction by a competent court;
-  (b) the lawful arrest or detention of a person for non-compliance with the lawful order of a court or in order to secure the fulfilment of any obligation prescribed by law;
-  (c) the lawful arrest or detention of a person effected for the purpose of bringing him before the competent legal authority on reasonable suspicion of having committed an offence or when it is reasonably considered necessary to prevent his committing an offence or fleeing after having done so;
-  (d) the detention of a minor by lawful order for the purpose of educational supervision or his lawful detention for the purpose of bringing him before the competent legal authority;
-  (e) the lawful detention of persons for the prevention of the spreading of infectious diseases, of persons of unsound mind, alcoholics or drug addicts or vagrants;
-  (f) the lawful arrest or detention of a person to prevent his effecting an unauthorised entry into the country or of a person against whom action is being taken with a view to deportation or extradition.
-
-4. Everyone who is deprived of his liberty by arrest or detention shall be entitled to take proceedings by which the lawfulness of his detention shall be decided speedily by a court and his release ordered if the detention is not lawful.`,
-    source: "Human Rights Act 1998",
-    act: "Human Rights Act",
-    section: "Article 5 (Schedule 1)",
-    title: "Right to liberty and security",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1998/42/schedule/1",
-    year: 1998,
-    topics: ["human rights", "liberty", "detention", "arrest", "ECHR"],
+    id: "uk-mca-s25",
+    text: `MATRIMONIAL CAUSES ACT 1973 — Sections 23–25 — Financial orders on divorce
+On divorce the court may order: periodical payments (maintenance/alimony); lump sum; property adjustment; pension sharing. Section 25 factors: (a) income, earning capacity and resources of both parties; (b) financial needs, obligations and responsibilities; (c) standard of living during marriage; (d) age and duration of marriage; (e) disability; (f) contributions made by each party including homemaking; (g) conduct if inequitable to disregard; (h) value of any lost benefit such as pension. The first consideration is welfare of any minor children. Courts aim for fairness — sharing, compensation, and meeting needs.`,
+    source: "Matrimonial Causes Act 1973", act: "Matrimonial Causes Act 1973", section: "Sections 23-25",
+    title: "Financial orders on divorce — maintenance, property, pension sharing", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1973/18", year: 1973,
+    topics: ["financial orders", "divorce", "maintenance", "alimony", "spousal support", "property division", "pension sharing"],
   },
   {
-    id: "uk-hra-art8",
-    text: `HUMAN RIGHTS ACT 1998 — Schedule 1, Part I
-Article 8 — Right to respect for private and family life
-
-1. Everyone has the right to respect for his private and family life, his home and his correspondence.
-2. There shall be no interference by a public authority with the exercise of this right except such as is in accordance with the law and is necessary in a democratic society in the interests of national security, public safety or the economic well-being of the country, for the prevention of disorder or crime, for the protection of health or morals, or for the protection of the rights and freedoms of others.
-
-Article 10 — Freedom of expression
-1. Everyone has the right to freedom of expression. This right shall include freedom to hold opinions and to receive and impart information and ideas without interference by public authority and regardless of frontiers.
-2. The exercise of these freedoms, since it carries with it duties and responsibilities, may be subject to such formalities, conditions, restrictions or penalties as are prescribed by law and are necessary in a democratic society, in the interests of national security, territorial integrity or public safety, for the prevention of disorder or crime, for the protection of the reputation or rights of others, for preventing the disclosure of information received in confidence, or for maintaining the authority and impartiality of the judiciary.`,
-    source: "Human Rights Act 1998",
-    act: "Human Rights Act",
-    section: "Articles 8 and 10 (Schedule 1)",
-    title: "Right to private and family life; freedom of expression",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1998/42/schedule/1",
-    year: 1998,
-    topics: ["human rights", "privacy", "family life", "free speech", "expression", "ECHR"],
+    id: "uk-mca-s25a",
+    text: `MATRIMONIAL CAUSES ACT 1973 — Section 25A — Clean break
+The court shall consider whether financial obligations of each party towards the other should be terminated as soon after the divorce as just and reasonable. A "clean break" order dismisses claims for ongoing maintenance. Courts prefer clean break where parties are young, marriage was short, or both are financially independent. Spousal maintenance can be time-limited or joint-lives. Either party can apply to vary maintenance.`,
+    source: "Matrimonial Causes Act 1973", act: "Matrimonial Causes Act 1973", section: "Section 25A",
+    title: "Clean break financial settlement on divorce", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1973/18", year: 1973,
+    topics: ["clean break", "divorce settlement", "spousal maintenance", "financial independence"],
   },
 
-  // ─── Equality Act 2010 ───────────────────────────────────────────────────
+  // ─── Children Act 1989 ────────────────────────────────────────────────────
   {
-    id: "uk-ea-s4",
-    text: `EQUALITY ACT 2010
-Section 4 — The protected characteristics
-
-The following characteristics are protected characteristics—
-  age;
-  disability;
-  gender reassignment;
-  marriage and civil partnership;
-  pregnancy and maternity;
-  race;
-  religion or belief;
-  sex;
-  sexual orientation.
-
-Section 9 — Race:
-Race includes—
-  (a) colour;
-  (b) nationality;
-  (c) ethnic or national origins.
-
-Section 10 — Religion or belief:
-Religion means any religion and a reference to religion includes a reference to a lack of religion. Belief means any religious or philosophical belief and a reference to belief includes a reference to a lack of belief.`,
-    source: "Equality Act 2010",
-    act: "Equality Act",
-    section: "Section 4",
-    title: "Protected characteristics",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2010/15/contents",
-    year: 2010,
-    topics: ["equality", "discrimination", "protected characteristics", "employment law", "Equality Act"],
+    id: "uk-children-s1",
+    text: `CHILDREN ACT 1989 — Section 1 — Welfare of the child is paramount
+The child's welfare is the court's paramount consideration. The welfare checklist: (a) ascertainable wishes and feelings of the child; (b) physical, emotional and educational needs; (c) likely effect of change in circumstances; (d) age, sex, background and characteristics; (e) harm suffered or at risk of harm; (f) capability of each parent to meet the child's needs. Courts also consider parental responsibility (Section 3) — rights, duties, powers and authority a parent has over a child.`,
+    source: "Children Act 1989", act: "Children Act 1989", section: "Section 1",
+    title: "Welfare of the child — paramount principle, custody and parental responsibility", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1989/41", year: 1989,
+    topics: ["child custody", "welfare of child", "parental responsibility", "family law", "children"],
   },
   {
-    id: "uk-ea-s13",
-    text: `EQUALITY ACT 2010
-Section 13 — Direct discrimination
+    id: "uk-children-s8",
+    text: `CHILDREN ACT 1989 — Section 8 — Child Arrangements Orders
+A Child Arrangements Order regulates with whom a child lives, spends time, or has contact. Courts can also make: Specific Issue Orders (deciding a specific question about upbringing, e.g. schooling or medical treatment); Prohibited Steps Orders (preventing a parent taking a specific step without consent). CAFCASS advises the court on children's welfare. Parental alienation is a serious concern courts address. Courts encourage mediation before court proceedings.`,
+    source: "Children Act 1989", act: "Children Act 1989", section: "Section 8",
+    title: "Child arrangements orders — who the child lives with and contact", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1989/41", year: 1989,
+    topics: ["child arrangements", "custody", "contact", "parental responsibility", "family law", "residence"],
+  },
 
-(1) A person (A) discriminates against another (B) if, because of a protected characteristic, A treats B less favourably than A treats or would treat others.
-(2) If the protected characteristic is age, A does not discriminate against B if A can show A's treatment of B to be a proportionate means of achieving a legitimate aim.
-(3) If the protected characteristic is disability, and B is not a disabled person, A does not discriminate against B only because A treats or would treat disabled persons more favourably than A treats B.
-(4) If the protected characteristic is marriage and civil partnership, this section applies to a contravention of Part 5 (work) only if the treatment is because it is B who is married or a civil partner.
-(5) If the protected characteristic is race, less favourable treatment includes segregating B from others.
-(6) If the protected characteristic is sex—
-  (a) less favourable treatment of a woman includes less favourable treatment of her because she is breast-feeding;
-  (b) in a case where B is a man, no account is to be taken of special treatment afforded to a woman in connection with pregnancy or childbirth.`,
-    source: "Equality Act 2010",
-    act: "Equality Act",
-    section: "Section 13",
-    title: "Direct discrimination",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2010/15/section/13",
-    year: 2010,
-    topics: ["equality", "direct discrimination", "discrimination", "employment law"],
+  // ─── Housing Act 1988 ─────────────────────────────────────────────────────
+  {
+    id: "uk-housing-s21",
+    text: `HOUSING ACT 1988 — Section 21 — No-fault eviction notice
+A landlord can recover possession from an assured shorthold tenant (AST) with at least 2 months' written notice (Section 21 notice) without giving a reason, after the fixed term expires. The notice is invalid if: (a) served within first 4 months; (b) deposit not protected in a government-approved scheme; (c) required documents (EPC, gas safety certificate, How to Rent guide) not provided. Court proceedings needed if tenant does not leave. The Renters' Rights Bill (2024) proposes to abolish Section 21.`,
+    source: "Housing Act 1988", act: "Housing Act 1988", section: "Section 21",
+    title: "No-fault eviction — Section 21 notice requirements", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1988/50", year: 1988,
+    topics: ["eviction", "section 21", "tenancy", "landlord", "assured shorthold tenancy", "tenant rights"],
   },
   {
-    id: "uk-ea-s19",
-    text: `EQUALITY ACT 2010
-Section 19 — Indirect discrimination
-
-(1) A person (A) discriminates against another (B) if A applies to B a provision, criterion or practice which is discriminatory in relation to a relevant protected characteristic of B's.
-(2) For the purposes of subsection (1), a provision, criterion or practice is discriminatory in relation to a relevant protected characteristic of B's if—
-  (a) A applies, or would apply, it to persons with whom B does not share the characteristic,
-  (b) it puts, or would put, persons with whom B shares the characteristic at a particular disadvantage when compared with persons with whom B does not share it,
-  (c) it puts, or would put, B at that disadvantage, and
-  (d) A cannot show it to be a proportionate means of achieving a legitimate aim.
-
-Section 26 — Harassment:
-A person (A) harasses another (B) if—
-  (a) A engages in unwanted conduct related to a relevant protected characteristic, and
-  (b) the conduct has the purpose or effect of— (i) violating B's dignity, or (ii) creating an intimidating, hostile, degrading, humiliating or offensive environment for B.`,
-    source: "Equality Act 2010",
-    act: "Equality Act",
-    section: "Sections 19 and 26",
-    title: "Indirect discrimination and harassment",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2010/15/section/19",
-    year: 2010,
-    topics: ["equality", "indirect discrimination", "harassment", "employment law"],
+    id: "uk-housing-s8",
+    text: `HOUSING ACT 1988 — Section 8 — Fault-based eviction
+Landlords can apply for possession on specific grounds. Mandatory grounds (court MUST grant possession): Ground 8 — at least 2 months' rent arrears at both notice and hearing. Discretionary grounds (court decides if reasonable): Ground 10 — some rent arrears; Ground 11 — persistent delay in paying rent; Ground 14 — nuisance, annoyance or illegal use of property. Notice must specify the grounds. Court proceedings are required.`,
+    source: "Housing Act 1988", act: "Housing Act 1988", section: "Section 8",
+    title: "Fault-based eviction — rent arrears and grounds for possession", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1988/50", year: 1988,
+    topics: ["eviction", "rent arrears", "section 8", "landlord", "possession order", "tenancy"],
+  },
+  {
+    id: "uk-lta-s11",
+    text: `LANDLORD AND TENANT ACT 1985 — Section 11 — Landlord's repair duties
+Landlords of residential properties must: (a) keep in repair the structure and exterior (roof, walls, foundations, drains, gutters, external pipes); (b) keep in repair and working order installations for water, gas, electricity and sanitation; (c) keep in repair and working order space heating and water heating. Tenants must report disrepair and allow access on 24 hours' notice. The Homes (Fitness for Human Habitation) Act 2018 additionally requires landlords to ensure properties are fit for habitation throughout.`,
+    source: "Landlord and Tenant Act 1985", act: "Landlord and Tenant Act 1985", section: "Section 11",
+    title: "Landlord's duty to repair — structure, utilities, heating", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1985/70", year: 1985,
+    topics: ["landlord repairs", "disrepair", "tenancy", "housing standards", "repairing covenant", "heating", "damp"],
   },
 
-  // ─── Employment Rights Act 1996 ──────────────────────────────────────────
+  // ─── Employment Rights Act 1996 ───────────────────────────────────────────
   {
     id: "uk-era-s94",
-    text: `EMPLOYMENT RIGHTS ACT 1996
-Section 94 — The right
-
-(1) An employee has the right not to be unfairly dismissed by his employer.
-(2) Subsection (1) has effect subject to the following provisions of this Part (in particular sections 108 to 110) and to the provisions of the 1992 Act.
-
-Section 108 — Qualifying period of employment:
-(1) Section 94 does not apply to the dismissal of an employee unless he has been continuously employed for a period of not less than two years ending with the effective date of termination.
-
-Section 98 — General
-(1) In determining for the purposes of this Part whether the dismissal of an employee is fair or unfair, it is for the employer to show—
-  (a) the reason (or, if more than one, the principal reason) for the dismissal, and
-  (b) that it is either a reason falling within subsection (2) or some other substantial reason of a kind such as to justify the dismissal of an employee holding the position which the employee held.
-(2) A reason falls within this subsection if it—
-  (a) relates to the capability or qualifications of the employee for performing work of the kind which he was employed by the employer to do,
-  (b) relates to the conduct of the employee,
-  (c) is that the employee was redundant, or
-  (d) is that the employee could not continue to work in the position which he held without contravention (either on his part or on that of his employer) of a duty or restriction imposed by or under an enactment.`,
-    source: "Employment Rights Act 1996",
-    act: "Employment Rights Act",
-    section: "Sections 94 and 98",
-    title: "Right not to be unfairly dismissed; grounds for dismissal",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1996/18/contents",
-    year: 1996,
-    topics: ["employment law", "unfair dismissal", "termination", "redundancy", "conduct"],
+    text: `EMPLOYMENT RIGHTS ACT 1996 — Sections 94 and 98 — Unfair dismissal
+Employees with 2+ years' service have the right not to be unfairly dismissed. Potentially fair reasons: (a) capability; (b) conduct; (c) redundancy; (d) statutory restriction; (e) some other substantial reason (SOSR). Even with a fair reason, dismissal must follow a fair procedure (ACAS Code). Compensation: basic award (up to £19,290) + compensatory award (lower of £105,707 or 52 weeks' gross pay). Automatic unfair dismissal (no qualifying period needed): whistleblowing, pregnancy, trade union activity.`,
+    source: "Employment Rights Act 1996", act: "Employment Rights Act 1996", section: "Sections 94 and 98",
+    title: "Unfair dismissal — qualifying period, fair reasons, compensation", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1996/18", year: 1996,
+    topics: ["unfair dismissal", "employment law", "redundancy", "compensation", "employee rights", "ACAS"],
   },
   {
-    id: "uk-era-s139",
-    text: `EMPLOYMENT RIGHTS ACT 1996
-Section 139 — Redundancy
-
-(1) For the purposes of this Act an employee who is dismissed shall be taken to be dismissed by reason of redundancy if the dismissal is wholly or mainly attributable to—
-  (a) the fact that his employer has ceased or intends to cease—
-    (i) to carry on the business for the purposes of which the employee was employed by him, or
-    (ii) to carry on that business in the place where the employee was so employed, or
-  (b) the fact that the requirements of that business—
-    (i) for employees to carry out work of a particular kind, or
-    (ii) for employees to carry out work of a particular kind in the place where the employee was employed by the employer, have ceased or diminished or are expected to cease or diminish.
-
-Statutory redundancy pay: Employees with 2+ years' continuous service are entitled to statutory redundancy pay calculated as: half a week's pay for each full year of employment under age 22; one week's pay for each full year of employment between ages 22 and 40; one and a half week's pay for each full year of employment over age 41. Maximum cap applies.`,
-    source: "Employment Rights Act 1996",
-    act: "Employment Rights Act",
-    section: "Section 139",
-    title: "Definition of redundancy and redundancy pay",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1996/18/section/139",
-    year: 1996,
-    topics: ["employment law", "redundancy", "redundancy pay", "termination"],
+    id: "uk-era-s135",
+    text: `EMPLOYMENT RIGHTS ACT 1996 — Statutory redundancy pay
+Employees with 2+ years' continuous service dismissed for redundancy are entitled to: 0.5 weeks' pay per year under age 22; 1 week's pay per year aged 22–40; 1.5 weeks' pay per year aged 41+. Maximum 20 years counted. Weekly pay capped at £643 (April 2024). Maximum statutory redundancy pay: £19,290. Redundancy exists when: business closes; workplace closes; fewer employees are needed for a particular role. Employer must follow a fair redundancy process including meaningful consultation.`,
+    source: "Employment Rights Act 1996", act: "Employment Rights Act 1996", section: "Sections 135-145",
+    title: "Statutory redundancy pay — eligibility and calculation", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1996/18", year: 1996,
+    topics: ["redundancy", "redundancy pay", "employment law", "dismissal", "employee rights"],
   },
   {
     id: "uk-era-s86",
-    text: `EMPLOYMENT RIGHTS ACT 1996
-Section 86 — Rights of employer and employee to minimum notice
-
-(1) The notice required to be given by an employer to terminate the contract of employment of a person who has been continuously employed for one month or more—
-  (a) is not less than one week's notice if his period of continuous employment is less than two years,
-  (b) is not less than one week's notice for each year of continuous employment if his period of continuous employment is two years or more but less than twelve years, and
-  (c) is not less than twelve weeks' notice if his period of continuous employment is twelve years or more.
-(2) The notice required to be given by an employee who has been continuously employed for one month or more to terminate his contract of employment is not less than one week.
-(3) Any provision for shorter notice in any contract of employment with a person who has been continuously employed for one month or more has effect subject to subsections (1) and (2); but this section does not prevent either party from waiving his right to notice on any occasion or from accepting a payment in lieu of notice.`,
-    source: "Employment Rights Act 1996",
-    act: "Employment Rights Act",
-    section: "Section 86",
-    title: "Minimum notice periods",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1996/18/section/86",
-    year: 1996,
-    topics: ["employment law", "notice period", "termination", "minimum notice"],
+    text: `EMPLOYMENT RIGHTS ACT 1996 — Section 86 — Minimum notice periods
+Employers must give: 1 week after 1 month; 1 additional week per year of service up to 12 weeks maximum. Employees must give at least 1 week after 1 month of service. Contractual notice can be longer. Summary dismissal without notice is only lawful for gross misconduct. Pay in lieu of notice (PILON) is permissible if contractually provided or by agreement.`,
+    source: "Employment Rights Act 1996", act: "Employment Rights Act 1996", section: "Section 86",
+    title: "Minimum notice periods for dismissal and resignation", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1996/18", year: 1996,
+    topics: ["notice period", "dismissal", "employment law", "PILON", "gross misconduct"],
   },
 
-  // ─── Consumer Rights Act 2015 ────────────────────────────────────────────
+  // ─── Equality Act 2010 ────────────────────────────────────────────────────
   {
-    id: "uk-cra-s9",
-    text: `CONSUMER RIGHTS ACT 2015
-Section 9 — Goods to be of satisfactory quality
-
-(1) Every contract to supply goods is to be treated as including a term that the quality of the goods is satisfactory.
-(2) The quality of goods is satisfactory if they meet the standard that a reasonable person would consider satisfactory, taking account of—
-  (a) any description of the goods,
-  (b) the price or other consideration for the goods (if relevant), and
-  (c) all the other relevant circumstances.
-(3) The quality of goods includes their state and condition; and the following aspects (among others) are in appropriate cases aspects of the quality of goods—
-  (a) fitness for all the purposes for which goods of that kind are usually supplied;
-  (b) appearance and finish;
-  (c) freedom from minor defects;
-  (d) safety;
-  (e) durability.
-
-Remedies for breach:
-- Short-term right to reject: within 30 days — full refund
-- Right to repair or replacement: after 30 days, up to 6 months
-- Right to price reduction or final right to reject: after one failed repair or replacement`,
-    source: "Consumer Rights Act 2015",
-    act: "Consumer Rights Act",
-    section: "Section 9",
-    title: "Goods to be of satisfactory quality",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2015/15/section/9",
-    year: 2015,
-    topics: ["consumer law", "goods", "satisfactory quality", "refund", "replacement"],
+    id: "uk-equality-protected",
+    text: `EQUALITY ACT 2010 — Protected characteristics and types of discrimination
+Protected characteristics: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, sexual orientation. Direct discrimination (Section 13): treating someone less favourably because of a protected characteristic. Indirect discrimination (Section 19): applying a provision that disadvantages those sharing a protected characteristic unless objectively justified. Harassment (Section 26): unwanted conduct violating dignity or creating hostile environment. Victimisation (Section 27): treating someone badly because they raised a discrimination complaint.`,
+    source: "Equality Act 2010", act: "Equality Act 2010", section: "Sections 4, 13, 19, 26, 27",
+    title: "Equality Act — protected characteristics, discrimination, harassment", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/2010/15", year: 2010,
+    topics: ["discrimination", "equality", "protected characteristics", "harassment", "race", "disability", "gender", "religion", "employment"],
   },
 
-  // ─── Landlord and Tenant Act 1985 ────────────────────────────────────────
+  // ─── Human Rights Act 1998 ────────────────────────────────────────────────
   {
-    id: "uk-lta-s11",
-    text: `LANDLORD AND TENANT ACT 1985
-Section 11 — Repairing obligations in short leases
+    id: "uk-hra-rights",
+    text: `HUMAN RIGHTS ACT 1998 — Convention rights in UK law
+Article 2: Right to life. Article 3: Prohibition of torture, inhuman or degrading treatment. Article 5: Right to liberty — no unlawful arrest or detention; must be brought before a court promptly. Article 6: Right to a fair trial — public hearing within reasonable time by independent tribunal; presumption of innocence. Article 8: Right to private and family life — interference must be lawful, necessary and proportionate. Article 10: Freedom of expression — subject to restrictions protecting reputation, national security, public order. Article 14: Prohibition of discrimination in enjoyment of Convention rights. Claimable against public authorities in UK courts.`,
+    source: "Human Rights Act 1998", act: "Human Rights Act 1998", section: "Schedule 1",
+    title: "Human rights — life, liberty, fair trial, privacy, free expression", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/1998/42", year: 1998,
+    topics: ["human rights", "fair trial", "right to life", "privacy", "freedom of expression", "torture", "liberty"],
+  },
 
-(1) In a lease to which this section applies (see subsections (1A) and (2)) there is implied a covenant by the lessor—
-  (a) to keep in repair the structure and exterior of the dwelling-house (including drains, gutters and external pipes),
-  (b) to keep in repair and proper working order the installations in the dwelling-house for the supply of water, gas and electricity and for sanitation (including basins, sinks, baths and sanitary conveniences, but not other fixtures, fittings and appliances for making use of the supply of water, gas or electricity), and
-  (c) to keep in repair and proper working order the installations in the dwelling-house for space heating and heating water.
-(1A) If a lease is a lease to which this section applies, the lessor must ensure that the dwelling-house is fit for human habitation at the time the lease is granted and throughout the tenancy.
-(2) This section applies to a lease of a dwelling-house granted on or after 24th October 1961 for a term of less than seven years.
-
-Note: The Homes (Fitness for Human Habitation) Act 2018 extended the fitness obligation (s.11(1A)) to all social and private tenancies regardless of term length.`,
-    source: "Landlord and Tenant Act 1985",
-    act: "Landlord and Tenant Act",
-    section: "Section 11",
-    title: "Implied repairing obligations by landlord",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/1985/70/section/11",
-    year: 1985,
-    topics: ["landlord", "tenant", "repairs", "housing", "tenancy", "property law"],
+  // ─── Consumer Rights Act 2015 ─────────────────────────────────────────────
+  {
+    id: "uk-cra-rights",
+    text: `CONSUMER RIGHTS ACT 2015 — Rights when buying goods, services and digital content
+Goods must be: of satisfactory quality (Section 9); fit for purpose (Section 10); as described (Section 11). Within 30 days: right to reject for full refund. After 30 days: right to repair or replacement; if unsuccessful, right to price reduction or final rejection. Services (Section 49) must be performed with reasonable care and skill. If not, consumer can require repeat performance or price reduction. Time for service must be reasonable if not agreed. Digital content must be of satisfactory quality, fit for purpose, and as described.`,
+    source: "Consumer Rights Act 2015", act: "Consumer Rights Act 2015", section: "Sections 9-11, 19, 49, 56",
+    title: "Consumer rights — faulty goods, poor services, refund rights", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/2015/15", year: 2015,
+    topics: ["consumer rights", "refund", "faulty goods", "services", "satisfactory quality", "digital content"],
   },
 
   // ─── Data Protection Act 2018 / UK GDPR ──────────────────────────────────
   {
-    id: "uk-dpa-ukgdpr",
-    text: `DATA PROTECTION ACT 2018 and UK GENERAL DATA PROTECTION REGULATION (UK GDPR)
-
-The Data Protection Act 2018 supplements the UK GDPR (retained from EU law post-Brexit).
-
-Key principles under Article 5 UK GDPR — Personal data must be:
-  (a) processed lawfully, fairly and in a transparent manner ("lawfulness, fairness and transparency");
-  (b) collected for specified, explicit and legitimate purposes and not further processed in a manner incompatible with those purposes ("purpose limitation");
-  (c) adequate, relevant and limited to what is necessary ("data minimisation");
-  (d) accurate and, where necessary, kept up to date ("accuracy");
-  (e) kept in a form which permits identification for no longer than necessary ("storage limitation");
-  (f) processed in a manner that ensures appropriate security ("integrity and confidentiality").
-
-Individual rights under UK GDPR:
-- Right to access (Subject Access Request — Article 15): must be responded to within one month
-- Right to rectification (Article 16)
-- Right to erasure / "right to be forgotten" (Article 17)
-- Right to restriction of processing (Article 18)
-- Right to data portability (Article 20)
-- Right to object (Article 21)
-
-Enforcement: Information Commissioner's Office (ICO). Maximum fines: up to £17.5 million or 4% of global annual turnover (whichever is higher) for serious breaches.`,
-    source: "Data Protection Act 2018",
-    act: "Data Protection Act",
-    section: "UK GDPR, Article 5",
-    title: "Data protection principles and individual rights",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2018/12/contents",
-    year: 2018,
-    topics: ["data protection", "GDPR", "privacy", "personal data", "ICO"],
+    id: "uk-dpa-rights",
+    text: `DATA PROTECTION ACT 2018 / UK GDPR — Data subject rights
+Right of access (Article 15): Request a copy of your personal data (Subject Access Request) — controller must respond within 1 month at no charge. Right to erasure (Article 17): Have data deleted where no longer necessary, consent withdrawn, or processing unlawful. Right to rectification (Article 16): Correct inaccurate personal data. Right to object (Article 21): Stop processing for direct marketing (absolute right). Lawful bases: consent, contract, legal obligation, vital interests, public task, legitimate interests. ICO enforces: fines up to £17.5 million or 4% of global turnover.`,
+    source: "Data Protection Act 2018 / UK GDPR", act: "Data Protection Act 2018", section: "UK GDPR Articles 15-21",
+    title: "Data protection — subject access, erasure, rectification", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/2018/12", year: 2018,
+    topics: ["data protection", "GDPR", "privacy", "personal data", "subject access request", "right to erasure"],
   },
 
-  // ─── Defamation Act 2013 ─────────────────────────────────────────────────
+  // ─── Fraud Act 2006 ───────────────────────────────────────────────────────
   {
-    id: "uk-defamation-s1",
-    text: `DEFAMATION ACT 2013
-Section 1 — Serious harm
+    id: "uk-fraud",
+    text: `FRAUD ACT 2006 — Fraud offences in England and Wales
+Fraud by false representation (Section 2): dishonestly making a false representation intending to make a gain or cause a loss — up to 10 years imprisonment. Fraud by failing to disclose information (Section 3): dishonestly failing to disclose where there is a legal duty to do so. Fraud by abuse of position (Section 4): using a position of trust dishonestly for gain — up to 10 years. Obtaining services dishonestly (Section 11): up to 5 years. Serious or organised fraud prosecuted by Serious Fraud Office.`,
+    source: "Fraud Act 2006", act: "Fraud Act 2006", section: "Sections 1-4, 11",
+    title: "Fraud — false representation, abuse of position, obtaining services", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/2006/35", year: 2006,
+    topics: ["fraud", "criminal law", "false representation", "financial crime", "dishonesty"],
+  },
 
-(1) A statement is not defamatory unless its publication has caused or is likely to cause serious harm to the reputation of the claimant.
-(2) For the purposes of this section, harm to the reputation of a body that trades for profit is not "serious harm" unless it has caused or is likely to cause the body serious financial loss.
-
-Section 2 — Truth (defence):
-It is a defence to an action for defamation for the defendant to show that the imputation conveyed by the statement complained of is substantially true.
-
-Section 3 — Honest opinion (defence):
-A statement of opinion is a defence if the defendant shows that: the statement was a statement of opinion; the statement indicated the basis of the opinion; and an honest person could have held the opinion on the basis of any fact which existed at the time the statement was published.
-
-Section 4 — Publication on a matter of public interest (defence):
-A defendant who publishes a statement on a matter of public interest, and reasonably believed that it was in the public interest, has a defence.`,
-    source: "Defamation Act 2013",
-    act: "Defamation Act",
-    section: "Sections 1–4",
-    title: "Serious harm threshold and defences",
-    jurisdiction: "uk",
-    url: "https://www.legislation.gov.uk/ukpga/2013/26/contents",
-    year: 2013,
-    topics: ["defamation", "libel", "slander", "reputation", "free speech", "media law"],
+  // ─── Defamation Act 2013 ──────────────────────────────────────────────────
+  {
+    id: "uk-defamation",
+    text: `DEFAMATION ACT 2013 — Defamation law in England and Wales
+Section 1: A statement is not defamatory unless it has caused or is likely to cause serious harm to reputation. Section 2: Truth is a complete defence. Section 3: Honest opinion is a defence if the statement is clearly an opinion, on a matter of public interest, and the opinion could have been held on the facts. Section 4: Publication on matter of public interest is a defence. Limitation: 1 year from publication. Libel (written); slander (spoken, usually requires proof of actual damage). Claimant must prove the statement was published, identified them, and was defamatory.`,
+    source: "Defamation Act 2013", act: "Defamation Act 2013", section: "Sections 1-5",
+    title: "Defamation — libel, slander, serious harm, truth and honest opinion defences", jurisdiction: "uk",
+    url: "https://www.legislation.gov.uk/ukpga/2013/26", year: 2013,
+    topics: ["defamation", "libel", "slander", "reputation", "serious harm", "civil law"],
   },
 ];
