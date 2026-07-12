@@ -52,15 +52,24 @@ export function SceneTrust() {
       className="scene"
       style={{ padding: "8rem 5rem", position: "relative", overflow: "hidden" }}
     >
-      {/* Giant background "§" */}
+      {/* Giant background logo mark watermark */}
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         transform: "translate(-50%, -50%)",
-        fontSize: "40vw", fontWeight: 900, fontFamily: "var(--font-serif)",
-        color: "rgba(212,175,122,0.018)", lineHeight: 1,
         pointerEvents: "none", userSelect: "none",
+        opacity: 0.022,
       }}>
-        §
+        <svg width="60vw" height="60vw" viewBox="0 0 48 48" fill="none" style={{ display: "block" }}>
+          <circle cx="24" cy="24" r="21.5" stroke="#c4a46a" strokeWidth="0.6"/>
+          <circle cx="24" cy="24" r="17.5" stroke="#c4a46a" strokeWidth="0.3"/>
+          <line x1="24" y1="14.5" x2="24" y2="35.5" stroke="#c4a46a" strokeWidth="0.5" strokeLinecap="round"/>
+          <line x1="10.5" y1="19" x2="37.5" y2="19" stroke="#c4a46a" strokeWidth="0.5" strokeLinecap="round"/>
+          <circle cx="24" cy="19" r="1.2" fill="#c4a46a"/>
+          <line x1="10.5" y1="19" x2="10.5" y2="28.5" stroke="#c4a46a" strokeWidth="0.4" strokeLinecap="round"/>
+          <line x1="37.5" y1="19" x2="37.5" y2="28.5" stroke="#c4a46a" strokeWidth="0.4" strokeLinecap="round"/>
+          <path d="M 5.5,28.5 Q 10.5,33.5 15.5,28.5" stroke="#c4a46a" strokeWidth="0.5" strokeLinecap="round" fill="none"/>
+          <path d="M 32.5,28.5 Q 37.5,33.5 42.5,28.5" stroke="#c4a46a" strokeWidth="0.5" strokeLinecap="round" fill="none"/>
+        </svg>
       </div>
 
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>

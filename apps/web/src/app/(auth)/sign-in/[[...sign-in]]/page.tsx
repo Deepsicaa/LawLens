@@ -1,5 +1,6 @@
 import { SignIn } from "@clerk/nextjs";
 import type { Metadata } from "next";
+import { LogoLockup } from "@/components/ui/logo";
 
 export const metadata: Metadata = { title: "Sign in" };
 
@@ -12,9 +13,12 @@ export default function SignInPage() {
       </div>
 
       <div className="relative z-10 w-full max-w-md">
-        <div className="mb-8 text-center">
-          <h1 className="text-2xl font-bold text-white">Welcome back</h1>
-          <p className="mt-2 text-sm text-white/40">Sign in to your LawLens account</p>
+        <div className="mb-8 text-center" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.25rem" }}>
+          <LogoLockup markSize={36} fontSize="1.1rem" gap="0.8rem" />
+          <div>
+            <h1 className="text-2xl font-bold text-white">Welcome back</h1>
+            <p className="mt-2 text-sm text-white/40">Sign in to your LawLens account</p>
+          </div>
         </div>
         <SignIn
           appearance={{

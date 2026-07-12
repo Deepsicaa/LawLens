@@ -191,13 +191,22 @@ export function SceneJurisdictions() {
                   </div>
                 </div>
 
-                {/* Corner landmark symbol */}
+                {/* Corner logo mark */}
                 <div style={{
                   position: "absolute", bottom: "2rem", right: "2rem",
-                  fontSize: "4rem", color: country.accent, opacity: 0.08,
-                  fontFamily: "var(--font-serif)", lineHeight: 1,
+                  opacity: 0.1, pointerEvents: "none",
                 }}>
-                  §
+                  <svg width="52" height="52" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="21.5" stroke={country.accent} strokeWidth="1.1"/>
+                    <circle cx="24" cy="24" r="17.5" stroke={country.accent} strokeWidth="0.5"/>
+                    <line x1="24" y1="14.5" x2="24" y2="35.5" stroke={country.accent} strokeWidth="0.85" strokeLinecap="round"/>
+                    <line x1="10.5" y1="19" x2="37.5" y2="19" stroke={country.accent} strokeWidth="0.85" strokeLinecap="round"/>
+                    <circle cx="24" cy="19" r="1.6" fill={country.accent}/>
+                    <line x1="10.5" y1="19" x2="10.5" y2="28.5" stroke={country.accent} strokeWidth="0.7" strokeLinecap="round"/>
+                    <line x1="37.5" y1="19" x2="37.5" y2="28.5" stroke={country.accent} strokeWidth="0.7" strokeLinecap="round"/>
+                    <path d="M 5.5,28.5 Q 10.5,33.5 15.5,28.5" stroke={country.accent} strokeWidth="0.85" strokeLinecap="round" fill="none"/>
+                    <path d="M 32.5,28.5 Q 37.5,33.5 42.5,28.5" stroke={country.accent} strokeWidth="0.85" strokeLinecap="round" fill="none"/>
+                  </svg>
                 </div>
               </motion.div>
             </AnimatePresence>
