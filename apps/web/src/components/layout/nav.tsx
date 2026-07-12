@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { LogoLockup } from "@/components/ui/logo";
 
 const LINKS = [
   { href: "#pipeline",      label: "How It Works" },
@@ -42,20 +43,8 @@ export function Nav() {
           height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem",
         }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.65rem", textDecoration: "none", flexShrink: 0 }}>
-            <div style={{
-              width: 32, height: 32, borderRadius: "0.6rem",
-              background: "linear-gradient(135deg, #d4af7a 0%, #8a5a20 100%)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              boxShadow: "0 0 20px rgba(212,175,122,0.4)",
-              fontSize: "0.9rem", fontWeight: 900, color: "#060608",
-              fontFamily: "var(--font-serif)", flexShrink: 0,
-            }}>
-              §
-            </div>
-            <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.01em" }}>
-              LawLens
-            </span>
+          <Link href="/" style={{ textDecoration: "none", flexShrink: 0 }}>
+            <LogoLockup markSize={30} fontSize="0.92rem" gap="0.7rem" />
           </Link>
 
           {/* Desktop links */}

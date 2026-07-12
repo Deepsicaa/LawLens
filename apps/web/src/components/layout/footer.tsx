@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { LogoLockup } from "@/components/ui/logo";
 
 const LINKS = {
   Product: [
@@ -40,16 +41,8 @@ export function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "3rem", marginBottom: "4rem" }}>
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.65rem", textDecoration: "none", marginBottom: "1.1rem" }}>
-              <div style={{
-                width: 32, height: 32, borderRadius: "0.6rem",
-                background: "linear-gradient(135deg, #d4af7a 0%, #8a5a20 100%)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "1rem", fontWeight: 900, color: "#060608",
-                fontFamily: "Georgia, serif",
-                boxShadow: "0 0 18px rgba(212,175,122,0.3)",
-              }}>§</div>
-              <span style={{ fontSize: "1rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.01em" }}>LawLens</span>
+            <Link href="/" style={{ display: "inline-flex", textDecoration: "none", marginBottom: "1.1rem" }}>
+              <LogoLockup markSize={30} fontSize="0.95rem" gap="0.7rem" />
             </Link>
             <p style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.32)", lineHeight: 1.75, maxWidth: 280, marginBottom: "1.5rem" }}>
               AI-powered legal intelligence backed by official government legislation.

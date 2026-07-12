@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Loader2, AlertCircle, ArrowRight } from "lucide-react";
 import { useChatStore } from "@/stores/chat.store";
 import { ChatMessage } from "@/components/ai/message";
+import { LogoMark } from "@/components/ui/logo";
 import type { LegalResponse, Message } from "types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -162,12 +163,14 @@ export function ChatMessages({ onSend }: { onSend: (text: string) => void }) {
             }}
           >
             <div style={{
-              width: 64, height: 64, borderRadius: "1.2rem", marginBottom: "1.75rem",
-              background: "linear-gradient(135deg, rgba(212,175,122,0.15) 0%, rgba(212,175,122,0.06) 100%)",
-              border: "1px solid rgba(212,175,122,0.2)",
+              width: 72, height: 72, borderRadius: "1.4rem", marginBottom: "1.75rem",
+              background: "linear-gradient(135deg, rgba(196,164,106,0.1) 0%, rgba(196,164,106,0.04) 100%)",
+              border: "1px solid rgba(196,164,106,0.18)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "1.8rem", boxShadow: "0 0 32px rgba(212,175,122,0.12)",
-            }}>§</div>
+              boxShadow: "0 0 36px rgba(196,164,106,0.1)",
+            }}>
+              <LogoMark size={40} />
+            </div>
 
             <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.02em", marginBottom: "0.5rem" }}>
               Ask a legal question

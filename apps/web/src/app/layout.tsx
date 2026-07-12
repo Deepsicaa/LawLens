@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   keywords: ["legal AI", "law", "legislation", "legal research", "AI legal assistant"],
   authors: [{ name: "LawLens" }],
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
   openGraph: {
     type: "website",
     siteName: "LawLens",

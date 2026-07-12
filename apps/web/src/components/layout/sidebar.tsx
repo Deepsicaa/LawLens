@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { useHistoryStore } from "@/stores/history.store";
 import { useChatStore } from "@/stores/chat.store";
+import { LogoLockup } from "@/components/ui/logo";
 
 const NAV = [
   { href: "/ask",      icon: Plus,       label: "New Chat",    accent: true },
@@ -41,23 +42,11 @@ export function Sidebar() {
     }}>
       {/* Logo */}
       <div style={{
-        height: 58, display: "flex", alignItems: "center", gap: "0.65rem",
+        height: 58, display: "flex", alignItems: "center",
         padding: "0 1.1rem",
         borderBottom: "1px solid rgba(255,255,255,0.05)",
       }}>
-        <div style={{
-          width: 30, height: 30, borderRadius: "0.55rem", flexShrink: 0,
-          background: "linear-gradient(135deg, #d4af7a 0%, #8a5a20 100%)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: "0.88rem", fontWeight: 900, color: "#060608",
-          fontFamily: "Georgia, serif",
-          boxShadow: "0 0 18px rgba(212,175,122,0.35)",
-        }}>
-          §
-        </div>
-        <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.01em" }}>
-          LawLens
-        </span>
+        <LogoLockup markSize={26} fontSize="0.88rem" gap="0.6rem" />
       </div>
 
       {/* Primary nav */}
