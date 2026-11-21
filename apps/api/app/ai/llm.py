@@ -1,7 +1,11 @@
 """OpenRouter LLM client — OpenAI-compatible API gateway supporting any model."""
+
 from __future__ import annotations
 
+from collections.abc import AsyncIterator, Sequence
+
 from openai import AsyncOpenAI
+from openai.types.chat import ChatCompletionMessageParam
 
 from app.core.config import settings
 
@@ -30,7 +34,7 @@ def get_client() -> AsyncOpenAI:
 
 async def complete(
     system: str,
-    messages: list[dict[str, str]],
+    messages: Sequence[ChatCompletionMessageParam],
     model: str = SONNET,
     max_tokens: int = 2048,
     temperature: float = 0.1,
@@ -40,24 +44,24 @@ async def complete(
         model=model,
         max_tokens=max_tokens,
         temperature=temperature,
-        messages=[{"role": "system", "content": system}, *messages],  # type: ignore[arg-type]
+        messages=[{"role": "system", "content": system}, *messages],
     )
     return response.choices[0].message.content or ""
 
 
 async def stream_complete(
     system: str,
-    messages: list[dict[str, str]],
+    messages: Sequence[ChatCompletionMessageParam],
     model: str = SONNET,
     max_tokens: int = 2048,
     temperature: float = 0.1,
-):
+) -> AsyncIterator[str]:
     """Streaming completion — yields text chunks via OpenRouter SSE."""
     stream = await get_client().chat.completions.create(
         model=model,
         max_tokens=max_tokens,
         temperature=temperature,
-        messages=[{"role": "system", "content": system}, *messages],  # type: ignore[arg-type]
+        messages=[{"role": "system", "content": system}, *messages],
         stream=True,
     )
     async for chunk in stream:

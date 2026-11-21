@@ -1,17 +1,18 @@
 from pathlib import Path
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Resolve .env from monorepo root regardless of working directory
-_HERE = Path(__file__).resolve().parent          # app/core/
-_API_DIR = _HERE.parent.parent                   # apps/api/
-_ROOT_ENV = _API_DIR.parent.parent / ".env"      # LawLens/.env
-_LOCAL_ENV = _API_DIR / ".env"                   # apps/api/.env (optional override)
+_HERE = Path(__file__).resolve().parent  # app/core/
+_API_DIR = _HERE.parent.parent  # apps/api/
+_ROOT_ENV = _API_DIR.parent.parent / ".env"  # LawLens/.env
+_LOCAL_ENV = _API_DIR / ".env"  # apps/api/.env (optional override)
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=(_ROOT_ENV, _LOCAL_ENV),         # root first, local overrides
+        env_file=(_ROOT_ENV, _LOCAL_ENV),  # root first, local overrides
         env_file_encoding="utf-8",
         extra="ignore",
     )
@@ -23,12 +24,8 @@ class Settings(BaseSettings):
     SECRET_KEY: str = Field(default="dev-secret-change-in-production")
 
     # ─── Database ─────────────────────────────────────────────────────────────
-    DATABASE_URL: str = Field(
-        default="postgresql+asyncpg://lawlens:lawlens@localhost:5432/lawlens"
-    )
-    DATABASE_URL_SYNC: str = Field(
-        default="postgresql://lawlens:lawlens@localhost:5432/lawlens"
-    )
+    DATABASE_URL: str = Field(default="postgresql+asyncpg://lawlens:lawlens@localhost:5432/lawlens")
+    DATABASE_URL_SYNC: str = Field(default="postgresql://lawlens:lawlens@localhost:5432/lawlens")
 
     # ─── Cache ────────────────────────────────────────────────────────────────
     REDIS_URL: str = "redis://localhost:6379"
@@ -38,10 +35,10 @@ class Settings(BaseSettings):
     QDRANT_API_KEY: str = ""
 
     # ─── AI ───────────────────────────────────────────────────────────────────
-    OPENROUTER_API_KEY: str = ""          # Routes to any LLM via OpenAI-compatible API
+    OPENROUTER_API_KEY: str = ""  # Routes to any LLM via OpenAI-compatible API
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
-    VOYAGE_API_KEY: str = ""              # Legal-specific embeddings (no OR equivalent)
-    COHERE_API_KEY: str = ""              # Cross-encoder reranking (no OR equivalent)
+    VOYAGE_API_KEY: str = ""  # Legal-specific embeddings (no OR equivalent)
+    COHERE_API_KEY: str = ""  # Cross-encoder reranking (no OR equivalent)
 
     # ─── Auth ─────────────────────────────────────────────────────────────────
     CLERK_SECRET_KEY: str = ""

@@ -1,6 +1,7 @@
 """
 /api/v1/conversations — Conversation history CRUD.
 """
+
 from __future__ import annotations
 
 from typing import Annotated
@@ -8,13 +9,13 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlmodel import select
+from sqlmodel import col, select
 
 from app.core.database import get_session
+from app.models.citation import Citation
 from app.models.conversation import Conversation
 from app.models.message import Message
-from app.models.citation import Citation
-from app.schemas.conversation import ConversationOut, ConversationDetailOut, MessageOut
+from app.schemas.conversation import ConversationDetailOut, ConversationOut, MessageOut
 from app.schemas.legal import CitationOut
 
 router = APIRouter()
@@ -39,7 +40,7 @@ async def list_conversations(
     result = await session.execute(
         select(Conversation)
         .where(Conversation.user_id == user_id)
-        .order_by(Conversation.updated_at.desc())  # type: ignore[arg-type]
+        .order_by(col(Conversation.updated_at).desc())
         .limit(100)
     )
     convs = result.scalars().all()

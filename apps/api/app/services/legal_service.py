@@ -1,6 +1,7 @@
 """
 Legal query service — orchestrates the RAG pipeline and persists results to PostgreSQL.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -10,11 +11,16 @@ from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.ai.pipeline.graph import run_pipeline
-from app.core.cache import get_cached_query, set_cached_query, make_query_cache_key
+from app.core.cache import get_cached_query, make_query_cache_key, set_cached_query
+from app.models.citation import Citation
 from app.models.conversation import Conversation
 from app.models.message import Message
-from app.models.citation import Citation
-from app.schemas.legal import LegalQueryResponse, CitationOut, CompareQueryResponse, JurisdictionResult
+from app.schemas.legal import (
+    CitationOut,
+    CompareQueryResponse,
+    JurisdictionResult,
+    LegalQueryResponse,
+)
 
 
 async def handle_legal_query(
@@ -100,16 +106,16 @@ async def handle_compare_query(
 ) -> CompareQueryResponse:
     """Run the pipeline in parallel across multiple jurisdictions."""
     import time
+
     start = time.monotonic()
 
-    tasks = [
-        run_pipeline(question=question, jurisdiction=j)
-        for j in jurisdictions
-    ]
+    tasks = [run_pipeline(question=question, jurisdiction=j) for j in jurisdictions]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     jurisdiction_results: list[JurisdictionResult] = []
-    for j, result in zip(jurisdictions, results):
+    for j, result in zip(jurisdictions, results, strict=True):
+        if isinstance(result, BaseException) and not isinstance(result, Exception):
+            raise result
         if isinstance(result, Exception):
             jurisdiction_results.append(
                 JurisdictionResult(

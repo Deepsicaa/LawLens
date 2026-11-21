@@ -1,9 +1,10 @@
 from datetime import datetime
-from uuid import UUID, uuid4
 from typing import Any
-from sqlmodel import SQLModel, Field
+from uuid import UUID, uuid4
+
 from sqlalchemy import Column
 from sqlalchemy.dialects.postgresql import JSONB
+from sqlmodel import Field, SQLModel
 
 
 class AnalyticsEvent(SQLModel, table=True):

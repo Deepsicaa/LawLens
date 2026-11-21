@@ -1,17 +1,16 @@
 """Sparse BM25 retrieval for exact-match keyword search."""
+
 from __future__ import annotations
 
-import asyncio
-from functools import lru_cache
+from typing import Any
 
-from rank_bm25 import BM25Okapi
 from qdrant_client import AsyncQdrantClient
-from qdrant_client.models import ScrollResult
+from rank_bm25 import BM25Okapi
 
 from app.core.config import settings
 
 # In-memory BM25 index per collection. Built once at startup.
-_bm25_indexes: dict[str, tuple[BM25Okapi, list[dict]]] = {}
+_bm25_indexes: dict[str, tuple[BM25Okapi, list[dict[str, Any]]]] = {}
 _building: set[str] = set()
 
 
@@ -20,25 +19,24 @@ def _tokenize(text: str) -> list[str]:
     return text.lower().split()
 
 
-async def _fetch_all_chunks(collection: str) -> list[dict]:
+async def _fetch_all_chunks(collection: str) -> list[dict[str, Any]]:
     """Scroll through all Qdrant payloads to build the BM25 corpus."""
     qdrant = AsyncQdrantClient(
         url=settings.QDRANT_URL,
         api_key=settings.QDRANT_API_KEY or None,
     )
 
-    chunks: list[dict] = []
+    chunks: list[dict[str, Any]] = []
     offset = None
 
     while True:
-        result: ScrollResult = await qdrant.scroll(
+        points, next_offset = await qdrant.scroll(
             collection_name=collection,
             limit=500,
             offset=offset,
             with_payload=True,
             with_vectors=False,
         )
-        points, next_offset = result
 
         for point in points:
             if point.payload:
@@ -80,7 +78,7 @@ async def sparse_retrieve(
     query: str,
     collection: str,
     top_k: int = 20,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     """
     BM25 keyword retrieval against a pre-built in-memory index.
     Falls back to empty list if index not yet built.

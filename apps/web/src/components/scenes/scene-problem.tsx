@@ -93,7 +93,7 @@ export function SceneProblem() {
           transition={{ delay: 0.3, duration: 0.8, ease: E }}
           style={{ fontSize: "1.1rem", lineHeight: 1.8, color: "rgba(240,237,232,0.4)", maxWidth: 560 }}
         >
-          Large language models generate plausible-sounding legal advice — but they don't
+          Large language models generate plausible-sounding legal advice — but they don&apos;t
           read the law. They hallucinate statutes. They invent citations. And the
           consequences are real.
         </motion.p>

@@ -1,17 +1,15 @@
 """LangGraph pipeline nodes — each performs one stage of the pipeline."""
+
 from __future__ import annotations
 
-import json
-import re
-
-from app.ai.llm import complete, HAIKU, SONNET
-from app.ai.retrievers.hybrid import hybrid_retrieve
-from app.ai.rerankers.cohere import rerank
 from app.ai.jurisdictions import get_jurisdiction
+from app.ai.llm import HAIKU, SONNET, complete
 from app.ai.pipeline.state import PipelineState
-
+from app.ai.rerankers.cohere import rerank
+from app.ai.retrievers.hybrid import hybrid_retrieve
 
 # ─── Node 1: Query Preprocessor ──────────────────────────────────────────────
+
 
 async def preprocess_query(state: PipelineState) -> PipelineState:
     """
@@ -48,6 +46,7 @@ Return ONLY the expanded query, nothing else. One sentence max."""
 
 # ─── Node 2: Hybrid Retriever ─────────────────────────────────────────────────
 
+
 async def retrieve_documents(state: PipelineState) -> PipelineState:
     """Run hybrid retrieval (dense + BM25 + RRF)."""
     query = state.get("expanded_query", state["question"])
@@ -66,6 +65,7 @@ async def retrieve_documents(state: PipelineState) -> PipelineState:
 
 # ─── Node 3: Reranker ─────────────────────────────────────────────────────────
 
+
 async def rerank_documents(state: PipelineState) -> PipelineState:
     """Cross-encoder reranking — top 30 → top 5."""
     candidates = state.get("retrieved_chunks", [])
@@ -77,6 +77,7 @@ async def rerank_documents(state: PipelineState) -> PipelineState:
 
 
 # ─── Node 4: Context Builder ──────────────────────────────────────────────────
+
 
 def build_context(state: PipelineState) -> PipelineState:
     """Format retrieved chunks as structured context for the LLM."""
@@ -107,10 +108,13 @@ def build_context(state: PipelineState) -> PipelineState:
 
 GENERATION_SYSTEM_TEMPLATE = """You are LawLens, an AI legal research assistant.
 
-You answer legal questions using ONLY the documents provided below. You do not use any knowledge from your training data.
+You answer legal questions using ONLY the documents provided below.
+You do not use any knowledge from your training data.
 
 Rules you MUST follow:
-1. Answer ONLY from the provided documents. If the answer is not in the documents, say "Based on the retrieved documents, I cannot find sufficient information to answer this question definitively."
+1. Answer ONLY from the provided documents. If the answer is not in the documents, say
+"Based on the retrieved documents, I cannot find sufficient information
+to answer this question definitively."
 2. NEVER fabricate laws, sections, cases, or citations.
 3. Every factual claim must be traceable to the provided documents.
 4. Use plain language. Avoid legal jargon unless quoting directly from the legislation.
@@ -156,6 +160,7 @@ async def generate_answer(state: PipelineState) -> PipelineState:
 
 # ─── Node 6: Citation Extraction ─────────────────────────────────────────────
 
+
 async def extract_citations(state: PipelineState) -> PipelineState:
     """Extract citations from the answer and link to retrieved chunks."""
     chunks = state.get("reranked_chunks", [])
@@ -182,6 +187,7 @@ async def extract_citations(state: PipelineState) -> PipelineState:
 
 
 # ─── Node 7: Confidence Scorer ────────────────────────────────────────────────
+
 
 def score_confidence(state: PipelineState) -> PipelineState:
     """
@@ -217,10 +223,6 @@ def score_confidence(state: PipelineState) -> PipelineState:
     verification_score = 0.7 if has_unsupported else 1.0
 
     # Weighted average
-    confidence = (
-        retrieval_score * 0.40
-        + coverage_score * 0.40
-        + verification_score * 0.20
-    )
+    confidence = retrieval_score * 0.40 + coverage_score * 0.40 + verification_score * 0.20
 
     return {**state, "confidence_score": round(min(max(confidence, 0.0), 1.0), 3)}

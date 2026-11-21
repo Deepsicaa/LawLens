@@ -1,18 +1,20 @@
 """
 /api/v1/admin — Admin-only routes for platform management and analytics.
 """
+
 from __future__ import annotations
+
+from typing import Any
 
 from fastapi import APIRouter, HTTPException, Request, status
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlmodel import select, func
+from sqlmodel import col, func, select
 
-from app.core.database import get_session
-from app.models.user import User
+from app.models.analytics import AnalyticsEvent
 from app.models.conversation import Conversation
 from app.models.message import Message
-from app.models.analytics import AnalyticsEvent
+from app.models.user import User
 
 router = APIRouter()
 
@@ -45,22 +47,20 @@ async def get_platform_stats(request: Request) -> PlatformStats:
         await _require_admin(request, session)
 
         # Counts
-        total_users = (await session.execute(select(func.count(User.id)))).scalar_one()
+        total_users = (await session.execute(select(func.count(col(User.id))))).scalar_one()
         total_conversations = (
-            await session.execute(select(func.count(Conversation.id)))
+            await session.execute(select(func.count(col(Conversation.id))))
         ).scalar_one()
-        total_messages = (await session.execute(select(func.count(Message.id)))).scalar_one()
+        total_messages = (await session.execute(select(func.count(col(Message.id))))).scalar_one()
         total_queries = (
-            await session.execute(
-                select(func.count(Message.id)).where(Message.role == "user")
-            )
+            await session.execute(select(func.count(col(Message.id))).where(Message.role == "user"))
         ).scalar_one()
 
         # Jurisdiction breakdown
         rows = (
             await session.execute(
-                select(Conversation.jurisdiction, func.count(Conversation.id)).group_by(
-                    Conversation.jurisdiction
+                select(Conversation.jurisdiction, func.count(col(Conversation.id))).group_by(
+                    col(Conversation.jurisdiction)
                 )
             )
         ).all()
@@ -79,7 +79,7 @@ async def get_platform_stats(request: Request) -> PlatformStats:
 async def track_event(
     request: Request,
     event_type: str,
-    properties: dict | None = None,
+    properties: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     """Track an analytics event (internal use)."""
     user_id: str | None = getattr(request.state, "user_id", None)

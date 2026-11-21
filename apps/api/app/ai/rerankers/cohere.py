@@ -1,5 +1,8 @@
 """Cohere cross-encoder reranking — the quality gate between retrieval and generation."""
+
 from __future__ import annotations
+
+from typing import Any
 
 import cohere
 
@@ -19,9 +22,9 @@ def get_cohere() -> cohere.AsyncClientV2:
 
 async def rerank(
     query: str,
-    candidates: list[dict],
+    candidates: list[dict[str, Any]],
     top_n: int = 5,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     """
     Cross-encoder reranking with Cohere rerank-v3.5.
 
@@ -47,10 +50,9 @@ async def rerank(
         query=query,
         documents=documents,
         top_n=min(top_n, len(candidates)),
-        return_documents=False,
     )
 
-    reranked: list[dict] = []
+    reranked: list[dict[str, Any]] = []
     for result in response.results:
         chunk = candidates[result.index]
         reranked.append(

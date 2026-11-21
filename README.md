@@ -73,17 +73,17 @@ make dev
 | Phase | Description | Status |
 |-------|-------------|--------|
 | 1 | Project Foundation & Architecture | ✅ Complete |
-| 2 | Landing Page | ⏳ Pending |
-| 3 | Authentication | ⏳ Pending |
-| 4 | Dashboard | ⏳ Pending |
-| 5 | Legal Document Ingestion | ⏳ Pending |
-| 6 | Embeddings | ⏳ Pending |
-| 7 | RAG Pipeline | ⏳ Pending |
-| 8 | Hallucination Reduction | ⏳ Pending |
-| 9 | Jurisdiction Routing | ⏳ Pending |
-| 10 | Comparison Mode | ⏳ Pending |
-| 11 | Admin Dashboard | ⏳ Pending |
-| 12 | Analytics | ⏳ Pending |
-| 13 | Deployment | ⏳ Pending |
-| 14 | Research | ⏳ Pending |
-| 15 | Production | ⏳ Pending |
+| 2 | Landing Page | Implemented |
+| 3 | Authentication | Implemented. Clerk sign-in, sign-up and route protection |
+| 4 | Dashboard | Implemented. Dashboard route and UI |
+| 5 | Legal Document Ingestion | Implemented. Ingestion scripts and jurisdiction corpora |
+| 6 | Embeddings | Implemented. Voyage embedding integration |
+| 7 | RAG Pipeline | Implemented. Hybrid retrieval, reranking and answer generation |
+| 8 | Hallucination Reduction | Grounding, citations and confidence scoring implemented. Impact evaluation pending |
+| 9 | Jurisdiction Routing | Jurisdiction router implemented |
+| 10 | Comparison Mode | Comparison page and API route implemented |
+| 11 | Admin Dashboard | Admin page and protected statistics endpoint implemented |
+| 12 | Analytics | Event and aggregate statistics endpoints implemented |
+| 13 | Deployment | Web deployed on Vercel. Railway API deployment unverified |
+| 14 | Research | Evaluation plan documented. Benchmark results pending |
+| 15 | Production | Web deployment recorded. End-to-end production verification pending |

@@ -1,7 +1,8 @@
 """LangGraph pipeline state — the shared data structure passed between nodes."""
+
 from __future__ import annotations
 
-from typing import TypedDict
+from typing import Any, TypedDict
 
 
 class PipelineState(TypedDict, total=False):
@@ -18,9 +19,9 @@ class PipelineState(TypedDict, total=False):
     expanded_query: str
 
     # Retrieval
-    retrieved_chunks: list[dict]   # From hybrid retriever
-    reranked_chunks: list[dict]    # After Cohere reranking
-    context_text: str              # Formatted context for LLM
+    retrieved_chunks: list[dict[str, Any]]  # From hybrid retriever
+    reranked_chunks: list[dict[str, Any]]  # After Cohere reranking
+    context_text: str  # Formatted context for LLM
 
     # Generation
     raw_answer: str
@@ -30,7 +31,7 @@ class PipelineState(TypedDict, total=False):
     verification_notes: str
 
     # Citations
-    citations: list[dict]
+    citations: list[dict[str, Any]]
 
     # Confidence
     confidence_score: float
