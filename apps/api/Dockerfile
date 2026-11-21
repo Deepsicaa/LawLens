@@ -10,7 +10,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 COPY pyproject.toml uv.lock* ./
 
 # Install production dependencies only, into a virtual environment
-RUN uv sync --frozen --no-dev
+RUN UV_PYTHON_DOWNLOADS=never uv sync --frozen --no-dev --no-install-project
 
 # ─── Runtime Stage ────────────────────────────────────────────────────────────
 FROM python:3.12-slim AS runtime
@@ -35,4 +35,4 @@ USER app
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port \"${PORT:-8000}\" --workers 2"]

@@ -79,11 +79,11 @@ make dev
 | 5 | Legal Document Ingestion | Implemented. Ingestion scripts and jurisdiction corpora |
 | 6 | Embeddings | Implemented. Voyage embedding integration |
 | 7 | RAG Pipeline | Implemented. Hybrid retrieval, reranking and answer generation |
-| 8 | Hallucination Reduction | Grounding, citations and confidence scoring implemented. Impact evaluation pending |
+| 8 | Hallucination Reduction | Grounding and citations implemented. Empty-evidence abstention tested in four jurisdictions. Comparative impact study pending |
 | 9 | Jurisdiction Routing | Jurisdiction router implemented |
 | 10 | Comparison Mode | Comparison page and API route implemented |
 | 11 | Admin Dashboard | Admin page and protected statistics endpoint implemented |
 | 12 | Analytics | Event and aggregate statistics endpoints implemented |
 | 13 | Deployment | Web deployed on Vercel. Railway API deployment unverified |
-| 14 | Research | Evaluation plan documented. Benchmark results pending |
-| 15 | Production | Web deployment recorded. End-to-end production verification pending |
+| 14 | Research | [Retrieval pilot completed](docs/research.md#reproducible-retrieval-pilot). Expert evaluation pending |
+| 15 | Production | Public landing page and access control verified. Signed-in production checks pending |

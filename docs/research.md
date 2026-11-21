@@ -7,6 +7,19 @@ concrete contributions to several open problems in legal AI.
 
 ---
 
+## Reproducible retrieval pilot
+
+Run `node --import tsx scripts/evaluate-retrieval.ts` from the repository root after installing workspace dependencies. The script runs the bundled BM25 retriever on the same chunked corpus available to the web query and comparison routes. It contains 12 hand-written questions with one expected source document per question, three for each supported jurisdiction.
+
+| Metric | Observed result |
+| --- | --- |
+| Expected document ranked first | 12 of 12 |
+| Expected document in top three | 12 of 12 |
+| Mean reciprocal rank at three | 1.00 |
+| Zero-match controls returning an abstention and zero citations | 4 of 4 |
+
+The questions were written after inspecting the corpus. These results establish a reproducible retrieval baseline. Measuring changes in hallucination rate requires held-out questions, generated answers from both systems, and independent claim-level judgments. The studies below describe planned experiments.
+
 ## Research Questions
 
 ### RQ1: Hallucination reduction in legal QA

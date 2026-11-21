@@ -1,5 +1,6 @@
 import type { Jurisdiction, RetrievedChunk, Citation, RAGResult, RAGConfig } from "./types";
 import { createQdrantClient } from "./vectorstore";
+import { searchBundledCorpus } from "./local-retrieval";
 import { hybridRetrieve } from "./retriever";
 import { rerank } from "./reranker";
 
@@ -26,13 +27,15 @@ Format your response:
 function buildContext(chunks: RetrievedChunk[]): string {
   return chunks
     .map(
-      (c, i) =>
-        `[${i + 1}] ${c.source}, ${c.section} — ${c.title}\n${c.text}\n(Source: ${c.url})`
+      (c, i) => `[${i + 1}] ${c.source}, ${c.section} — ${c.title}\n${c.text}\n(Source: ${c.url})`
     )
     .join("\n\n---\n\n");
 }
 
-function chunksToContextCitations(chunks: RetrievedChunk[], jurisdiction: Jurisdiction): Citation[] {
+function chunksToContextCitations(
+  chunks: RetrievedChunk[],
+  jurisdiction: Jurisdiction
+): Citation[] {
   return chunks.slice(0, 5).map((c) => ({
     id: crypto.randomUUID(),
     source: c.source,
@@ -80,33 +83,43 @@ export async function runRAGPipeline(
 ): Promise<void> {
   const start = Date.now();
 
-  const qdrantClient = createQdrantClient(config.qdrantUrl, config.qdrantApiKey);
-
-  // Step 1: Hybrid retrieval (top-30)
   let chunks: RetrievedChunk[] = [];
-  try {
-    chunks = await hybridRetrieve(
-      qdrantClient,
-      question,
+  if (config.qdrantUrl) {
+    try {
+      const client = createQdrantClient(config.qdrantUrl, config.qdrantApiKey);
+      chunks = await hybridRetrieve(
+        client,
+        question,
+        jurisdiction,
+        config.voyageApiKey,
+        config.topK ?? 30
+      );
+    } catch (error) {
+      console.warn("[RAG] Remote retrieval unavailable", error);
+    }
+  }
+  if (!chunks.length) chunks = searchBundledCorpus(question, jurisdiction, config.topK ?? 30);
+  if (!chunks.length) {
+    const answer = "The available sources contain insufficient evidence to answer this question.";
+    callbacks.onChunk(answer);
+    callbacks.onDone({
+      answer,
+      citations: [],
+      retrievedChunks: [],
+      confidenceScore: 0,
       jurisdiction,
-      config.voyageApiKey,  // undefined → uses Ollama local embeddings
-      config.topK ?? 30
-    );
-  } catch (err) {
-    // Retrieval failed — fall back to LLM-only (empty context)
-    console.warn("[RAG] Retrieval failed:", err);
+      retrievedDocuments: 0,
+      processingTimeMs: Date.now() - start,
+      hasUnsupportedClaims: false,
+    });
+    return;
   }
 
   // Step 2: Rerank to top-N
   let rerankedChunks = chunks;
   if (chunks.length > (config.rerankTopN ?? 5) && config.cohereApiKey) {
     try {
-      rerankedChunks = await rerank(
-        question,
-        chunks,
-        config.cohereApiKey,
-        config.rerankTopN ?? 5
-      );
+      rerankedChunks = await rerank(question, chunks, config.cohereApiKey, config.rerankTopN ?? 5);
     } catch (err) {
       console.warn("[RAG] Rerank failed, using retrieval order:", err);
       rerankedChunks = chunks.slice(0, config.rerankTopN ?? 5);
@@ -138,10 +151,7 @@ export async function runRAGPipeline(
         messages: [
           {
             role: "system",
-            content:
-              rerankedChunks.length > 0
-                ? SYSTEM_PROMPT(jurisdiction, context)
-                : fallbackSystemPrompt(jurisdiction),
+            content: SYSTEM_PROMPT(jurisdiction, context),
           },
           { role: "user", content: question },
         ],
@@ -157,11 +167,12 @@ export async function runRAGPipeline(
 
     const decoder = new TextDecoder();
 
+    let pending = "";
     for (;;) {
       const { done, value } = await reader.read();
-      if (done) break;
-
-      const lines = decoder.decode(value).split("\n");
+      pending += decoder.decode(value, { stream: !done });
+      const lines = pending.split("\n");
+      pending = done ? "" : (lines.pop() ?? "");
       for (const line of lines) {
         if (!line.startsWith("data: ")) continue;
         const payload = line.slice(6).trim();
@@ -179,7 +190,9 @@ export async function runRAGPipeline(
           // Malformed SSE line; skip
         }
       }
+      if (done) break;
     }
+    if (!fullAnswer.trim()) throw new Error("The model returned an empty answer");
   } catch (err) {
     callbacks.onError(err instanceof Error ? err : new Error(String(err)));
     return;
@@ -201,14 +214,4 @@ export async function runRAGPipeline(
     processingTimeMs: Date.now() - start,
     hasUnsupportedClaims: confidenceScore < 0.45,
   });
-}
-
-function fallbackSystemPrompt(jurisdiction: string): string {
-  return `You are LawLens, an AI legal research assistant specializing in ${jurisdiction} law.
-
-Answer the legal question using your knowledge of ${jurisdiction} legislation.
-Always cite the specific Act and Section for every legal claim.
-Use citation format: [Act Name, Section X (Year)]
-Never fabricate laws or cases. If uncertain, say so.
-End with: "Always consult a qualified lawyer for advice specific to your situation."`;
 }
