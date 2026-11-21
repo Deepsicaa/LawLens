@@ -1,5 +1,6 @@
 from collections.abc import AsyncIterator
 
+from sqlalchemy.engine import make_url
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
     AsyncSession,
@@ -10,8 +11,12 @@ from sqlmodel import SQLModel
 
 from app.core.config import settings
 
+database_url = make_url(settings.DATABASE_URL)
+if database_url.drivername in {"postgres", "postgresql"}:
+    database_url = database_url.set(drivername="postgresql+asyncpg")
+
 engine: AsyncEngine = create_async_engine(
-    settings.DATABASE_URL,
+    database_url,
     echo=settings.ENV == "development",
     pool_size=10,
     max_overflow=20,
