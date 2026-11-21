@@ -1,36 +1,40 @@
 """
 /api/v1/webhooks/clerk — Sync Clerk users to PostgreSQL on sign-up/update.
 """
+
 from __future__ import annotations
 
-import hmac
 import hashlib
+import hmac
+from typing import Any
 
 from fastapi import APIRouter, HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
-from app.core.database import get_session
 from app.models.user import User
 
 router = APIRouter()
 
 
-def _verify_clerk_signature(payload: bytes, svix_signature: str, svix_timestamp: str) -> bool:
+def _verify_clerk_signature(
+    payload: bytes, svix_id: str, svix_signature: str, svix_timestamp: str
+) -> bool:
     """Verify Clerk webhook signature using HMAC-SHA256."""
     if not settings.CLERK_WEBHOOK_SECRET:
         return True  # Skip in development if secret not set
 
-    signed_content = f"{svix_timestamp}.{payload.decode('utf-8')}"
+    signed_content = f"{svix_id}.{svix_timestamp}.{payload.decode('utf-8')}"
     secret = settings.CLERK_WEBHOOK_SECRET.removeprefix("whsec_")
 
     import base64
+
     key = base64.b64decode(secret)
     expected = hmac.new(key, signed_content.encode(), hashlib.sha256).digest()
     expected_b64 = base64.b64encode(expected).decode()
 
     # Clerk sends comma-separated list of signatures; check any match
-    return any(sig == f"v1,{expected_b64}" for sig in svix_signature.split(" "))
+    return any(hmac.compare_digest(sig, f"v1,{expected_b64}") for sig in svix_signature.split(" "))
 
 
 @router.post("/clerk")
@@ -41,27 +45,27 @@ async def clerk_webhook(request: Request) -> dict[str, str]:
     svix_timestamp = request.headers.get("svix-timestamp", "")
     svix_signature = request.headers.get("svix-signature", "")
 
-    if not _verify_clerk_signature(payload, svix_signature, svix_timestamp):
+    if not _verify_clerk_signature(payload, svix_id, svix_signature, svix_timestamp):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid signature")
 
     import json
+
     data = json.loads(payload)
     event_type = data.get("type", "")
     user_data = data.get("data", {})
 
-    async with AsyncSession(bind=None) as session:  # type: ignore[call-arg]
-        from app.core.database import engine
-        from sqlalchemy.ext.asyncio import AsyncSession as AS
-        async with AS(bind=engine) as db:
-            if event_type in ("user.created", "user.updated"):
-                await _upsert_user(user_data, db)
-            elif event_type == "user.deleted":
-                await _delete_user(user_data.get("id", ""), db)
+    from app.core.database import AsyncSessionLocal
+
+    async with AsyncSessionLocal() as db:
+        if event_type in ("user.created", "user.updated"):
+            await _upsert_user(user_data, db)
+        elif event_type == "user.deleted":
+            await _delete_user(user_data.get("id", ""), db)
 
     return {"status": "ok"}
 
 
-async def _upsert_user(data: dict, session: AsyncSession) -> None:
+async def _upsert_user(data: dict[str, Any], session: AsyncSession) -> None:
     user_id = data.get("id", "")
     if not user_id:
         return

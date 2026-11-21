@@ -41,11 +41,7 @@ PRs are blocked from merging if any check fails.
 
 ### On merge to `main`
 
-Two independent deploy pipelines fire in parallel based on changed paths:
-
-**`apps/web/**` changed →** `deploy-web.yml`
-- Type check + build verification
-- Deploy to Vercel production
+The linked Vercel project builds the web app from the Git integration. Its project settings supply the production environment and the `apps/web` root directory. For a manual redeployment of `main`, run the Deploy Web workflow with the Vercel project, organization and token secrets configured.
 
 **`apps/api/**` changed →** `deploy-api.yml`
 - Run tests

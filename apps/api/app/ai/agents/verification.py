@@ -2,11 +2,12 @@
 Verification Agent — checks whether the generated answer is supported by the retrieved documents.
 Uses Claude Haiku (fast, cheap classification) as a secondary LLM pass.
 """
+
 from __future__ import annotations
 
 import json
 
-from app.ai.llm import complete, HAIKU
+from app.ai.llm import HAIKU, complete
 from app.ai.pipeline.state import PipelineState
 
 VERIFICATION_SYSTEM = """You are a legal fact-checker for an AI legal research system.

@@ -1,22 +1,25 @@
 """LangGraph pipeline definition — connects nodes into a state machine."""
+
 from __future__ import annotations
 
 import time
+from typing import cast
 
-from langgraph.graph import StateGraph, END
+from langgraph.graph import END, StateGraph
+from langgraph.graph.state import CompiledStateGraph
 
-from app.ai.pipeline.state import PipelineState
+from app.ai.agents.jurisdiction_router import route_jurisdiction
+from app.ai.agents.verification import verify_answer
 from app.ai.pipeline.nodes import (
-    preprocess_query,
-    retrieve_documents,
-    rerank_documents,
     build_context,
-    generate_answer,
     extract_citations,
+    generate_answer,
+    preprocess_query,
+    rerank_documents,
+    retrieve_documents,
     score_confidence,
 )
-from app.ai.agents.verification import verify_answer
-from app.ai.agents.jurisdiction_router import route_jurisdiction
+from app.ai.pipeline.state import PipelineState
 
 
 def _needs_clarification(state: PipelineState) -> str:
@@ -33,7 +36,7 @@ def _has_context(state: PipelineState) -> str:
     return "continue"
 
 
-def build_pipeline() -> StateGraph:
+def build_pipeline() -> StateGraph[PipelineState]:
     graph = StateGraph(PipelineState)
 
     # Add nodes
@@ -88,7 +91,7 @@ def build_pipeline() -> StateGraph:
 _pipeline = None
 
 
-def get_pipeline():
+def get_pipeline() -> CompiledStateGraph[PipelineState]:
     global _pipeline
     if _pipeline is None:
         _pipeline = build_pipeline().compile()
@@ -114,7 +117,7 @@ async def run_pipeline(
     }
 
     pipeline = get_pipeline()
-    final_state: PipelineState = await pipeline.ainvoke(initial_state)
+    final_state = cast(PipelineState, await pipeline.ainvoke(initial_state))
 
     elapsed_ms = int((time.monotonic() - start) * 1000)
     return {**final_state, "processing_time_ms": elapsed_ms}

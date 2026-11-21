@@ -1,17 +1,19 @@
 """Alembic environment — uses sync SQLAlchemy URL for migrations."""
+
 import os
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config, pool
-from alembic import context
 from sqlmodel import SQLModel
+
+from alembic import context
+from app.models.analytics import AnalyticsEvent  # noqa: F401
+from app.models.citation import Citation  # noqa: F401
+from app.models.conversation import Conversation  # noqa: F401
+from app.models.message import Message  # noqa: F401
 
 # Load all models so metadata is populated
 from app.models.user import User  # noqa: F401
-from app.models.conversation import Conversation  # noqa: F401
-from app.models.message import Message  # noqa: F401
-from app.models.citation import Citation  # noqa: F401
-from app.models.analytics import AnalyticsEvent  # noqa: F401
 
 config = context.config
 if config.config_file_name is not None:

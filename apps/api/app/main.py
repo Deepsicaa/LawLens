@@ -1,13 +1,13 @@
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from typing import AsyncIterator
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.v1 import router as v1_router
 from app.core.config import settings
 from app.core.database import create_db_and_tables
 from app.core.security import ClerkAuthMiddleware
-from app.api.v1 import router as v1_router
 
 
 @asynccontextmanager

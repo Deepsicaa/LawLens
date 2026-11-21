@@ -1,6 +1,7 @@
 """
 /api/v1/legal — Legal query and comparison endpoints.
 """
+
 from __future__ import annotations
 
 from typing import Annotated
@@ -8,15 +9,15 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.database import get_session
 from app.core.cache import check_rate_limit
+from app.core.database import get_session
 from app.schemas.legal import (
-    LegalQueryRequest,
-    LegalQueryResponse,
     CompareQueryRequest,
     CompareQueryResponse,
+    LegalQueryRequest,
+    LegalQueryResponse,
 )
-from app.services.legal_service import handle_legal_query, handle_compare_query
+from app.services.legal_service import handle_compare_query, handle_legal_query
 
 router = APIRouter()
 

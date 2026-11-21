@@ -117,7 +117,7 @@ export function SceneVerification() {
                   </span>
                 </div>
                 <p style={{ fontSize: "0.78rem", lineHeight: 1.6, color: "rgba(240,237,232,0.35)", fontStyle: "italic" }}>
-                  "{c.excerpt.slice(0, 72)}…"
+                  &quot;{c.excerpt.slice(0, 72)}…&quot;
                 </p>
               </motion.div>
             ))}

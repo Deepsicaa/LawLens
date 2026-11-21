@@ -1,7 +1,9 @@
 """Hybrid retrieval: Dense + BM25 fused with Reciprocal Rank Fusion (RRF)."""
+
 from __future__ import annotations
 
 import asyncio
+from typing import Any
 
 from app.ai.retrievers.dense import dense_retrieve
 from app.ai.retrievers.sparse import sparse_retrieve
@@ -20,7 +22,7 @@ async def hybrid_retrieve(
     dense_top_k: int = 20,
     sparse_top_k: int = 20,
     final_top_k: int = 30,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     """
     Run dense and sparse retrieval in parallel, fuse with RRF.
     Returns up to final_top_k candidates ranked by combined RRF score.
@@ -32,7 +34,7 @@ async def hybrid_retrieve(
 
     # Build score accumulator keyed by chunk ID
     scores: dict[str, float] = {}
-    chunk_by_id: dict[str, dict] = {}
+    chunk_by_id: dict[str, dict[str, Any]] = {}
 
     for result in dense_results:
         chunk_id = result["id"]

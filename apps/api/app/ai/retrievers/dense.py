@@ -1,20 +1,22 @@
 """Dense vector retrieval using Qdrant + voyage-law-2 embeddings."""
+
 from __future__ import annotations
 
-import voyageai
+from typing import Any
+
 from qdrant_client import AsyncQdrantClient
-from qdrant_client.models import ScoredPoint
+from voyageai.client_async import AsyncClient
 
 from app.core.config import settings
 
-_voyage: voyageai.AsyncClient | None = None
+_voyage: AsyncClient | None = None
 _qdrant: AsyncQdrantClient | None = None
 
 
-def get_voyage() -> voyageai.AsyncClient:
+def get_voyage() -> AsyncClient:
     global _voyage
     if _voyage is None:
-        _voyage = voyageai.AsyncClient(api_key=settings.VOYAGE_API_KEY)
+        _voyage = AsyncClient(api_key=settings.VOYAGE_API_KEY)
     return _voyage
 
 
@@ -35,23 +37,23 @@ async def embed_query(query: str) -> list[float]:
         model=settings.EMBEDDING_MODEL,
         input_type="query",
     )
-    return result.embeddings[0]
+    return [float(value) for value in result.embeddings[0]]
 
 
 async def dense_retrieve(
     query: str,
     collection: str,
     top_k: int = 20,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     """
     Retrieve top_k most similar chunks from Qdrant.
     Returns dicts with text, metadata, and score.
     """
     query_vector = await embed_query(query)
 
-    results: list[ScoredPoint] = await get_qdrant().search(
+    response = await get_qdrant().query_points(
         collection_name=collection,
-        query_vector=query_vector,
+        query=query_vector,
         limit=top_k,
         with_payload=True,
         with_vectors=False,
@@ -69,5 +71,5 @@ async def dense_retrieve(
             "dense_score": result.score,
             "dense_rank": i + 1,
         }
-        for i, result in enumerate(results)
+        for i, result in enumerate(response.points)
     ]

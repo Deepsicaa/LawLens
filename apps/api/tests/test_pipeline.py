@@ -1,8 +1,8 @@
 """Unit tests for pipeline components."""
-import pytest
-from app.ai.retrievers.hybrid import _rrf_score
+
 from app.ai.pipeline.nodes import build_context, score_confidence
 from app.ai.pipeline.state import PipelineState
+from app.ai.retrievers.hybrid import _rrf_score
 
 
 def test_rrf_score_decreases_with_rank() -> None:

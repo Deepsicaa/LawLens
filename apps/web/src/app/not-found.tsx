@@ -11,7 +11,7 @@ export default function NotFound() {
       <p className="text-6xl font-bold text-white/10 mb-4">404</p>
       <h1 className="text-xl font-semibold text-white mb-2">Page not found</h1>
       <p className="text-sm text-white/40 mb-8 max-w-sm">
-        This section of law doesn't exist — or hasn't been enacted yet.
+        This section of law doesn&apos;t exist — or hasn&apos;t been enacted yet.
       </p>
 
       <div className="flex items-center gap-3">

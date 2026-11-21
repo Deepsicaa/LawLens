@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { useUser, useClerk } from "@clerk/nextjs";
 import { motion, AnimatePresence } from "framer-motion";
@@ -41,7 +42,7 @@ function ProfileSection() {
       }}>
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.4), transparent)" }} />
         {user?.imageUrl ? (
-          <img src={user.imageUrl} alt="Avatar" style={{ width: 56, height: 56, borderRadius: "50%", border: "2px solid rgba(212,175,122,0.3)", flexShrink: 0 }} />
+          <Image unoptimized width={56} height={56} src={user.imageUrl} alt="Avatar" style={{ width: 56, height: 56, borderRadius: "50%", border: "2px solid rgba(212,175,122,0.3)", flexShrink: 0 }} />
         ) : (
           <div style={{
             width: 56, height: 56, borderRadius: "50%", flexShrink: 0,
@@ -238,7 +239,7 @@ function SecuritySection() {
               Secured by Clerk
             </p>
             <p style={{ fontSize: "0.75rem", color: "rgba(240,237,232,0.38)", lineHeight: 1.6 }}>
-              Password, two-factor authentication, and active sessions are managed through Clerk's secure portal.
+              Password, two-factor authentication, and active sessions are managed through Clerk&apos;s secure portal.
             </p>
           </div>
         </div>

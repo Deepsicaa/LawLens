@@ -1,9 +1,10 @@
 """Jurisdiction Router — classifies which country's law applies to a query."""
+
 from __future__ import annotations
 
 import json
 
-from app.ai.llm import complete, HAIKU
+from app.ai.llm import HAIKU, complete
 from app.ai.pipeline.state import PipelineState
 from app.core.config import settings
 
@@ -72,9 +73,9 @@ async def route_jurisdiction(state: PipelineState) -> PipelineState:
         "jurisdiction_confidence": confidence,
         "jurisdiction_needs_clarification": needs_clarification,
         "answer": (
-            f"Your question seems to span multiple jurisdictions. "
-            f"Could you clarify which country's law you're asking about? "
-            f"(India, UK, Canada, or Australia)"
+            "Your question seems to span multiple jurisdictions. "
+            "Could you clarify which country's law you're asking about? "
+            "(India, UK, Canada, or Australia)"
         )
         if needs_clarification
         else state.get("answer", ""),

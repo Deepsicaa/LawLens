@@ -1,3 +1,5 @@
+# Public response fields preserve the camelCase JSON contract.
+# ruff: noqa: N815
 from __future__ import annotations
 
 from pydantic import BaseModel, Field

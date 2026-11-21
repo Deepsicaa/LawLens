@@ -1,5 +1,13 @@
-from sqlalchemy.ext.asyncio import AsyncEngine, create_async_engine, async_sessionmaker, AsyncSession
+from collections.abc import AsyncIterator
+
+from sqlalchemy.ext.asyncio import (
+    AsyncEngine,
+    AsyncSession,
+    async_sessionmaker,
+    create_async_engine,
+)
 from sqlmodel import SQLModel
+
 from app.core.config import settings
 
 engine: AsyncEngine = create_async_engine(
@@ -22,6 +30,6 @@ async def create_db_and_tables() -> None:
         await conn.run_sync(SQLModel.metadata.create_all)
 
 
-async def get_session() -> AsyncSession:  # type: ignore[return]
+async def get_session() -> AsyncIterator[AsyncSession]:
     async with AsyncSessionLocal() as session:
-        yield session  # type: ignore[misc]
+        yield session
