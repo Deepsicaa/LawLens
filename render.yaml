@@ -32,8 +32,7 @@ services:
           property: connectionString
       - key: CLERK_SECRET_KEY
         sync: false
-      - key: CLERK_WEBHOOK_SECRET
-        sync: false
+      # Set CLERK_WEBHOOK_SECRET after Clerk has the public Render endpoint.
       - key: OPENROUTER_API_KEY
         sync: false
       - key: QDRANT_URL
