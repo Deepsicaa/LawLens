@@ -9,7 +9,7 @@ import { JURISDICTIONS } from "types";
 import type { Jurisdiction } from "types";
 
 const JURISDICTION_COLORS: Record<string, string> = {
-  india: "#f97316", uk: "#3b82f6", canada: "#ef4444", australia: "#10b981",
+  india: "#f97316", uk: "#3b82f6", canada: "#ef4444", australia: "#267554",
 };
 
 function getGreeting() {
@@ -55,25 +55,25 @@ export default function DashboardPage() {
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
           <div>
-            <p style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#d4af7a", marginBottom: "0.4rem" }}>
+            <p style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#704784", marginBottom: "0.4rem" }}>
               {getGreeting()}
             </p>
-            <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#f0ede8", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+            <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#302a3c", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
               {firstName}
             </h1>
-            <p style={{ fontSize: "0.83rem", color: "rgba(240,237,232,0.3)", marginTop: "0.4rem" }}>
+            <p style={{ fontSize: "0.83rem", color: "#62596b", marginTop: "0.4rem" }}>
               What legal question can we answer today?
             </p>
           </div>
           <div style={{
             padding: "0.55rem 1.1rem",
             borderRadius: "999px",
-            border: "1px solid rgba(212,175,122,0.2)",
-            background: "rgba(212,175,122,0.06)",
-            fontSize: "0.72rem", color: "#d4af7a", letterSpacing: "0.06em",
+            border: "1px solid rgba(118,75,138,0.2)",
+            background: "rgba(118,75,138,0.06)",
+            fontSize: "0.72rem", color: "#704784", letterSpacing: "0.06em",
             display: "flex", alignItems: "center", gap: "0.4rem",
           }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10b981", display: "inline-block", boxShadow: "0 0 6px #10b981" }} />
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#267554", display: "inline-block", boxShadow: "0 0 6px #267554" }} />
             System operational
           </div>
         </div>
@@ -81,11 +81,11 @@ export default function DashboardPage() {
 
       {/* Quick actions */}
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.07 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.875rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 170px), 1fr))", gap: "0.875rem" }}>
           {[
-            { href: "/ask", icon: MessageSquare, label: "Ask a Question", desc: "Research any legal topic with RAG", color: "#d4af7a", glow: "rgba(212,175,122,0.12)", accent: true },
+            { href: "/ask", icon: MessageSquare, label: "Ask a Question", desc: "Research any legal topic with RAG", color: "#704784", glow: "rgba(118,75,138,0.12)", accent: true },
             { href: "/compare", icon: GitCompare, label: "Compare Laws", desc: "How four countries answer one question", color: "#7c3aed", glow: "rgba(124,58,237,0.1)", accent: false },
-            { href: "/history", icon: Clock, label: "Chat History", desc: `${conversations.length} saved conversation${conversations.length !== 1 ? "s" : ""}`, color: "#10b981", glow: "rgba(16,185,129,0.1)", accent: false },
+            { href: "/history", icon: Clock, label: "Chat History", desc: `${conversations.length} saved conversation${conversations.length !== 1 ? "s" : ""}`, color: "#267554", glow: "rgba(16,185,129,0.1)", accent: false },
           ].map((a, i) => {
             const Icon = a.icon;
             return (
@@ -96,8 +96,8 @@ export default function DashboardPage() {
                   borderRadius: "1.1rem",
                   border: `1px solid ${a.color}22`,
                   background: a.accent
-                    ? `linear-gradient(135deg, ${a.color}14 0%, rgba(8,8,12,0.6) 100%)`
-                    : `rgba(255,255,255,0.02)`,
+                    ? `linear-gradient(135deg, ${a.color}14 0%, #fffaf8 100%)`
+                    : `rgba(97,74,108,0.02)`,
                   textDecoration: "none",
                   transition: "all 0.2s",
                   boxShadow: a.accent ? `0 0 32px ${a.glow}` : "none",
@@ -127,10 +127,10 @@ export default function DashboardPage() {
                   </div>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.3rem" }}>
-                      <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "#f0ede8" }}>{a.label}</span>
-                      <ArrowRight size={13} style={{ color: "rgba(240,237,232,0.2)" }} />
+                      <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "#302a3c" }}>{a.label}</span>
+                      <ArrowRight size={13} style={{ color: "#62596b" }} />
                     </div>
-                    <p style={{ fontSize: "0.75rem", color: "rgba(240,237,232,0.35)", lineHeight: 1.5 }}>{a.desc}</p>
+                    <p style={{ fontSize: "0.75rem", color: "#62596b", lineHeight: 1.5 }}>{a.desc}</p>
                   </div>
                 </Link>
               </motion.div>
@@ -141,12 +141,12 @@ export default function DashboardPage() {
 
       {/* Stats */}
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.18 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.75rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))", gap: "0.75rem" }}>
           {[
-            { label: "Questions asked", value: totalMessages, icon: MessageSquare, color: "#d4af7a" },
+            { label: "Questions asked", value: totalMessages, icon: MessageSquare, color: "#704784" },
             { label: "Jurisdictions used", value: usedJurisdictions, icon: Globe, color: "#3b82f6" },
             { label: "Citations received", value: totalCitations, icon: FileText, color: "#7c3aed" },
-            { label: "Avg. confidence", value: avgConfidence > 0 ? `${avgConfidence}%` : "—", icon: Zap, color: "#10b981" },
+            { label: "Avg. confidence", value: avgConfidence > 0 ? `${avgConfidence}%` : "—", icon: Zap, color: "#267554" },
           ].map((s, i) => {
             const Icon = s.icon;
             return (
@@ -154,8 +154,8 @@ export default function DashboardPage() {
                 style={{
                   padding: "1.25rem 1.35rem",
                   borderRadius: "1rem",
-                  border: "1px solid rgba(255,255,255,0.05)",
-                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(97,74,108,0.05)",
+                  background: "rgba(97,74,108,0.02)",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.85rem" }}>
@@ -167,10 +167,10 @@ export default function DashboardPage() {
                     <Icon size={13} style={{ color: s.color }} />
                   </div>
                 </div>
-                <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "#f0ede8", letterSpacing: "-0.03em", lineHeight: 1 }}>
+                <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "#302a3c", letterSpacing: "-0.03em", lineHeight: 1 }}>
                   {s.value}
                 </div>
-                <div style={{ fontSize: "0.68rem", color: "rgba(240,237,232,0.28)", marginTop: "0.4rem" }}>{s.label}</div>
+                <div style={{ fontSize: "0.68rem", color: "#62596b", marginTop: "0.4rem" }}>{s.label}</div>
               </motion.div>
             );
           })}
@@ -180,16 +180,16 @@ export default function DashboardPage() {
       {/* Recent conversations */}
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.28 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-          <p style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(240,237,232,0.22)" }}>
+          <p style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#62596b" }}>
             Recent conversations
           </p>
           {conversations.length > 0 && (
             <Link href="/history" style={{
               display: "flex", alignItems: "center", gap: "0.3rem",
-              fontSize: "0.72rem", color: "rgba(240,237,232,0.3)", textDecoration: "none", transition: "color 0.15s",
+              fontSize: "0.72rem", color: "#62596b", textDecoration: "none", transition: "color 0.15s",
             }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#d4af7a"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(240,237,232,0.3)"; }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#704784"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#62596b"; }}
             >
               View all <ChevronRight size={11} />
             </Link>
@@ -198,28 +198,28 @@ export default function DashboardPage() {
 
         {recent.length === 0 ? (
           <div style={{
-            borderRadius: "1.1rem", border: "1px solid rgba(255,255,255,0.05)",
-            background: "rgba(255,255,255,0.015)",
+            borderRadius: "1.1rem", border: "1px solid rgba(97,74,108,0.05)",
+            background: "rgba(97,74,108,0.015)",
             padding: "3.5rem 2rem", textAlign: "center",
           }}>
             <div style={{
               width: 48, height: 48, borderRadius: "1rem",
-              background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
+              background: "rgba(97,74,108,0.03)", border: "1px solid rgba(97,74,108,0.07)",
               display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.1rem",
             }}>
-              <MessageSquare size={18} style={{ color: "rgba(240,237,232,0.18)" }} />
+              <MessageSquare size={18} style={{ color: "#62596b" }} />
             </div>
-            <p style={{ fontSize: "0.85rem", color: "rgba(240,237,232,0.3)", marginBottom: "0.4rem" }}>No conversations yet</p>
-            <p style={{ fontSize: "0.75rem", color: "rgba(240,237,232,0.15)", marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "0.85rem", color: "#62596b", marginBottom: "0.4rem" }}>No conversations yet</p>
+            <p style={{ fontSize: "0.75rem", color: "#62596b", marginBottom: "1.5rem" }}>
               Your chats will appear here after you ask a question
             </p>
             <button
               onClick={() => router.push("/ask")}
               style={{
                 padding: "0.65rem 1.5rem", borderRadius: "999px",
-                background: "#d4af7a", color: "#060608",
+                background: "#704784", color: "#fffaf8",
                 fontWeight: 700, fontSize: "0.82rem", border: "none", cursor: "pointer",
-                boxShadow: "0 0 20px rgba(212,175,122,0.3)",
+                boxShadow: "0 0 20px rgba(118,75,138,0.3)",
               }}
             >
               Ask your first question
@@ -229,7 +229,7 @@ export default function DashboardPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {recent.map((conv, i) => {
               const jMeta = JURISDICTIONS[conv.jurisdiction as keyof typeof JURISDICTIONS];
-              const jColor = JURISDICTION_COLORS[conv.jurisdiction] ?? "#d4af7a";
+              const jColor = JURISDICTION_COLORS[conv.jurisdiction] ?? "#704784";
               return (
                 <motion.div
                   key={conv.id}
@@ -240,11 +240,11 @@ export default function DashboardPage() {
                   style={{
                     display: "flex", alignItems: "center", gap: "1rem",
                     padding: "0.9rem 1.1rem", borderRadius: "0.875rem",
-                    border: "1px solid rgba(255,255,255,0.05)",
-                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(97,74,108,0.05)",
+                    background: "rgba(97,74,108,0.02)",
                     cursor: "pointer", transition: "all 0.15s",
                   }}
-                  whileHover={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.09)" }}
+                  whileHover={{ background: "rgba(97,74,108,0.04)", borderColor: "rgba(97,74,108,0.09)" }}
                 >
                   <div style={{
                     width: 38, height: 38, borderRadius: "0.65rem", flexShrink: 0,
@@ -254,17 +254,17 @@ export default function DashboardPage() {
                     {jMeta?.flag ?? "⚖️"}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <p style={{ fontSize: "0.83rem", fontWeight: 500, color: "#f0ede8", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "0.2rem" }}>
+                    <p style={{ fontSize: "0.83rem", fontWeight: 500, color: "#302a3c", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "0.2rem" }}>
                       {conv.title}
                     </p>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                       <span style={{ fontSize: "0.62rem", color: jColor, padding: "0.15rem 0.5rem", borderRadius: "999px", background: `${jColor}12`, border: `1px solid ${jColor}22` }}>
                         {jMeta?.name ?? conv.jurisdiction}
                       </span>
-                      <span style={{ fontSize: "0.68rem", color: "rgba(240,237,232,0.25)" }}>
+                      <span style={{ fontSize: "0.68rem", color: "#62596b" }}>
                         {formatRelative(conv.updatedAt)}
                       </span>
-                      <span style={{ fontSize: "0.68rem", color: "rgba(240,237,232,0.18)" }}>
+                      <span style={{ fontSize: "0.68rem", color: "#62596b" }}>
                         {conv.messageCount} msgs
                       </span>
                     </div>
@@ -274,9 +274,9 @@ export default function DashboardPage() {
                       <div style={{ fontSize: "0.78rem", fontWeight: 700, color: jColor }}>
                         {Math.round(conv.confidenceScore * 100)}%
                       </div>
-                      <div style={{ fontSize: "0.6rem", color: "rgba(240,237,232,0.2)" }}>confidence</div>
+                      <div style={{ fontSize: "0.6rem", color: "#62596b" }}>confidence</div>
                     </div>
-                    <ChevronRight size={13} style={{ color: "rgba(240,237,232,0.2)" }} />
+                    <ChevronRight size={13} style={{ color: "#62596b" }} />
                   </div>
                 </motion.div>
               );
@@ -289,32 +289,32 @@ export default function DashboardPage() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}>
         <div style={{
           borderRadius: "1.1rem",
-          border: "1px solid rgba(212,175,122,0.12)",
-          background: "linear-gradient(135deg, rgba(212,175,122,0.05) 0%, rgba(8,8,12,0) 100%)",
+          border: "1px solid rgba(118,75,138,0.12)",
+          background: "linear-gradient(135deg, rgba(118,75,138,0.05) 0%, #fffaf8 100%)",
           padding: "1.35rem 1.75rem",
           display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.5rem",
           flexWrap: "wrap",
           position: "relative", overflow: "hidden",
         }}>
-          <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.4), transparent)" }} />
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(118,75,138,0.4), transparent)" }} />
           <div>
-            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#f0ede8", marginBottom: "0.25rem" }}>
+            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#302a3c", marginBottom: "0.25rem" }}>
               Powered by official government legislation
             </p>
-            <p style={{ fontSize: "0.72rem", color: "rgba(240,237,232,0.3)", lineHeight: 1.5 }}>
+            <p style={{ fontSize: "0.72rem", color: "#62596b", lineHeight: 1.5 }}>
               India · United Kingdom · Canada · Australia — every answer grounded in law, not model memory.
             </p>
           </div>
           <Link href="/ask" style={{
             flexShrink: 0, display: "flex", alignItems: "center", gap: "0.5rem",
             padding: "0.65rem 1.35rem", borderRadius: "999px",
-            background: "#d4af7a", color: "#060608", fontWeight: 700, fontSize: "0.82rem",
+            background: "#704784", color: "#fffaf8", fontWeight: 700, fontSize: "0.82rem",
             textDecoration: "none", whiteSpace: "nowrap",
-            boxShadow: "0 0 20px rgba(212,175,122,0.25)",
+            boxShadow: "0 0 20px rgba(118,75,138,0.25)",
             transition: "box-shadow 0.2s",
           }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 32px rgba(212,175,122,0.45)"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 20px rgba(212,175,122,0.25)"; }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 32px rgba(118,75,138,0.45)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 20px rgba(118,75,138,0.25)"; }}
           >
             Ask a question <ArrowRight size={13} />
           </Link>

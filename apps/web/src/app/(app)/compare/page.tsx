@@ -11,7 +11,7 @@ const JURISDICTION_COLORS: Record<string, string> = {
   india: "#f97316",
   uk: "#3b82f6",
   canada: "#ef4444",
-  australia: "#10b981",
+  australia: "#267554",
 };
 
 interface CompareResult {
@@ -80,25 +80,25 @@ export default function ComparePage() {
     <div style={{ padding: "2.5rem 3rem", maxWidth: 1100, margin: "0 auto" }}>
       {/* Header */}
       <div style={{ marginBottom: "2.5rem" }}>
-        <h1 style={{ fontSize: "1.6rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.02em", marginBottom: "0.4rem" }}>
+        <h1 style={{ fontSize: "1.6rem", fontWeight: 700, color: "#302a3c", letterSpacing: "-0.02em", marginBottom: "0.4rem" }}>
           Compare Jurisdictions
         </h1>
-        <p style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.32)", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "0.82rem", color: "#62596b", lineHeight: 1.6 }}>
           Ask one question. See how four different countries answer it under their official legislation.
         </p>
       </div>
 
       {/* Query card */}
       <div style={{
-        borderRadius: "1.25rem", border: "1px solid rgba(255,255,255,0.07)",
-        background: "rgba(255,255,255,0.02)", padding: "1.75rem",
+        borderRadius: "1.25rem", border: "1px solid rgba(97,74,108,0.07)",
+        background: "rgba(97,74,108,0.02)", padding: "1.75rem",
         marginBottom: "2rem",
       }}>
         {/* Jurisdiction pills */}
         <div style={{ marginBottom: "1.5rem" }}>
           <p style={{
             fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em",
-            textTransform: "uppercase", color: "rgba(240,237,232,0.25)",
+            textTransform: "uppercase", color: "#62596b",
             marginBottom: "0.85rem",
           }}>
             Select jurisdictions (min 2)
@@ -107,7 +107,7 @@ export default function ComparePage() {
             {ALL_JURISDICTIONS.map((j) => {
               const meta = JURISDICTIONS[j];
               const active = selected.includes(j);
-              const col = JURISDICTION_COLORS[j] ?? "#d4af7a";
+              const col = JURISDICTION_COLORS[j] ?? "#704784";
               return (
                 <button
                   key={j}
@@ -115,9 +115,9 @@ export default function ComparePage() {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: "0.5rem",
                     padding: "0.5rem 1rem", borderRadius: "0.65rem", cursor: "pointer",
-                    border: `1px solid ${active ? col + "40" : "rgba(255,255,255,0.07)"}`,
+                    border: `1px solid ${active ? col + "40" : "rgba(97,74,108,0.07)"}`,
                     background: active ? `${col}12` : "transparent",
-                    color: active ? col : "rgba(240,237,232,0.38)",
+                    color: active ? col : "#62596b",
                     fontSize: "0.82rem", fontWeight: active ? 600 : 400,
                     transition: "all 0.18s",
                   }}
@@ -146,15 +146,15 @@ export default function ComparePage() {
             style={{
               flex: 1, resize: "none", padding: "0.85rem 1rem",
               borderRadius: "0.75rem",
-              background: "rgba(255,255,255,0.025)",
-              border: "1px solid rgba(255,255,255,0.07)",
-              fontSize: "0.875rem", color: "rgba(240,237,232,0.85)",
+              background: "rgba(97,74,108,0.025)",
+              border: "1px solid rgba(97,74,108,0.07)",
+              fontSize: "0.875rem", color: "#302a3c",
               outline: "none", transition: "border-color 0.2s",
               fontFamily: "var(--font-geist, sans-serif)",
             }}
             disabled={isLoading}
-            onFocus={(e) => { e.target.style.borderColor = "rgba(212,175,122,0.3)"; }}
-            onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.07)"; }}
+            onFocus={(e) => { e.target.style.borderColor = "rgba(118,75,138,0.3)"; }}
+            onBlur={(e) => { e.target.style.borderColor = "rgba(97,74,108,0.07)"; }}
           />
           <button
             onClick={() => void handleCompare()}
@@ -164,15 +164,15 @@ export default function ComparePage() {
               display: "flex", alignItems: "center", justifyContent: "center",
               border: "none",
               background: question.trim() && selected.length >= 2 && !isLoading
-                ? "#d4af7a"
-                : "rgba(255,255,255,0.05)",
+                ? "#704784"
+                : "rgba(97,74,108,0.05)",
               color: question.trim() && selected.length >= 2 && !isLoading
-                ? "#060608"
-                : "rgba(240,237,232,0.2)",
+                ? "#fffaf8"
+                : "#62596b",
               cursor: question.trim() && selected.length >= 2 && !isLoading ? "pointer" : "default",
               transition: "all 0.18s",
               boxShadow: question.trim() && selected.length >= 2 && !isLoading
-                ? "0 0 18px rgba(212,175,122,0.35)" : "none",
+                ? "0 0 18px rgba(118,75,138,0.35)" : "none",
             }}
           >
             {isLoading ? <Loader2 size={17} style={{ animation: "spin 1s linear infinite" }} /> : <GitCompare size={17} />}
@@ -192,7 +192,7 @@ export default function ComparePage() {
         >
           <div style={{ display: "flex", gap: 6 }}>
             {selected.map((j, i) => {
-              const col = JURISDICTION_COLORS[j] ?? "#d4af7a";
+              const col = JURISDICTION_COLORS[j] ?? "#704784";
               return (
                 <motion.div
                   key={j}
@@ -203,7 +203,7 @@ export default function ComparePage() {
               );
             })}
           </div>
-          <p style={{ fontSize: "0.85rem", color: "rgba(240,237,232,0.32)" }}>
+          <p style={{ fontSize: "0.85rem", color: "#62596b" }}>
             Querying official legislation across {selected.length} jurisdictions…
           </p>
         </motion.div>
@@ -218,7 +218,7 @@ export default function ComparePage() {
             padding: "0.875rem 1.1rem", borderRadius: "0.75rem",
             border: "1px solid rgba(239,68,68,0.2)",
             background: "rgba(239,68,68,0.06)",
-            fontSize: "0.82rem", color: "#fca5a5",
+            fontSize: "0.82rem", color: "#943b51",
             marginBottom: "1.5rem",
           }}
         >
@@ -237,22 +237,22 @@ export default function ComparePage() {
             {/* Question summary */}
             <div style={{
               padding: "1rem 1.25rem", borderRadius: "0.875rem",
-              border: "1px solid rgba(212,175,122,0.12)",
-              background: "rgba(212,175,122,0.04)",
+              border: "1px solid rgba(118,75,138,0.12)",
+              background: "rgba(118,75,138,0.04)",
               marginBottom: "1.5rem",
               display: "flex", alignItems: "center", gap: "0.75rem",
             }}>
-              <span style={{ fontSize: "0.65rem", color: "#d4af7a", letterSpacing: "0.15em", textTransform: "uppercase", flexShrink: 0 }}>
+              <span style={{ fontSize: "0.65rem", color: "#704784", letterSpacing: "0.15em", textTransform: "uppercase", flexShrink: 0 }}>
                 Comparing
               </span>
-              <span style={{ fontSize: "0.875rem", color: "rgba(240,237,232,0.7)", flex: 1 }}>{lastQuestion}</span>
+              <span style={{ fontSize: "0.875rem", color: "#302a3c", flex: 1 }}>{lastQuestion}</span>
             </div>
 
             {/* Grid of results */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))", gap: "1rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 420px), 1fr))", gap: "1rem" }}>
               {results.map((result, i) => {
                 const meta = JURISDICTIONS[result.jurisdiction as Jurisdiction];
-                const col = JURISDICTION_COLORS[result.jurisdiction] ?? "#d4af7a";
+                const col = JURISDICTION_COLORS[result.jurisdiction] ?? "#704784";
                 const pct = Math.round(result.confidenceScore * 100);
 
                 return (
@@ -264,7 +264,7 @@ export default function ComparePage() {
                     style={{
                       borderRadius: "1.1rem", overflow: "hidden",
                       border: `1px solid ${col}18`,
-                      background: `linear-gradient(135deg, ${col}06 0%, rgba(8,9,12,0.9) 60%)`,
+                      background: `linear-gradient(135deg, ${col}06 0%, #fffaf8 60%)`,
                     }}
                   >
                     {/* Top accent */}
@@ -274,13 +274,13 @@ export default function ComparePage() {
                     <div style={{
                       display: "flex", alignItems: "center", justifyContent: "space-between",
                       padding: "1rem 1.25rem",
-                      borderBottom: "1px solid rgba(255,255,255,0.05)",
+                      borderBottom: "1px solid rgba(97,74,108,0.05)",
                     }}>
                       <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
                         <span style={{ fontSize: "1.3rem" }}>{meta?.flag}</span>
                         <div>
-                          <h3 style={{ fontSize: "0.95rem", fontWeight: 600, color: "#f0ede8" }}>{meta?.name}</h3>
-                          <p style={{ fontSize: "0.65rem", color: "rgba(240,237,232,0.28)" }}>
+                          <h3 style={{ fontSize: "0.95rem", fontWeight: 600, color: "#302a3c" }}>{meta?.name}</h3>
+                          <p style={{ fontSize: "0.65rem", color: "#62596b" }}>
                             {result.citations.length} source{result.citations.length !== 1 ? "s" : ""} cited
                           </p>
                         </div>
@@ -288,13 +288,13 @@ export default function ComparePage() {
                       {/* Confidence */}
                       <div style={{ textAlign: "right" }}>
                         <div style={{ fontSize: "1.1rem", fontWeight: 700, color: col, lineHeight: 1 }}>{pct}%</div>
-                        <div style={{ fontSize: "0.6rem", color: "rgba(240,237,232,0.28)", marginTop: 1 }}>confidence</div>
+                        <div style={{ fontSize: "0.6rem", color: "#62596b", marginTop: 1 }}>confidence</div>
                       </div>
                     </div>
 
                     {/* Confidence bar */}
                     <div style={{ padding: "0.5rem 1.25rem 0" }}>
-                      <div style={{ height: 2, borderRadius: 2, background: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
+                      <div style={{ height: 2, borderRadius: 2, background: "rgba(97,74,108,0.06)", overflow: "hidden" }}>
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${pct}%` }}
@@ -305,7 +305,7 @@ export default function ComparePage() {
                     </div>
 
                     {/* Answer */}
-                    <div style={{ padding: "1rem 1.25rem", fontSize: "0.84rem", lineHeight: 1.8, color: "rgba(240,237,232,0.62)" }}>
+                    <div style={{ padding: "1rem 1.25rem", fontSize: "0.84rem", lineHeight: 1.8, color: "#62596b" }}>
                       {result.answer}
                     </div>
 
@@ -313,10 +313,10 @@ export default function ComparePage() {
                     {result.citations.length > 0 && (
                       <div style={{
                         padding: "0.75rem 1.25rem 1.1rem",
-                        borderTop: "1px solid rgba(255,255,255,0.04)",
+                        borderTop: "1px solid rgba(97,74,108,0.04)",
                         display: "flex", flexDirection: "column", gap: "0.4rem",
                       }}>
-                        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(240,237,232,0.2)", marginBottom: "0.3rem" }}>
+                        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#62596b", marginBottom: "0.3rem" }}>
                           Sources
                         </p>
                         {result.citations.slice(0, 3).map((c) => (
@@ -328,7 +328,7 @@ export default function ComparePage() {
                             <span style={{ fontSize: "0.68rem", color: col, fontWeight: 600, flexShrink: 0 }}>
                               {c.section}
                             </span>
-                            <span style={{ fontSize: "0.68rem", color: "rgba(240,237,232,0.35)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            <span style={{ fontSize: "0.68rem", color: "#62596b", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                               {c.source}
                             </span>
                             {c.url && (
@@ -350,7 +350,7 @@ export default function ComparePage() {
 
       <style>{`
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        textarea::placeholder { color: rgba(240,237,232,0.2); }
+        textarea::placeholder { color: #62596b; }
       `}</style>
     </div>
   );

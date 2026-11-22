@@ -164,19 +164,19 @@ export function ChatMessages({ onSend }: { onSend: (text: string) => void }) {
           >
             <div style={{
               width: 72, height: 72, borderRadius: "1.4rem", marginBottom: "1.75rem",
-              background: "linear-gradient(135deg, rgba(196,164,106,0.1) 0%, rgba(196,164,106,0.04) 100%)",
-              border: "1px solid rgba(196,164,106,0.18)",
+              background: "linear-gradient(135deg, rgba(118,75,138,0.1) 0%, rgba(118,75,138,0.04) 100%)",
+              border: "1px solid rgba(118,75,138,0.18)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              boxShadow: "0 0 36px rgba(196,164,106,0.1)",
+              boxShadow: "0 0 36px rgba(118,75,138,0.1)",
             }}>
               <LogoMark size={40} />
             </div>
 
-            <h2 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.02em", marginBottom: "0.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "clamp(2rem, 3vw, 3rem)", fontWeight: 500, color: "#302a3c", letterSpacing: "-0.02em", marginBottom: "0.5rem" }}>
               Ask a legal question
             </h2>
-            <p style={{ fontSize: "0.85rem", color: "rgba(240,237,232,0.32)", maxWidth: 360, lineHeight: 1.7, marginBottom: "2.5rem" }}>
-              Every answer is retrieved from official government legislation — not from model memory.
+            <p style={{ fontSize: "0.85rem", color: "#62596b", maxWidth: 360, lineHeight: 1.7, marginBottom: "2.5rem" }}>
+              Choose a jurisdiction, then explore a question and its legal sources.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "100%", maxWidth: 520 }}>
@@ -187,20 +187,20 @@ export function ChatMessages({ onSend }: { onSend: (text: string) => void }) {
                   style={{
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     gap: "0.75rem", padding: "0.85rem 1.1rem", borderRadius: "0.75rem",
-                    textAlign: "left", background: "rgba(255,255,255,0.025)",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    color: "rgba(240,237,232,0.55)", fontSize: "0.83rem",
+                    textAlign: "left", background: "rgba(97,74,108,0.025)",
+                    border: "1px solid rgba(97,74,108,0.07)",
+                    color: "#62596b", fontSize: "0.83rem",
                     cursor: "pointer", transition: "all 0.15s", width: "100%",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(212,175,122,0.25)";
-                    e.currentTarget.style.color = "#f0ede8";
-                    e.currentTarget.style.background = "rgba(212,175,122,0.05)";
+                    e.currentTarget.style.borderColor = "rgba(118,75,138,0.25)";
+                    e.currentTarget.style.color = "#302a3c";
+                    e.currentTarget.style.background = "rgba(118,75,138,0.05)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-                    e.currentTarget.style.color = "rgba(240,237,232,0.55)";
-                    e.currentTarget.style.background = "rgba(255,255,255,0.025)";
+                    e.currentTarget.style.borderColor = "rgba(97,74,108,0.07)";
+                    e.currentTarget.style.color = "#62596b";
+                    e.currentTarget.style.background = "rgba(97,74,108,0.025)";
                   }}
                 >
                   <span>{s}</span>
@@ -229,22 +229,22 @@ export function ChatMessages({ onSend }: { onSend: (text: string) => void }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             style={{
-              borderRadius: "1rem", border: "1px solid rgba(212,175,122,0.1)",
-              background: "rgba(15,14,20,0.9)", overflow: "hidden", marginBottom: "1.25rem",
+              borderRadius: "1rem", border: "1px solid rgba(118,75,138,0.1)",
+              background: "#fffaf8", overflow: "hidden", marginBottom: "1.25rem",
             }}
           >
             <div style={{
               display: "flex", alignItems: "center", gap: "0.6rem", padding: "0.65rem 1rem",
-              borderBottom: "1px solid rgba(212,175,122,0.07)", background: "rgba(212,175,122,0.03)",
+              borderBottom: "1px solid rgba(118,75,138,0.07)", background: "rgba(118,75,138,0.03)",
             }}>
-              <Loader2 size={12} style={{ color: "#d4af7a", animation: "spin 1s linear infinite" }} />
-              <span style={{ fontSize: "0.68rem", fontWeight: 600, color: "#d4af7a", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+              <Loader2 size={12} style={{ color: "#704784", animation: "spin 1s linear infinite" }} />
+              <span style={{ fontSize: "0.68rem", fontWeight: 600, color: "#704784", letterSpacing: "0.14em", textTransform: "uppercase" }}>
                 LawLens is analyzing…
               </span>
             </div>
-            <div style={{ padding: "1rem", fontSize: "0.875rem", lineHeight: 1.85, color: "rgba(240,237,232,0.75)" }}>
+            <div style={{ padding: "1rem", fontSize: "0.875rem", lineHeight: 1.85, color: "#302a3c" }}>
               {streamingContent}
-              <span style={{ display: "inline-block", width: 2, height: "1em", background: "#d4af7a", marginLeft: 2, verticalAlign: "text-bottom", animation: "blink 1s ease-in-out infinite" }} />
+              <span style={{ display: "inline-block", width: 2, height: "1em", background: "#704784", marginLeft: 2, verticalAlign: "text-bottom", animation: "blink 1s ease-in-out infinite" }} />
             </div>
           </motion.div>
         )}
@@ -257,21 +257,21 @@ export function ChatMessages({ onSend }: { onSend: (text: string) => void }) {
             style={{
               display: "flex", alignItems: "center", gap: "0.85rem",
               padding: "0.85rem 1rem", borderRadius: "0.875rem",
-              border: "1px solid rgba(255,255,255,0.05)",
-              background: "rgba(255,255,255,0.02)", marginBottom: "1.25rem",
+              border: "1px solid rgba(97,74,108,0.05)",
+              background: "rgba(97,74,108,0.02)", marginBottom: "1.25rem",
             }}
           >
             <div style={{ display: "flex", gap: 4 }}>
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
-                  style={{ width: 4, height: 4, borderRadius: "50%", background: "#d4af7a" }}
+                  style={{ width: 4, height: 4, borderRadius: "50%", background: "#704784" }}
                   animate={{ opacity: [0.2, 1, 0.2], y: [0, -4, 0] }}
                   transition={{ duration: 0.9, delay: i * 0.18, repeat: Infinity }}
                 />
               ))}
             </div>
-            <span style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.35)" }}>
+            <span style={{ fontSize: "0.82rem", color: "#62596b" }}>
               Retrieving from official legislation…
             </span>
           </motion.div>
@@ -322,7 +322,7 @@ export function ChatInput({
               display: "flex", alignItems: "flex-start", gap: "0.6rem",
               marginBottom: "0.65rem", padding: "0.75rem 1rem",
               borderRadius: "0.75rem", border: "1px solid rgba(239,68,68,0.2)",
-              background: "rgba(239,68,68,0.06)", fontSize: "0.82rem", color: "#fca5a5",
+              background: "rgba(239,68,68,0.06)", fontSize: "0.82rem", color: "#943b51",
             }}
           >
             <AlertCircle size={14} style={{ flexShrink: 0, marginTop: 1 }} />
@@ -334,11 +334,12 @@ export function ChatInput({
       <div style={{
         display: "flex", gap: "0.75rem", alignItems: "flex-end",
         padding: "0.85rem 1rem", borderRadius: "1rem",
-        border: "1px solid rgba(212,175,122,0.14)",
-        background: "rgba(10,10,16,0.98)",
-        boxShadow: "0 -8px 24px rgba(8,9,12,0.6)",
+        border: "1px solid rgba(118,75,138,0.14)",
+        background: "#fffaf8",
+        boxShadow: "0 4px 20px #46344b0c",
       }}>
         <textarea
+          aria-label="Legal question"
           ref={textareaRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -348,12 +349,13 @@ export function ChatInput({
           disabled={isStreaming}
           style={{
             flex: 1, resize: "none", background: "transparent",
-            fontSize: "0.875rem", color: "rgba(240,237,232,0.85)",
+            fontSize: "0.875rem", color: "#302a3c",
             outline: "none", lineHeight: 1.7, border: "none",
             fontFamily: "var(--font-geist, sans-serif)",
           }}
         />
         <button
+          aria-label="Send question"
           onClick={onSend}
           disabled={!input.trim() || isStreaming}
           style={{
@@ -361,10 +363,10 @@ export function ChatInput({
             display: "flex", alignItems: "center", justifyContent: "center",
             border: "none",
             cursor: !input.trim() || isStreaming ? "default" : "pointer",
-            background: input.trim() && !isStreaming ? "#d4af7a" : "rgba(212,175,122,0.08)",
-            color: input.trim() && !isStreaming ? "#060608" : "rgba(240,237,232,0.2)",
+            background: input.trim() && !isStreaming ? "#704784" : "rgba(118,75,138,0.08)",
+            color: input.trim() && !isStreaming ? "#fffaf8" : "#62596b",
             transition: "all 0.15s",
-            boxShadow: input.trim() && !isStreaming ? "0 0 14px rgba(212,175,122,0.35)" : "none",
+            boxShadow: input.trim() && !isStreaming ? "0 0 14px rgba(118,75,138,0.35)" : "none",
           }}
         >
           {isStreaming
@@ -373,13 +375,13 @@ export function ChatInput({
         </button>
       </div>
 
-      <p style={{ marginTop: "0.45rem", textAlign: "center", fontSize: "0.65rem", color: "rgba(240,237,232,0.12)", letterSpacing: "0.04em" }}>
+      <p style={{ marginTop: "0.45rem", textAlign: "center", fontSize: "0.65rem", color: "#62596b", letterSpacing: "0.04em" }}>
         Answers sourced from official government legislation · Always verify with a qualified lawyer
       </p>
 
       <style>{`
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        textarea::placeholder { color: rgba(240,237,232,0.2); }
+        textarea::placeholder { color: #62596b; }
       `}</style>
     </div>
   );

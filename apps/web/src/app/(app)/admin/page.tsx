@@ -44,13 +44,13 @@ export default async function AdminPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-xl font-bold text-white">Admin Dashboard</h1>
-        <p className="mt-1 text-sm text-white/40">Platform statistics and management.</p>
+        <h1 className="text-xl font-bold text-[#302a3c]">Admin Dashboard</h1>
+        <p className="mt-1 text-sm text-[#62596b]">Platform statistics and management.</p>
       </div>
 
       {!stats ? (
         <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
-          <p className="text-sm text-white/30">Unable to load stats. Admin access required.</p>
+          <p className="text-sm text-[#62596b]">Unable to load stats. Admin access required.</p>
         </div>
       ) : (
         <>
@@ -65,9 +65,9 @@ export default async function AdminPage() {
               const Icon = stat.icon;
               return (
                 <div key={stat.label} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                  <Icon className="h-4 w-4 text-white/20 mb-3" />
-                  <div className="text-2xl font-bold text-white">{stat.value.toLocaleString()}</div>
-                  <div className="mt-1 text-xs text-white/30">{stat.label}</div>
+                  <Icon className="h-4 w-4 text-[#62596b] mb-3" />
+                  <div className="text-2xl font-bold text-[#302a3c]">{stat.value.toLocaleString()}</div>
+                  <div className="mt-1 text-xs text-[#62596b]">{stat.label}</div>
                 </div>
               );
             })}
@@ -75,7 +75,7 @@ export default async function AdminPage() {
 
           {/* Jurisdiction breakdown */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
-            <h2 className="text-sm font-semibold text-white/50 mb-5">Jurisdiction usage</h2>
+            <h2 className="text-sm font-semibold text-[#62596b] mb-5">Jurisdiction usage</h2>
             <div className="space-y-3">
               {Object.entries(stats.jurisdictions_breakdown)
                 .sort(([, a], [, b]) => b - a)
@@ -85,14 +85,14 @@ export default async function AdminPage() {
                   return (
                     <div key={j} className="flex items-center gap-4">
                       <span className="w-5">{JURISDICTION_FLAGS[j] ?? "🌐"}</span>
-                      <span className="text-sm text-white/60 w-28 capitalize">{j}</span>
+                      <span className="text-sm text-[#62596b] w-28 capitalize">{j}</span>
                       <div className="flex-1 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
                         <div
                           className="h-full bg-blue-500 rounded-full"
                           style={{ width: `${pct}%` }}
                         />
                       </div>
-                      <span className="text-xs tabular-nums text-white/30 w-16 text-right">
+                      <span className="text-xs tabular-nums text-[#62596b] w-16 text-right">
                         {count.toLocaleString()} ({pct}%)
                       </span>
                     </div>

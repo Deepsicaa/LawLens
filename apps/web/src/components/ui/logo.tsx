@@ -6,7 +6,7 @@ interface LogoMarkProps {
   color?: string;
 }
 
-export function LogoMark({ size = 32, color = "#c4a46a" }: LogoMarkProps) {
+export function LogoMark({ size = 32, color = "#785a86" }: LogoMarkProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
       <circle cx="24" cy="24" r="21.5" stroke={color} strokeWidth="1.1" />
@@ -35,9 +35,9 @@ export function LogoLockup({
   markSize = 28,
   fontSize = "0.92rem",
   gap = "0.65rem",
-  lawColor = "#ede9e2",
-  lensColor = "#c4a46a",
-  markColor = "#c4a46a",
+  lawColor = "#302a3c",
+  lensColor = "#785a86",
+  markColor = "#785a86",
 }: LogoLockupProps) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap }}>

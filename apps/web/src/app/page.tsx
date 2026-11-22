@@ -1,37 +1,44 @@
-import { Nav } from "@/components/layout/nav";
-import { Footer } from "@/components/layout/footer";
-import { SceneHero } from "@/components/scenes/scene-hero";
-import { SceneProblem } from "@/components/scenes/scene-problem";
-import { ScenePipeline } from "@/components/scenes/scene-pipeline";
-import { SceneVerification } from "@/components/scenes/scene-verification";
-import { SceneJurisdictions } from "@/components/scenes/scene-jurisdictions";
-import { SceneDemo } from "@/components/scenes/scene-demo";
-import { SceneTrust } from "@/components/scenes/scene-trust";
-import { SceneCTA } from "@/components/scenes/scene-cta";
-import { LenisProvider } from "@/providers/lenis-provider";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, BookOpen, Layers, History, Scale } from "lucide-react";
+import { LogoLockup } from "@/components/ui/logo";
+
+const tools = [
+  { href: "/ask", name: "Research a question", detail: "Explore legislation and follow the sources behind an answer.", icon: BookOpen },
+  { href: "/compare", name: "Compare laws", detail: "Read how two jurisdictions approach the same question.", icon: Layers },
+  { href: "/history", name: "Your reading history", detail: "Return to the questions and citations you’ve collected.", icon: History },
+];
 
 export default function LandingPage() {
   return (
-    <LenisProvider>
-      <Nav />
-      <main style={{ position: "relative", zIndex: 2 }}>
-        <SceneHero />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.1) 50%, transparent)" }} />
-        <SceneProblem />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.04) 50%, transparent)" }} />
-        <ScenePipeline />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(16,185,129,0.08) 50%, transparent)" }} />
-        <SceneVerification />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.04) 50%, transparent)" }} />
-        <SceneJurisdictions />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.08) 50%, transparent)" }} />
-        <SceneDemo />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.1) 50%, transparent)" }} />
-        <SceneTrust />
-        <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.1) 50%, transparent)" }} />
-        <SceneCTA />
+    <div className="reading-room">
+      <header className="room-nav">
+        <Link href="/" aria-label="LawLens home"><LogoLockup markSize={36} /></Link>
+        <nav aria-label="Main navigation"><a href="#workspace">Workspace</a><Link href="/compare">Compare laws</Link><Link className="room-login" href="/sign-in">Sign in <ArrowUpRight size={16} /></Link></nav>
+      </header>
+      <main>
+        <section className="room-hero">
+          <div className="room-intro">
+            <p className="room-kicker"><span /> Legal research studio</p>
+            <h1>Read the law<br /><em>with clarity.</em></h1>
+            <p className="room-summary">Ask a legal question, compare jurisdictions, and trace each answer back to its sources.</p>
+            <Link className="room-action" href="/ask">Open research desk <ArrowRight size={18} /></Link>
+          </div>
+          <div className="reading-art" aria-hidden="true">
+            <div className="library-arch" />
+            <div className="book-stack">
+              <div className="art-book lilac"><Scale size={32} strokeWidth={1.2} /><span>Law &amp; Society</span></div>
+              <div className="art-book sage"><span>Comparative Law</span></div>
+              <div className="art-book rose"><span>The Statute Book</span></div>
+            </div>
+          </div>
+        </section>
+        <div className="room-regions" aria-label="Supported jurisdictions">{["India","United Kingdom","Canada","Australia"].map(region => <span key={region}>{region}</span>)}</div>
+        <section className="room-tools" id="workspace">
+          <h2>Your research desk</h2>
+          <div>{tools.map(({ href, name, detail, icon: Icon }) => <Link key={href} href={href}><Icon size={24} strokeWidth={1.5} /><h3>{name}</h3><p>{detail}</p><ArrowUpRight className="card-arrow" size={18} /></Link>)}</div>
+        </section>
       </main>
-      <Footer />
-    </LenisProvider>
+      <footer className="room-nav"><LogoLockup /><Link href="/sign-up">Create an account <ArrowUpRight size={15} /></Link></footer>
+    </div>
   );
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { QueryProvider } from "@/providers/query-provider";
 import "./globals.css";
+import "./studio.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#05060a",
-  colorScheme: "dark",
+  themeColor: "#fbf8f4",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -50,13 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
         className={`${geist.variable} ${geistMono.variable} ${playfair.variable}`}
       >
-        <body className="min-h-screen antialiased" style={{ background: "#060608" }}>
-          <div className="atmos" aria-hidden>
-            <div className="atmos-orb atmos-1" />
-            <div className="atmos-orb atmos-2" />
-            <div className="atmos-orb atmos-3" />
-          </div>
-          <div className="grain" aria-hidden />
+        <body className="min-h-screen antialiased">
           <QueryProvider>
             {children}
           </QueryProvider>

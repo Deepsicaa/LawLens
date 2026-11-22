@@ -2,9 +2,9 @@ import { Sidebar } from "@/components/layout/sidebar";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "#08090c" }}>
+    <div className="studio">
       <Sidebar />
-      <main style={{ flex: 1, marginLeft: 224, minHeight: "100vh", position: "relative" }}>
+      <main className="studio-main">
         {children}
       </main>
     </div>

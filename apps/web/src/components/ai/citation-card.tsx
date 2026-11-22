@@ -18,16 +18,16 @@ export function CitationCard({ citation, index }: Props) {
         <div className="flex-1 min-w-0">
           {/* Source + section */}
           <div className="flex items-center gap-2 flex-wrap mb-2">
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-white/70">
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-[#62596b]">
               <BookOpen className="w-3 h-3" />
               {citation.source}
             </div>
-            <span className="text-xs text-white/30">·</span>
+            <span className="text-xs text-[#62596b]">·</span>
             <span className="text-xs font-medium text-blue-400">{citation.section}</span>
           </div>
 
           {/* Text excerpt */}
-          <p className="text-xs leading-relaxed text-white/40 line-clamp-3">{citation.text}</p>
+          <p className="text-xs leading-relaxed text-[#62596b] line-clamp-3">{citation.text}</p>
 
           {/* Score + link */}
           <div className="flex items-center gap-3 mt-3">
@@ -38,7 +38,7 @@ export function CitationCard({ citation, index }: Props) {
                   style={{ width: `${Math.round(citation.relevanceScore * 100)}%` }}
                 />
               </div>
-              <span className="text-[10px] text-white/25 tabular-nums">
+              <span className="text-[10px] text-[#62596b] tabular-nums">
                 {Math.round(citation.relevanceScore * 100)}% relevance
               </span>
             </div>
@@ -47,7 +47,7 @@ export function CitationCard({ citation, index }: Props) {
                 href={citation.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-auto flex items-center gap-1 text-[11px] text-white/25 hover:text-white/60 transition-colors"
+                className="ml-auto flex items-center gap-1 text-[11px] text-[#62596b] hover:text-[#62596b] transition-colors"
               >
                 <ExternalLink className="w-3 h-3" />
                 Official source

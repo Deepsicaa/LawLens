@@ -10,7 +10,7 @@ import { JURISDICTIONS, type Jurisdiction } from "@/types";
 type Section = "profile" | "preferences" | "security";
 
 const JURISDICTION_COLORS: Record<string, string> = {
-  india: "#f97316", uk: "#3b82f6", canada: "#ef4444", australia: "#10b981",
+  india: "#f97316", uk: "#3b82f6", canada: "#ef4444", australia: "#267554",
 };
 
 const NAV: { id: Section; label: string; Icon: typeof User }[] = [
@@ -36,29 +36,29 @@ function ProfileSection() {
       <div style={{
         display: "flex", alignItems: "center", gap: "1.25rem",
         padding: "1.5rem", borderRadius: "1.1rem",
-        border: "1px solid rgba(212,175,122,0.15)",
-        background: "linear-gradient(135deg, rgba(212,175,122,0.07) 0%, rgba(8,8,12,0) 100%)",
+        border: "1px solid rgba(118,75,138,0.15)",
+        background: "linear-gradient(135deg, rgba(118,75,138,0.07) 0%, #fffaf8 100%)",
         position: "relative", overflow: "hidden",
       }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(212,175,122,0.4), transparent)" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(118,75,138,0.4), transparent)" }} />
         {user?.imageUrl ? (
-          <Image unoptimized width={56} height={56} src={user.imageUrl} alt="Avatar" style={{ width: 56, height: 56, borderRadius: "50%", border: "2px solid rgba(212,175,122,0.3)", flexShrink: 0 }} />
+          <Image unoptimized width={56} height={56} src={user.imageUrl} alt="Avatar" style={{ width: 56, height: 56, borderRadius: "50%", border: "2px solid rgba(118,75,138,0.3)", flexShrink: 0 }} />
         ) : (
           <div style={{
             width: 56, height: 56, borderRadius: "50%", flexShrink: 0,
-            background: "linear-gradient(135deg, #d4af7a, #8a5a20)",
+            background: "linear-gradient(135deg, #704784, #8a5a20)",
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: "1.4rem", fontWeight: 700, color: "#060608",
-            border: "2px solid rgba(212,175,122,0.3)",
+            fontSize: "1.4rem", fontWeight: 700, color: "#fffaf8",
+            border: "2px solid rgba(118,75,138,0.3)",
           }}>
             {user?.firstName?.[0]?.toUpperCase() ?? "?"}
           </div>
         )}
         <div>
-          <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#f0ede8", marginBottom: "0.2rem", letterSpacing: "-0.01em" }}>
+          <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#302a3c", marginBottom: "0.2rem", letterSpacing: "-0.01em" }}>
             {user?.fullName ?? user?.username ?? "—"}
           </p>
-          <p style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.38)" }}>
+          <p style={{ fontSize: "0.78rem", color: "#62596b" }}>
             {user?.primaryEmailAddress?.emailAddress}
           </p>
         </div>
@@ -66,19 +66,19 @@ function ProfileSection() {
 
       {/* Account details */}
       <div>
-        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(240,237,232,0.22)", marginBottom: "0.75rem" }}>
+        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#62596b", marginBottom: "0.75rem" }}>
           Account details
         </p>
-        <div style={{ borderRadius: "1rem", border: "1px solid rgba(255,255,255,0.06)", overflow: "hidden" }}>
+        <div style={{ borderRadius: "1rem", border: "1px solid rgba(97,74,108,0.06)", overflow: "hidden" }}>
           {rows.map((r, i) => (
             <div key={r.label} style={{
               display: "flex", alignItems: "center", justifyContent: "space-between",
               padding: "0.9rem 1.1rem",
-              borderBottom: i < rows.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
-              background: "rgba(255,255,255,0.015)",
+              borderBottom: i < rows.length - 1 ? "1px solid rgba(97,74,108,0.05)" : "none",
+              background: "rgba(97,74,108,0.015)",
             }}>
-              <span style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.38)" }}>{r.label}</span>
-              <span style={{ fontSize: r.mono ? "0.72rem" : "0.82rem", fontFamily: r.mono ? "monospace" : undefined, color: "rgba(240,237,232,0.65)", letterSpacing: r.mono ? "0.02em" : undefined }}>
+              <span style={{ fontSize: "0.82rem", color: "#62596b" }}>{r.label}</span>
+              <span style={{ fontSize: r.mono ? "0.72rem" : "0.82rem", fontFamily: r.mono ? "monospace" : undefined, color: "#62596b", letterSpacing: r.mono ? "0.02em" : undefined }}>
                 {r.value}
               </span>
             </div>
@@ -88,7 +88,7 @@ function ProfileSection() {
 
       {/* Sign out */}
       <div>
-        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(240,237,232,0.22)", marginBottom: "0.75rem" }}>
+        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#62596b", marginBottom: "0.75rem" }}>
           Actions
         </p>
         <button
@@ -97,20 +97,20 @@ function ProfileSection() {
             display: "flex", alignItems: "center", gap: "0.75rem",
             width: "100%", padding: "0.9rem 1.1rem",
             borderRadius: "0.875rem", textAlign: "left",
-            border: "1px solid rgba(255,255,255,0.06)",
-            background: "rgba(255,255,255,0.02)",
-            fontSize: "0.85rem", color: "rgba(240,237,232,0.5)",
+            border: "1px solid rgba(97,74,108,0.06)",
+            background: "rgba(97,74,108,0.02)",
+            fontSize: "0.85rem", color: "#62596b",
             cursor: "pointer", transition: "all 0.15s",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#f0ede8";
-            e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-            e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+            e.currentTarget.style.color = "#302a3c";
+            e.currentTarget.style.background = "rgba(97,74,108,0.05)";
+            e.currentTarget.style.borderColor = "rgba(97,74,108,0.1)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = "rgba(240,237,232,0.5)";
-            e.currentTarget.style.background = "rgba(255,255,255,0.02)";
-            e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
+            e.currentTarget.style.color = "#62596b";
+            e.currentTarget.style.background = "rgba(97,74,108,0.02)";
+            e.currentTarget.style.borderColor = "rgba(97,74,108,0.06)";
           }}
         >
           <LogOut size={15} />
@@ -134,16 +134,16 @@ function PreferencesSection() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       <div>
-        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(240,237,232,0.22)", marginBottom: "0.75rem" }}>
+        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#62596b", marginBottom: "0.75rem" }}>
           Default jurisdiction
         </p>
-        <p style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.3)", marginBottom: "1.1rem", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "0.78rem", color: "#62596b", marginBottom: "1.1rem", lineHeight: 1.6 }}>
           The jurisdiction selected when you start a new chat.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
           {(Object.keys(JURISDICTIONS) as Jurisdiction[]).map((key) => {
             const j = JURISDICTIONS[key];
-            const col = JURISDICTION_COLORS[key] ?? "#d4af7a";
+            const col = JURISDICTION_COLORS[key] ?? "#704784";
             const active = selected === key;
             return (
               <button
@@ -152,8 +152,8 @@ function PreferencesSection() {
                 style={{
                   display: "flex", alignItems: "center", gap: "0.75rem",
                   padding: "0.9rem 1.1rem", borderRadius: "0.875rem", textAlign: "left",
-                  border: `1px solid ${active ? col + "40" : "rgba(255,255,255,0.06)"}`,
-                  background: active ? `${col}10` : "rgba(255,255,255,0.02)",
+                  border: `1px solid ${active ? col + "40" : "rgba(97,74,108,0.06)"}`,
+                  background: active ? `${col}10` : "rgba(97,74,108,0.02)",
                   cursor: "pointer", transition: "all 0.18s",
                   boxShadow: active ? `0 0 20px ${col}18` : "none",
                 }}
@@ -165,13 +165,13 @@ function PreferencesSection() {
                 }}
                 onMouseLeave={(e) => {
                   if (!active) {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                    e.currentTarget.style.background = "rgba(255,255,255,0.02)";
+                    e.currentTarget.style.borderColor = "rgba(97,74,108,0.06)";
+                    e.currentTarget.style.background = "rgba(97,74,108,0.02)";
                   }
                 }}
               >
                 <span style={{ fontSize: "1.3rem" }}>{j.flag}</span>
-                <span style={{ fontSize: "0.85rem", fontWeight: active ? 600 : 400, color: active ? col : "rgba(240,237,232,0.55)", flex: 1 }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: active ? 600 : 400, color: active ? col : "#62596b", flex: 1 }}>
                   {j.name}
                 </span>
                 {active && (
@@ -180,7 +180,7 @@ function PreferencesSection() {
                     background: col, display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0,
                   }}>
-                    <Check size={10} style={{ color: "#060608" }} />
+                    <Check size={10} style={{ color: "#fffaf8" }} />
                   </div>
                 )}
               </button>
@@ -195,12 +195,12 @@ function PreferencesSection() {
           style={{
             display: "inline-flex", alignItems: "center", gap: "0.5rem",
             padding: "0.7rem 1.5rem", borderRadius: "999px",
-            border: `1px solid ${saved ? "rgba(16,185,129,0.3)" : "rgba(212,175,122,0.3)"}`,
-            background: saved ? "rgba(16,185,129,0.1)" : "#d4af7a",
-            color: saved ? "#10b981" : "#060608",
+            border: `1px solid ${saved ? "rgba(16,185,129,0.3)" : "rgba(118,75,138,0.3)"}`,
+            background: saved ? "rgba(16,185,129,0.1)" : "#704784",
+            color: saved ? "#267554" : "#fffaf8",
             fontSize: "0.85rem", fontWeight: 700, cursor: "pointer",
             transition: "all 0.2s",
-            boxShadow: saved ? "0 0 16px rgba(16,185,129,0.2)" : "0 0 20px rgba(212,175,122,0.3)",
+            boxShadow: saved ? "0 0 16px rgba(16,185,129,0.2)" : "0 0 20px rgba(118,75,138,0.3)",
           }}
         >
           {saved ? <><Check size={13} /> Saved</> : "Save preferences"}
@@ -218,7 +218,7 @@ function SecuritySection() {
     <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       {/* Auth provider */}
       <div>
-        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(240,237,232,0.22)", marginBottom: "0.75rem" }}>
+        <p style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#62596b", marginBottom: "0.75rem" }}>
           Authentication
         </p>
         <div style={{
@@ -232,13 +232,13 @@ function SecuritySection() {
             background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.25)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
-            <Shield size={14} style={{ color: "#10b981" }} />
+            <Shield size={14} style={{ color: "#267554" }} />
           </div>
           <div>
-            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#f0ede8", marginBottom: "0.3rem" }}>
+            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#302a3c", marginBottom: "0.3rem" }}>
               Secured by Clerk
             </p>
-            <p style={{ fontSize: "0.75rem", color: "rgba(240,237,232,0.38)", lineHeight: 1.6 }}>
+            <p style={{ fontSize: "0.75rem", color: "#62596b", lineHeight: 1.6 }}>
               Password, two-factor authentication, and active sessions are managed through Clerk&apos;s secure portal.
             </p>
           </div>
@@ -252,18 +252,18 @@ function SecuritySection() {
             display: "flex", alignItems: "center", justifyContent: "space-between",
             marginTop: "0.6rem", padding: "0.9rem 1.1rem",
             borderRadius: "0.875rem", textDecoration: "none",
-            border: "1px solid rgba(255,255,255,0.06)",
-            background: "rgba(255,255,255,0.02)",
-            fontSize: "0.85rem", color: "rgba(240,237,232,0.45)",
+            border: "1px solid rgba(97,74,108,0.06)",
+            background: "rgba(97,74,108,0.02)",
+            fontSize: "0.85rem", color: "#62596b",
             transition: "all 0.15s",
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.color = "#f0ede8";
-            (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.05)";
+            (e.currentTarget as HTMLAnchorElement).style.color = "#302a3c";
+            (e.currentTarget as HTMLAnchorElement).style.background = "rgba(97,74,108,0.05)";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.color = "rgba(240,237,232,0.45)";
-            (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.02)";
+            (e.currentTarget as HTMLAnchorElement).style.color = "#62596b";
+            (e.currentTarget as HTMLAnchorElement).style.background = "rgba(97,74,108,0.02)";
           }}
         >
           <span>Manage account security</span>
@@ -281,7 +281,7 @@ function SecuritySection() {
           border: "1px solid rgba(239,68,68,0.18)",
           background: "rgba(239,68,68,0.04)",
         }}>
-          <p style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.4)", lineHeight: 1.6, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "0.82rem", color: "#62596b", lineHeight: 1.6, marginBottom: "1rem" }}>
             Permanently delete your account and all associated conversations. This action cannot be undone.
           </p>
           <AnimatePresence mode="wait">
@@ -309,7 +309,7 @@ function SecuritySection() {
                 initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}
               >
-                <span style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.4)" }}>Are you sure?</span>
+                <span style={{ fontSize: "0.78rem", color: "#62596b" }}>Are you sure?</span>
                 <button
                   style={{
                     padding: "0.5rem 1rem", borderRadius: "0.55rem",
@@ -324,9 +324,9 @@ function SecuritySection() {
                   onClick={() => setConfirmDelete(false)}
                   style={{
                     padding: "0.5rem 1rem", borderRadius: "0.55rem",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(97,74,108,0.07)",
                     background: "transparent",
-                    fontSize: "0.78rem", color: "rgba(240,237,232,0.4)", cursor: "pointer",
+                    fontSize: "0.78rem", color: "#62596b", cursor: "pointer",
                   }}
                 >
                   Cancel
@@ -348,10 +348,10 @@ export default function SettingsPage() {
     <div style={{ padding: "2.5rem 3rem", maxWidth: 820, margin: "0 auto" }}>
       {/* Header */}
       <div style={{ marginBottom: "2.5rem" }}>
-        <h1 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#f0ede8", letterSpacing: "-0.03em", marginBottom: "0.3rem" }}>
+        <h1 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#302a3c", letterSpacing: "-0.03em", marginBottom: "0.3rem" }}>
           Settings
         </h1>
-        <p style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.3)" }}>
+        <p style={{ fontSize: "0.82rem", color: "#62596b" }}>
           Manage your account and preferences
         </p>
       </div>
@@ -368,22 +368,22 @@ export default function SettingsPage() {
                 style={{
                   display: "flex", alignItems: "center", gap: "0.65rem",
                   padding: "0.65rem 0.9rem", borderRadius: "0.75rem",
-                  border: `1px solid ${isActive ? "rgba(212,175,122,0.2)" : "transparent"}`,
-                  background: isActive ? "rgba(212,175,122,0.08)" : "transparent",
-                  color: isActive ? "#d4af7a" : "rgba(240,237,232,0.38)",
+                  border: `1px solid ${isActive ? "rgba(118,75,138,0.2)" : "transparent"}`,
+                  background: isActive ? "rgba(118,75,138,0.08)" : "transparent",
+                  color: isActive ? "#704784" : "#62596b",
                   fontSize: "0.83rem", fontWeight: isActive ? 600 : 400,
                   cursor: "pointer", width: "100%", textAlign: "left",
                   transition: "all 0.15s",
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = "rgba(240,237,232,0.75)";
-                    e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+                    e.currentTarget.style.color = "#302a3c";
+                    e.currentTarget.style.background = "rgba(97,74,108,0.04)";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.color = "rgba(240,237,232,0.38)";
+                    e.currentTarget.style.color = "#62596b";
                     e.currentTarget.style.background = "transparent";
                   }
                 }}

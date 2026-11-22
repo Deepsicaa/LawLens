@@ -26,7 +26,7 @@ const JURISDICTION_COLORS: Record<string, string> = {
   india: "#f97316",
   uk: "#3b82f6",
   canada: "#ef4444",
-  australia: "#10b981",
+  australia: "#267554",
 };
 
 export default function HistoryPage() {
@@ -59,10 +59,10 @@ export default function HistoryPage() {
       {/* Header */}
       <div style={{ marginBottom: "2.5rem", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
         <div>
-          <h1 style={{ fontSize: "1.6rem", fontWeight: 700, color: "#f0ede8", letterSpacing: "-0.02em", marginBottom: "0.35rem" }}>
+          <h1 style={{ fontSize: "1.6rem", fontWeight: 700, color: "#302a3c", letterSpacing: "-0.02em", marginBottom: "0.35rem" }}>
             Chat History
           </h1>
-          <p style={{ fontSize: "0.82rem", color: "rgba(240,237,232,0.32)" }}>
+          <p style={{ fontSize: "0.82rem", color: "#62596b" }}>
             {conversations.length} saved conversation{conversations.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function HistoryPage() {
           <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
             {confirmClear ? (
               <>
-                <span style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.4)" }}>Are you sure?</span>
+                <span style={{ fontSize: "0.78rem", color: "#62596b" }}>Are you sure?</span>
                 <button
                   onClick={() => { clearAll(); setConfirmClear(false); }}
                   style={{ fontSize: "0.78rem", color: "#ef4444", border: "none", cursor: "pointer", padding: "0.35rem 0.75rem", borderRadius: "0.5rem", background: "rgba(239,68,68,0.1)" }}
@@ -79,7 +79,7 @@ export default function HistoryPage() {
                 </button>
                 <button
                   onClick={() => setConfirmClear(false)}
-                  style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.4)", background: "none", border: "none", cursor: "pointer" }}
+                  style={{ fontSize: "0.78rem", color: "#62596b", background: "none", border: "none", cursor: "pointer" }}
                 >
                   Cancel
                 </button>
@@ -87,7 +87,7 @@ export default function HistoryPage() {
             ) : (
               <button
                 onClick={() => setConfirmClear(true)}
-                style={{ fontSize: "0.78rem", color: "rgba(240,237,232,0.28)", background: "none", border: "1px solid rgba(255,255,255,0.07)", cursor: "pointer", padding: "0.4rem 0.85rem", borderRadius: "0.5rem" }}
+                style={{ fontSize: "0.78rem", color: "#62596b", background: "none", border: "1px solid rgba(97,74,108,0.07)", cursor: "pointer", padding: "0.4rem 0.85rem", borderRadius: "0.5rem" }}
               >
                 Clear all
               </button>
@@ -102,24 +102,24 @@ export default function HistoryPage() {
           position: "relative", marginBottom: "1.5rem",
           display: "flex", alignItems: "center",
         }}>
-          <Search size={14} style={{ position: "absolute", left: "1rem", color: "rgba(240,237,232,0.3)", pointerEvents: "none" }} />
+          <Search size={14} style={{ position: "absolute", left: "1rem", color: "#62596b", pointerEvents: "none" }} />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search conversations…"
             style={{
               width: "100%", padding: "0.7rem 2.5rem 0.7rem 2.5rem",
-              background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
-              borderRadius: "0.75rem", fontSize: "0.85rem", color: "#f0ede8",
+              background: "rgba(97,74,108,0.03)", border: "1px solid rgba(97,74,108,0.07)",
+              borderRadius: "0.75rem", fontSize: "0.85rem", color: "#302a3c",
               outline: "none", transition: "border-color 0.2s",
             }}
-            onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(212,175,122,0.3)"; }}
-            onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(255,255,255,0.07)"; }}
+            onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(118,75,138,0.3)"; }}
+            onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(97,74,108,0.07)"; }}
           />
           {search && (
             <button onClick={() => setSearch("")} style={{
               position: "absolute", right: "0.75rem", background: "none", border: "none",
-              color: "rgba(240,237,232,0.3)", cursor: "pointer", padding: "0.25rem",
+              color: "#62596b", cursor: "pointer", padding: "0.25rem",
             }}>
               <X size={13} />
             </button>
@@ -132,20 +132,20 @@ export default function HistoryPage() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: "6rem", textAlign: "center" }}>
           <div style={{
             width: 52, height: 52, borderRadius: "1rem",
-            background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
+            background: "rgba(97,74,108,0.03)", border: "1px solid rgba(97,74,108,0.07)",
             display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.25rem",
           }}>
-            <MessageSquare size={20} style={{ color: "rgba(240,237,232,0.25)" }} />
+            <MessageSquare size={20} style={{ color: "#62596b" }} />
           </div>
-          <p style={{ fontSize: "0.95rem", color: "rgba(240,237,232,0.45)", marginBottom: "0.5rem" }}>No conversations yet</p>
-          <p style={{ fontSize: "0.8rem", color: "rgba(240,237,232,0.22)", marginBottom: "1.5rem" }}>
+          <p style={{ fontSize: "0.95rem", color: "#62596b", marginBottom: "0.5rem" }}>No conversations yet</p>
+          <p style={{ fontSize: "0.8rem", color: "#62596b", marginBottom: "1.5rem" }}>
             Your chats will appear here automatically after you ask a question.
           </p>
           <button
             onClick={() => router.push("/ask")}
             style={{
               padding: "0.7rem 1.5rem", borderRadius: "999px",
-              background: "#d4af7a", color: "#060608", fontWeight: 700,
+              background: "#704784", color: "#fffaf8", fontWeight: 700,
               fontSize: "0.85rem", border: "none", cursor: "pointer",
             }}
           >
@@ -156,7 +156,7 @@ export default function HistoryPage() {
 
       {/* No search results */}
       {conversations.length > 0 && filtered.length === 0 && (
-        <div style={{ textAlign: "center", paddingTop: "3rem", color: "rgba(240,237,232,0.35)", fontSize: "0.88rem" }}>
+        <div style={{ textAlign: "center", paddingTop: "3rem", color: "#62596b", fontSize: "0.88rem" }}>
           No conversations match &ldquo;{search}&rdquo;
         </div>
       )}
@@ -166,7 +166,7 @@ export default function HistoryPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
           {filtered.map((conv, i) => {
             const jMeta = JURISDICTIONS[conv.jurisdiction as keyof typeof JURISDICTIONS];
-            const jColor = JURISDICTION_COLORS[conv.jurisdiction] ?? "#d4af7a";
+            const jColor = JURISDICTION_COLORS[conv.jurisdiction] ?? "#704784";
 
             return (
               <motion.div
@@ -180,12 +180,12 @@ export default function HistoryPage() {
                   display: "flex", alignItems: "center", gap: "1rem",
                   padding: "1rem 1.25rem",
                   borderRadius: "0.875rem",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(97,74,108,0.06)",
+                  background: "rgba(97,74,108,0.02)",
                   cursor: "pointer", transition: "all 0.18s",
                   position: "relative",
                 }}
-                whileHover={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}
+                whileHover={{ background: "rgba(97,74,108,0.04)", borderColor: "rgba(97,74,108,0.1)" }}
               >
                 {/* Jurisdiction dot */}
                 <div style={{
@@ -200,7 +200,7 @@ export default function HistoryPage() {
                 {/* Content */}
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <p style={{
-                    fontSize: "0.875rem", fontWeight: 500, color: "#f0ede8",
+                    fontSize: "0.875rem", fontWeight: 500, color: "#302a3c",
                     whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
                     marginBottom: "0.25rem",
                   }}>
@@ -214,11 +214,11 @@ export default function HistoryPage() {
                     }}>
                       {jMeta?.name ?? conv.jurisdiction}
                     </span>
-                    <span style={{ fontSize: "0.72rem", color: "rgba(240,237,232,0.28)", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+                    <span style={{ fontSize: "0.72rem", color: "#62596b", display: "flex", alignItems: "center", gap: "0.25rem" }}>
                       <Clock size={11} />
                       {formatRelative(conv.updatedAt)}
                     </span>
-                    <span style={{ fontSize: "0.72rem", color: "rgba(240,237,232,0.2)" }}>
+                    <span style={{ fontSize: "0.72rem", color: "#62596b" }}>
                       {conv.messageCount} message{conv.messageCount !== 1 ? "s" : ""}
                     </span>
                   </div>
@@ -235,15 +235,15 @@ export default function HistoryPage() {
                     style={{
                       width: 30, height: 30, borderRadius: "0.5rem", display: "flex",
                       alignItems: "center", justifyContent: "center", background: "none",
-                      border: "none", cursor: "pointer", color: "rgba(240,237,232,0.35)",
+                      border: "none", cursor: "pointer", color: "#62596b",
                       transition: "all 0.15s",
                     }}
                     onMouseEnter={(e) => { (e.currentTarget).style.color = "#ef4444"; (e.currentTarget).style.background = "rgba(239,68,68,0.1)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget).style.color = "rgba(240,237,232,0.35)"; (e.currentTarget).style.background = "none"; }}
+                    onMouseLeave={(e) => { (e.currentTarget).style.color = "#62596b"; (e.currentTarget).style.background = "none"; }}
                   >
                     <Trash2 size={13} />
                   </button>
-                  <ChevronRight size={15} style={{ color: "rgba(240,237,232,0.25)" }} />
+                  <ChevronRight size={15} style={{ color: "#62596b" }} />
                 </div>
               </motion.div>
             );

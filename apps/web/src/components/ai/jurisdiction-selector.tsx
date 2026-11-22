@@ -37,8 +37,8 @@ export function JurisdictionSelector({ value, onChange, disabled, compact }: Pro
               className={cn(
                 "inline-flex items-center gap-2 rounded-xl border px-3.5 py-2 text-sm font-medium transition-all duration-150",
                 value === key
-                  ? "border-[rgba(201,162,39,0.5)] bg-[rgba(201,162,39,0.12)] text-[#c9a227]"
-                  : "border-[rgba(201,162,39,0.08)] bg-[rgba(201,162,39,0.03)] text-[#f0ebe0]/40 hover:border-[rgba(201,162,39,0.2)] hover:text-[#f0ebe0]/70",
+                  ? "border-[rgba(118,75,138,0.5)] bg-[rgba(118,75,138,0.12)] text-[#704784]"
+                  : "border-[rgba(118,75,138,0.08)] bg-[rgba(118,75,138,0.03)] text-[#62596b] hover:border-[rgba(118,75,138,0.2)] hover:text-[#62596b]",
                 disabled && "pointer-events-none opacity-40"
               )}
             >
@@ -58,7 +58,7 @@ export function JurisdictionSelector({ value, onChange, disabled, compact }: Pro
         onClick={() => !disabled && setOpen(v => !v)}
         disabled={disabled}
         className={cn(
-          "flex items-center gap-2 rounded-lg border border-[rgba(201,162,39,0.2)] bg-[rgba(201,162,39,0.08)] px-3 py-1.5 text-sm font-medium text-[#c9a227] transition-all hover:bg-[rgba(201,162,39,0.12)]",
+          "flex items-center gap-2 rounded-lg border border-[rgba(118,75,138,0.2)] bg-[rgba(118,75,138,0.08)] px-3 py-1.5 text-sm font-medium text-[#704784] transition-all hover:bg-[rgba(118,75,138,0.12)]",
           disabled && "pointer-events-none opacity-50"
         )}
       >
@@ -68,7 +68,7 @@ export function JurisdictionSelector({ value, onChange, disabled, compact }: Pro
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 z-50 w-44 rounded-xl border border-[rgba(201,162,39,0.15)] bg-[#0f1013] shadow-xl overflow-hidden">
+        <div className="absolute right-0 top-full mt-1 z-50 w-44 rounded-xl border border-[rgba(118,75,138,0.15)] bg-[#fffcfa] shadow-xl overflow-hidden">
           {(Object.entries(JURISDICTIONS) as [Jurisdiction, (typeof JURISDICTIONS)[Jurisdiction]][]).map(
             ([key, m]) => (
               <button
@@ -77,8 +77,8 @@ export function JurisdictionSelector({ value, onChange, disabled, compact }: Pro
                 className={cn(
                   "flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-left transition-colors",
                   value === key
-                    ? "bg-[rgba(201,162,39,0.1)] text-[#c9a227]"
-                    : "text-[#f0ebe0]/55 hover:bg-[rgba(201,162,39,0.05)] hover:text-[#f0ebe0]/90"
+                    ? "bg-[rgba(118,75,138,0.1)] text-[#704784]"
+                    : "text-[#62596b] hover:bg-[rgba(118,75,138,0.05)] hover:text-[#62596b]"
                 )}
               >
                 <span>{m.flag}</span>
