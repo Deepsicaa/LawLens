@@ -22,7 +22,7 @@ def _verify_clerk_signature(
 ) -> bool:
     """Verify Clerk webhook signature using HMAC-SHA256."""
     if not settings.CLERK_WEBHOOK_SECRET:
-        return True  # Skip in development if secret not set
+        return False
 
     signed_content = f"{svix_id}.{svix_timestamp}.{payload.decode('utf-8')}"
     secret = settings.CLERK_WEBHOOK_SECRET.removeprefix("whsec_")
