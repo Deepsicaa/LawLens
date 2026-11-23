@@ -1,8 +1,11 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { RoundedBox } from "@react-three/drei";
-import { Component, useState, type ReactNode } from "react";
+import { Component, useEffect, useRef, useState, type ReactNode } from "react";
+
+import type { Group } from "three";
+import { useReducedMotion } from "framer-motion";
 
 class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   override state = { failed: false };
@@ -54,11 +57,46 @@ function Rod({
   );
 }
 
+function Turntable({
+  angle,
+  children,
+}: {
+  angle: number;
+  children: (beam: React.RefObject<Group | null>) => ReactNode;
+}) {
+  const table = useRef<Group>(null);
+  const beam = useRef<Group>(null);
+  const elapsed = useRef(0);
+  const reduce = useReducedMotion();
+  const invalidate = useThree((state) => state.invalidate);
+  useEffect(() => {
+    elapsed.current = 0;
+    invalidate();
+  }, [angle, reduce, invalidate]);
+  useFrame((_, delta) => {
+    if (!table.current || !beam.current) return;
+    const dt = Math.min(delta, 0.05);
+    elapsed.current += dt;
+    const t = elapsed.current;
+    const remaining = angle - table.current.rotation.y;
+    table.current.rotation.y +=
+      reduce || Math.abs(remaining) < 0.001 ? remaining : remaining * (1 - Math.exp(-6 * dt));
+    beam.current.rotation.z = reduce || t > 3 ? 0 : 0.12 * Math.sin(t * 5) * Math.exp(-1.4 * t);
+    if (!reduce && (t < 3 || Math.abs(remaining) >= 0.001)) invalidate();
+  });
+  return <group ref={table}>{children(beam)}</group>;
+}
+
 export function ClarityScene() {
   const [angle, setAngle] = useState(0.2);
   return (
     <div className="clarity-art">
       <div className="orbit" aria-hidden="true" />
+      <div className="hero-stars" aria-hidden="true">
+        <i>✦</i>
+        <i>✧</i>
+        <i>✦</i>
+      </div>
       <div className="clay-stage" aria-hidden="true">
         <SceneBoundary>
           <Canvas
@@ -71,47 +109,53 @@ export function ClarityScene() {
             <ambientLight intensity={2} />
             <directionalLight position={[-3, 7, 5]} intensity={3} />
             <directionalLight position={[5, 2, 0]} intensity={1.2} />
-            <group rotation={[0, angle, 0]}>
-              <mesh position={[0, -1.13, 0]}>
-                <cylinderGeometry args={[2.15, 2.18, 0.23, 72]} />
-                <meshStandardMaterial color="#d6cddd" />
-              </mesh>
-              <Book y={-0.75} color="#efa78d" angle={-0.13} />
-              <Book y={-0.28} color="#b8a0d6" angle={0.12} />
-              <Book y={0.19} color="#b5c5a3" angle={-0.04} />
-              <group position={[0.35, 0.42, 0]}>
-                <Rod x={0} y={0.66} length={1.35} radius={0.055} />
-                <Rod x={0} y={1.27} length={1.48} radius={0.048} angle={Math.PI / 2} />
-                <mesh position={[0, 1.44, 0]}>
-                  <sphereGeometry args={[0.14, 24, 16]} />
-                  <meshStandardMaterial color="#f1d17b" />
-                </mesh>
-                {[-0.61, 0.61].map((x) => (
-                  <group key={x}>
-                    <Rod x={x - 0.09} y={0.97} length={0.62} radius={0.013} angle={-0.18} />
-                    <Rod x={x + 0.09} y={0.97} length={0.62} radius={0.013} angle={0.18} />
-                    <mesh position={[x, 0.65, 0]}>
-                      <cylinderGeometry args={[0.29, 0.14, 0.11, 32]} />
-                      <meshStandardMaterial color="#e6ba60" />
+            <Turntable angle={angle}>
+              {(beam) => (
+                <>
+                  <mesh position={[0, -1.13, 0]}>
+                    <cylinderGeometry args={[2.15, 2.18, 0.23, 72]} />
+                    <meshStandardMaterial color="#d6cddd" />
+                  </mesh>
+                  <Book y={-0.75} color="#efa78d" angle={-0.13} />
+                  <Book y={-0.28} color="#b8a0d6" angle={0.12} />
+                  <Book y={0.19} color="#b5c5a3" angle={-0.04} />
+                  <group position={[0.35, 0.42, 0]}>
+                    <Rod x={0} y={0.66} length={1.35} radius={0.055} />
+                    <group ref={beam} position={[0, 1.27, 0]}>
+                      <Rod x={0} y={0} length={1.48} radius={0.048} angle={Math.PI / 2} />
+                      <mesh position={[0, 0.17, 0]}>
+                        <sphereGeometry args={[0.14, 24, 16]} />
+                        <meshStandardMaterial color="#f1d17b" />
+                      </mesh>
+                      {[-0.61, 0.61].map((x) => (
+                        <group key={x}>
+                          <Rod x={x - 0.09} y={-0.3} length={0.62} radius={0.013} angle={-0.18} />
+                          <Rod x={x + 0.09} y={-0.3} length={0.62} radius={0.013} angle={0.18} />
+                          <mesh position={[x, -0.62, 0]}>
+                            <cylinderGeometry args={[0.29, 0.14, 0.11, 32]} />
+                            <meshStandardMaterial color="#e6ba60" />
+                          </mesh>
+                        </group>
+                      ))}
+                    </group>
+                  </group>
+                  <group position={[-1.4, 0.84, 0.1]} rotation={[0, -0.17, -0.2]}>
+                    <mesh>
+                      <torusGeometry args={[0.39, 0.083, 18, 48]} />
+                      <meshStandardMaterial color="#aa86cc" />
+                    </mesh>
+                    <mesh position={[0, -0.63, 0]}>
+                      <capsuleGeometry args={[0.075, 0.43, 8, 16]} />
+                      <meshStandardMaterial color="#906ab5" />
                     </mesh>
                   </group>
-                ))}
-              </group>
-              <group position={[-1.4, 0.84, 0.1]} rotation={[0, -0.17, -0.2]}>
-                <mesh>
-                  <torusGeometry args={[0.39, 0.083, 18, 48]} />
-                  <meshStandardMaterial color="#aa86cc" />
-                </mesh>
-                <mesh position={[0, -0.63, 0]}>
-                  <capsuleGeometry args={[0.075, 0.43, 8, 16]} />
-                  <meshStandardMaterial color="#906ab5" />
-                </mesh>
-              </group>
-              <mesh position={[0.96, -0.73, 1.04]}>
-                <sphereGeometry args={[0.3, 28, 24]} />
-                <meshStandardMaterial color="#f6d58c" />
-              </mesh>
-            </group>
+                  <mesh position={[0.96, -0.73, 1.04]}>
+                    <sphereGeometry args={[0.3, 28, 24]} />
+                    <meshStandardMaterial color="#f6d58c" />
+                  </mesh>
+                </>
+              )}
+            </Turntable>
           </Canvas>
         </SceneBoundary>
       </div>

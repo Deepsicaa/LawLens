@@ -447,3 +447,98 @@
   font-size: clamp(84px, 12vw, 180px);
   color: #9170bb;
 }
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-stars i {
+  position: absolute;
+  left: 9%;
+  top: 28%;
+  color: #d68d67;
+  font:
+    26px/1 Georgia,
+    serif;
+}
+.hero-stars i:nth-child(2) {
+  left: 91%;
+  top: 67%;
+  font-size: 22px;
+}
+.hero-stars i:nth-child(3) {
+  left: 31%;
+  top: 10%;
+  font-size: 13px;
+  color: #a081ca;
+}
+.paper::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 30px;
+  background: #b294ce;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 77%, 0 100%);
+  position: absolute;
+  top: 0;
+  right: 12px;
+}
+.paper {
+  position: relative;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-stars i {
+    animation: star-glint 2s ease-in-out 2;
+  }
+  .hero-stars i:nth-child(2) {
+    animation-delay: 0.35s;
+  }
+  .hero-stars i:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  .method-cards article {
+    transition:
+      translate 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  @media (hover: hover) {
+    .method-cards article:hover {
+      translate: 0 -5px;
+      box-shadow: 0 12px 26px #53446412;
+    }
+    .method-cards article:hover .art-1 svg {
+      animation: scan-paper 1.3s ease-in-out;
+    }
+    .method-cards article:hover .art-0 span {
+      animation: question-lift 0.75s ease;
+    }
+    .method-cards article:hover .art-2 svg {
+      animation: stamp-check 0.55s ease;
+    }
+  }
+}
+@keyframes star-glint {
+  50% {
+    transform: scale(0.72) rotate(16deg);
+    opacity: 0.55;
+  }
+}
+@keyframes scan-paper {
+  45% {
+    translate: -22px -15px;
+    rotate: -8deg;
+  }
+}
+@keyframes question-lift {
+  45% {
+    translate: 0 -7px;
+    rotate: -4deg;
+  }
+}
+@keyframes stamp-check {
+  45% {
+    scale: 1.1;
+    rotate: -5deg;
+  }
+}
