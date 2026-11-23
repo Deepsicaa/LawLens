@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
-      { url: "/favicon.svg?v=book-lens", type: "image/svg+xml" },
+      { url: "/favicon.svg?v=clarity", type: "image/svg+xml" },
     ],
   },
   openGraph: {
